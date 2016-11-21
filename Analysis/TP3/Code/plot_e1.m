@@ -1,0 +1,10 @@
+plot(mm,errs);
+xlabel('m');
+ylabel('error');
+legend('err(r_m(x))');
+hold on;
+scatter([m50,m95,m100],[errs(m50),errs(m95),errs(m100)]);
+my = ylim()(2);
+text(m50+2,my/50+errs(m50),'50%');
+text(m95+2,my/50+errs(m95),'95%');
+text(m100+2,my/50+errs(m100),'100%');

@@ -205,31 +205,70 @@
 
   \;
 
-  <tabular|<tformat|<table|<row|<cell|x+y=y+x
-  <math|\<Rightarrow\>>>|<cell|s(x)+y=y+s(x)>>|<row|<cell|>|<cell|s(x)+y=s(y+x)>>|<row|<cell|>|<cell|s(x)+y=s(x+y)>>|<row|<cell|>|<cell|s(x+y)=s(y+x)>>|<row|<cell|>|<cell|s(x)+0=s(x)>>|<row|<cell|>|<cell|s(x)=s(x)>>|<row|<cell|s(x)+y=s(x+y)<math|\<Rightarrow\>>>|<cell|s(x)+s(y)=s(x+s(y))>>|<row|<cell|>|<cell|s(s(x)+y)=s(s(x+y))>>|<row|<cell|>|<cell|s(s(x+y))=s(s(x+y))>>>>>
+  \;
+
+  <section|CTL>
+
+  Sintassi
+
+  <\itemize>
+    <item>A(<math|\<forall\>>),E(<math|\<exists\>>)
+
+    <item>N(next), G(globaly), F(finally), U (until), W (weak)
+
+    <item><math|\<vee\>,\<wedge\>,\<neg\>,true,false> operatori possibili
+
+    <item>AP (proposizioni atomiche)
+  </itemize>
 
   \;
 
-  \;
+  <subsection|Esercizi>
 
-  \;
+  <with|gr-mode|<tuple|group-edit|move>|gr-frame|<tuple|scale|1cm|<tuple|0.599991gw|-43536tmpt>>|gr-geometry|<tuple|geometry|1par|0.266669par|center>|gr-arrow-end|\<gtr\>|<graphics||<carc|<point|-5.78175517987191|2.03538180242575>|<point|-5.92992546694692|2.75505390654005>|<point|-4.99858534259185|2.47988523343514>>|<carc|<point|-3.51033629928892|1.42403499941829>|<point|-3.65850658636393|2.14370710353259>|<point|-2.72716646200886|1.86853843042768>>|<carc|<point|-3.62801144062024|2.95992891638223>|<point|-3.77618172769525|3.67960102049653>|<point|-2.84484160334018|3.40443234739162>>|<carc|<point|-1.56725405976903|3.13748423124577>|<point|-1.71542434684404|3.85715633536007>|<point|-0.78408422248897|3.58198766225516>>|<carc|<point|0.184180876374428|3.22099564341529>|<point|0.0360105892994187|3.94066774752959>|<point|0.96735071365449|3.66549907442468>>|<carc|<point|0.19015249604428|1.51204119560343>|<point|0.0419822089692699|2.23171329971773>|<point|0.97332233332434|1.95654462661282>>|<with|arrow-end|\<gtr\>|<line|<point|-4.99859|2.47989>|<point|-3.86245664187241|3.33588878832995>>>|<with|arrow-end|\<gtr\>|<line|<point|-2.84484|3.40443>|<point|-1.79065870976834|3.44984589532172>>>|<with|arrow-end|\<gtr\>|<line|<point|-0.784084|3.58199>|<point|-0.0510329671099158|3.70003178540952>>>|<with|arrow-end|\<gtr\>|<line|<point|-4.99859|2.47989>|<point|-3.74418027993846|1.79473435996929>>>|<with|arrow-end|\<gtr\>|<line|<point|-2.72717|1.86854>|<point|-0.0429353185732452|1.87671924259151>>>|<text-at|i=1|<point|-5.89974|3.45902>>|<text-at|i=2|<point|-3.86772|4.00936>>|<text-at|i=4|<point|-1.53937|4.39036>>|<text-at|i=3|<point|0.917779|3.87206>>|<text-at|i=2|<point|-2.64005|2.44301>>|<text-at|i=3|<point|0.9694678347665|2.15697175552322>>|<text-at||<point|-1.11786|1.61751>>>>
 
-  \;
+  <\itemize>
+    <item>se i=2 allora + tardi i=3
 
-  <\session|python|default>
-    \;
-  </session>
+    AG(i=2 <math|\<Rightarrow\>>AF(i=3))
+
+    <item>i=2 fino a che i=3
+
+    (i=2) AW(i=3)
+
+    <item>se i=2 allora piu' tardi in una esecuzione avra' i=3
+
+    AG(i=2 <math|\<Rightarrow\>> EF(i=3))
+
+    <item>se i=2 allora resta 2\ 
+
+    AG(i=2 <math|\<Rightarrow\>> (i=2)AU(i=3))
+  </itemize>
+
+  AG p : p7 and !p6 and \ !p5(!p6,p7), !p4(!p5,p2), !p3(p2,!p4), !p2(!p3),
+  !p1(!p2,!p3)
+
+  EF AG p :\ 
+
+  p7 !p6 !p5 !p4 !p3 !p2 !p1
+
+  p7 !p6 p5( p7, !p6) p4(p5,!p2) p3(p4,!p2) p2(p3) p1(p2,p3)
+
+  p7 !p6 p5(p7,!p6) p4(p5,p2) p3(p4,p2) p2(p3) p1(p2,p3)
 </body>
 
 <\references>
   <\collection>
     <associate|auto-1|<tuple|1|1>>
+    <associate|auto-10|<tuple|4|?>>
     <associate|auto-2|<tuple|1.1|1>>
     <associate|auto-3|<tuple|1.2|1>>
     <associate|auto-4|<tuple|2|1>>
     <associate|auto-5|<tuple|2.1|1>>
     <associate|auto-6|<tuple|2.1.1|3>>
     <associate|auto-7|<tuple|1|4>>
+    <associate|auto-8|<tuple|3|?>>
+    <associate|auto-9|<tuple|3.1|?>>
   </collection>
 </references>
 
@@ -262,6 +301,14 @@
       <with|par-left|<quote|2tab>|2.1.1<space|2spc>Parte 2
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-6>>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc>CTL>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-8><vspace|0.5fn>
+
+      <with|par-left|<quote|1tab>|3.1<space|2spc>Esercizi
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-9>>
     </associate>
   </collection>
 </auxiliary>

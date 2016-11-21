@@ -1,0 +1,97 @@
+<TeXmacs|1.99.2>
+
+<style|generic>
+
+<\body>
+  <section|Algebraic specification>
+
+  Un insieme di di specificazione algebriche
+  <math|Spec=<around*|\<langle\>|S,F,X,AX|\<rangle\>>> è una signature
+  esteesa di un insieme di assiomi <math|E> nella variabile <math|X>
+
+  Sintassi definita, e il senso?
+
+  <\itemize-dot>
+    <item>Implementazione
+
+    <math|\<Rightarrow\> >Specifiche <math|\<vDash\>> Implementazione
+    (Semantica)
+
+    <math|\<Rightarrow\>>propieta' (teorema) <math|\<dashv\> >Specifiche
+    <math|\<wedge\>> propieta' (teorema) <math|\<dashv\> > Implementazione
+
+    \;
+  </itemize-dot>
+
+  <section|Computation Tree Logic (CTL)>
+
+  <subsection|Introduzione>
+
+  Quali sono le logiche temporali esistenti
+
+  <\itemize>
+    <item>Linear-time logic (LTL):
+
+    Descrive una sequenza lineare di esecuizone
+
+    <item>Computation Tree Logic (CTL)
+
+    La sequenza e' descritta in un albero di esecuzione (+ realistico)
+  </itemize>
+
+  Per un grafo si crea il suo albero di esecuzione (ovvero tutte le possibili
+  tappe della esecuzione)
+
+  \;
+
+  Questo vuole dire:
+
+  <\math>
+    \<tau\>= <around*|\<langle\>|S,\<rightarrow\>,s<rsup|0>|\<rangle\>>\<rightarrow\>
+    <around*|\<langle\>|U,\<rightarrow\><rprime|'>,u<rsup|0>|\<rangle\>>
+  </math>
+
+  Ovvero una sorta di copia del grafo dove pero' ogni nodo ha un solo
+  predocessore.
+
+  <\underline>
+    Sintassi:
+  </underline>
+
+  <with|font-series|bold|AP>: atomi proposition
+
+  <\itemize>
+    <item><math|a\<in\>AP \<rightarrow\> a <text|is a CTL formula>>
+
+    <item><math|\<phi\><rsub|1>,\<phi\><rsub|2>> are CTL formulas then :
+
+    <\equation*>
+      \<neg\>\<phi\><rsub|1><space|1em>\<phi\><rsub|1>\<wedge\>\<phi\><rsub|2><space|1em>EX\<phi\><rsub|1><space|1em>EG\<phi\><rsub|1><space|1em>\<phi\><rsub|1>EU\<phi\><rsub|2>
+    </equation*>
+
+    \;
+  </itemize>
+
+  <underline|Struttura Kripke>
+
+  E' un sistema di transizione (una sorta di automata con inf
+</body>
+
+<\references>
+  <\collection>
+    <associate|auto-1|<tuple|1|?>>
+    <associate|auto-2|<tuple|2|?>>
+    <associate|auto-3|<tuple|2.1|?>>
+    <associate|auto-4|<tuple|1|?>>
+  </collection>
+</references>
+
+<\auxiliary>
+  <\collection>
+    <\associate|toc>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Algebraic
+      specification> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-1><vspace|0.5fn>
+    </associate>
+  </collection>
+</auxiliary>

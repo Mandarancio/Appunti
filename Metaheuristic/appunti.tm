@@ -3,17 +3,17 @@
 <style|<tuple|generic|italian>>
 
 <\body>
-  <section|Simulated Annealing>
+  <section|Simulate Annealing>
 
   <subsection|Convergenza>
 
-  La convergenza descive le condizioni sotto le quali una metaeuristica trava
-  l'ottimo globale (e non solamente locale).
+  La convergenza descrive le condizioni sotto le quali una metaeuristica
+  trova l'ottimo globale (e non solamente locale).
 
   Per la ricotta possiamo fare una analisi matematica precisa di questa
   condizione.
 
-  Si può calcolare la probababilità di convergenza. La soluzione trovata sarà
+  Si può calcolare la probabilità di convergenza. La soluzione trovata sarà
   albitrariamente vicina all'ottimo. con una probabilità ... vicina di 1.
 
   Questo e' vero se:
@@ -34,7 +34,7 @@
     vicini)
 
     In pratica <math|C> è sconosciuta, e la diminuzione di temperatura è
-    troppo lenta per essere accttabile. Pe le applicazioni pratiche ci si
+    troppo lenta per essere accettabile. Per le applicazioni pratiche ci si
     accontenterà di un ottimo accettabile con tempi molto più rapidi.
   </itemize>
 
@@ -52,9 +52,9 @@
     mvt=<around*|{|N,S,W,E|}>
   </math>
 
-  Supposiamo di darci una funzione di energia <math|E<around*|(|x,y|)>>
+  Supponiamo di darci una funzione di energia <math|E<around*|(|x,y|)>>
 
-  Possiamo assegniare ad ogni punto in <math|S> una indice
+  Possiamo assegnare ad ogni punto in <math|S> una indice
   <math|i=n<rsub|y><around*|(|y-1|)>+x>
 
   Nell'esempio <math|y> a 100 valori possibili per <math|i>.
@@ -152,7 +152,7 @@
   <\itemize>
     <item>Codificare lo spazio di ricerca <math|S>
 
-    <item>Definire le traformazioni (movimenti) possibili
+    <item>Definire le <underline|trasformazioni> (movimenti) possibili
 
     <item>Scegliere una soluzione <math|s<rsub|0>> iniziale
   </itemize>
@@ -176,7 +176,7 @@
     <math|\<Gamma\><rsub|0>>=0.5 se la soluzione iniziale è considerata
     mediocre
 
-    <math|\<Gamma\><rsub|0>>=0.2 se invece è considreata buona
+    <math|\<Gamma\><rsub|0>>=0.2 se invece è considerata buona
 
     <item>Si risolve dunque che la temperatura è:\ 
 
@@ -187,12 +187,12 @@
     </eqnarray*>
   </enumerate>
 
-  Intuitavamente questo vuole dire che possiamo poter fare dei salti di
+  Intuitivamente questo vuole dire che possiamo poter fare dei salti di
   dimensione <math|\<Delta\>E> con una buona probabilità.
 
   \;
 
-  <with|font-series|bold|I cabiamenti di temperatutra>
+  <with|font-series|bold|I cambiamenti di temperatura>
 
   In particolare si utilizza la stessa temperatura per diverse iterazioni.
 
@@ -204,20 +204,20 @@
     <item>abbiamo analizzato 100<math|n> candidati
   </itemize>
 
-  Dove <math|n> è il numero di gradi di libertà del sistma.
+  Dove <math|n> è il numero di gradi di libertà del sistema.
 
   <with|gr-mode|<tuple|edit|text-at>|gr-frame|<tuple|scale|1cm|<tuple|0.0800134gw|0.199999gh>>|gr-geometry|<tuple|geometry|0.46667par|0.266669par|center>|gr-line-width|2ln|gr-arrow-end|\<gtr\>|<graphics||<line|<point|0|1.6>|<point|1.0|1.6>|<point|1.0|1.3>|<point|2.0|1.3>|<point|2.0|1.0>|<point|3.0|1.0>|<point|3.0|0.7>>|<line|<point|3|0.7>|<point|4.0|0.7>|<point|4.0|0.4>|<point|5.0|0.4>|<point|5.0|0.0>>|<text-at|t|<point|5.5|-0.4>>|<text-at|T|<point|-0.4|2.6>>|<with|arrow-end|\<gtr\>|line-width|2ln|<line|<point|0|0>|<point|6.0|0.0>>>|<with|arrow-end|\<gtr\>|line-width|2ln|<line|<point|0|0>|<point|0.0|3.0>>>|<text-at|<math|T<rsub|0>>|<point|0.4|1.2>>|<text-at|<math|T<rsub|1>>|<point|1.4|0.7>>|<text-at|<math|T<rsub|n>>|<point|4.4|0.7>>|<text-at||<point|5|0>>>>
 
   \;
 
-  La <with|font-series|bold|progressione> della tempratura è:
+  La <with|font-series|bold|progressione> della temperatura è:
   <math|T<rsub|k\<space\>+1 >=0.9T<rsub|k>>
 
   \;
 
   <with|font-series|bold|La condizione di stop>
 
-  Se dopo almeno 3 piliari di temperatura successivi, la soluzione trovata
+  Se dopo almeno 3 gradini di temperatura successivi, la soluzione trovata
   non si trova un miglioramento della soluzione, ci si ferma.
 
   \;
@@ -264,13 +264,13 @@
   rimpiazzata per una variazione attraverso le <math|n> repliche.
 
   La replica <math|m>-esima avrà una alta temperatura e esplorerà lo spazio,
-  metre la replica 1 permettarà la ricerca di un risultato ottimizzato.
+  mentre la replica 1 permetterà la ricerca di un risultato ottimizzato.
 
   In ciascuna dell <math|n> repliche abbiamo una configurazione che evolve
   secondo le regole di una ricotta a temperatura fissa. Ma andiamo anche ad
   aggiungere la possibilità di cambiare le soluzioni tra le ricotte vicine.
 
-  Le configurazioni <math|C<rsub|i>> e <math|C<rsub|j>> sono scambate se
+  Le configurazioni <math|C<rsub|i>> e <math|C<rsub|j>> sono scambiate se
   <math|i=j\<pm\>1> con una probabilità
 
   <\equation*>
@@ -317,11 +317,11 @@
     <item>Il numero <math|m> di repliche, spesso <math|m=<sqrt|n>>, con
     <math|n> uguale al numero di gradi di libertà
 
-    <item>le condizioni di scambio, eg quando due ricotte arrivano
+    <item>le condizioni di scambio, ex quando due ricotte arrivano
     all'equilibrio
 
     <item>la distribuzione delle temperature delle repliche: la replica di
-    temperatura <math|T<rsub|max>> deve avere una temperatura ugaule a quella
+    temperatura <math|T<rsub|max>> deve avere una temperatura uguale a quella
     iniziale di una ricotta standard <math|T<rsub|0>>, mentre la replica con
     temperatura <math|T<rsub|min>> dovrà avere una temperatura abbastanza
     piccola per cercare i minimi di energia
@@ -329,7 +329,7 @@
     Possiamo decidere di ridistribuire le temperature se il tasso di scambio
     è troppo grande o piccolo.
 
-    Se questo tasso è inferiore al 0.5% allora diminueremo le \ temperatrue
+    Se questo tasso è inferiore al 0.5% allora diminuiremo le \ temperature
     di <math|\<Delta\>T>:
 
     <\equation*>
@@ -348,7 +348,7 @@
 
   <section|Ant System>
 
-  In questo caso l'intelligenza collettivà e la sua percezione è molto
+  In questo caso l'intelligenza collettiva e la sua percezione è molto
   migliore di quella del singolo individuo.
 
   I problemi di questi tipo sono chiamati dai fisici <underline|problemi
@@ -364,7 +364,7 @@
   diversi tra gli individui e nessuno fra di loro ha una conoscenza globale
   del problema. Dunque non c'è bisogno di capi.
 
-  I sistemi auto-organnizati sono interessanti per la semplicità degli
+  I sistemi auto-organizzati sono interessanti per la semplicità degli
   individui presenti. In più questi sistemi sono robusti ai disfunzionamenti
   o agli errori (addirittura a volta benefici, per esplorare delle soluzioni
   migliori).
@@ -378,7 +378,7 @@
 
   <with|font-series|bold|La storia>
 
-  Nel 1992 \ Colani, Dorigo e Marizzo propongono l'agoritmo
+  Nel 1992 \ Colani, Dorigo e Marizzo propongono l'algoritmo
   <with|font-series|bold|Ant-System> (AS) che permette di risolvere problemi
   di tipo combinatorio (tipo TSP, QAP...)
 
@@ -395,10 +395,10 @@
 
     <item>PSO
 
-    <item>Lucioles
+    <item>Lucciole
   </itemize>
 
-  <subsection|La pista dei ferormoni: una ottimizazione naturale>
+  <subsection|La pista dei ferormoni: una ottimizzazione naturale>
 
   Inizieremo descrivendo il ruolo dei ferormoni delle formiche per mostrare
   come questo meccanismo può dare luogo a una ottimizzazione.
@@ -428,10 +428,10 @@
 
   <with|gr-mode|<tuple|edit|point>|gr-frame|<tuple|scale|1cm|<tuple|0.599991gw|0.440006gh>>|gr-geometry|<tuple|geometry|0.953324par|0.333336par|center>|gr-line-width|2ln|gr-transformation|<tuple|<tuple|1.0|0.0|6.93889390390723e-17|0.0>|<tuple|0.0|1.0|0.0|0.0>|<tuple|-6.93889390390723e-17|0.0|1.0|0.0>|<tuple|0.0|0.0|0.0|1.0>>|gr-dash-style|11100|gr-color|blue|gr-opacity|40%|<graphics||<with|line-width|5ln|<cline|<point|0|0>|<point|1.0|2.0>|<point|2.0|0.0>|<point|1.0|-1.0>>>|<with|line-width|5ln|<line|<point|-6|0.3>|<point|-3.7|0.3>|<point|-2.0|1.5>|<point|-1.0|0.2>|<point|-0.4|0.2>|<point|1.0|2.7>|<point|2.3|0.5>|<point|3.3|0.5>>>|<with|arrow-end|\<gtr\>|line-width|5ln|<line|<point|3.4|0.3>|<point|4.4|0.3>>>|<with|arrow-end|\<gtr\>|line-width|5ln|<line|<point|-7|0>|<point|-6.0|0.0>>>|<text-at|Nido|<point|-7.8|0.8>>|<text-at|Cibo|<point|4.5|0.7>>|<with|line-width|5ln|<cline|<point|-3.5|0>|<point|-2.0|1.0>|<point|-1.09994708294748|-0.212495039026326>|<point|-2.54093612150881|-0.8>>>|<with|line-width|5ln|<line|<point|-6|-0.4>|<point|-3.6|-0.4>|<point|-2.5|-1.3>|<point|-1.0|-0.5>|<point|0.0|-0.6>|<point|1.0|-1.7>|<point|2.6|0.0>|<point|3.3|0.0>>>|<with|color|red|dash-style|10|line-width|2ln|<line|<point|-5.6|0>|<point|-3.7|0.0>|<point|-2.5|-1.0>|<point|-0.740111125810292|-0.191328218018256>|<point|-0.083939674560127|-0.254828681042466>|<point|1.0|-1.4>|<point|2.5|0.3>|<point|3.0|0.3>>>>>
 
-  Disponendo di un sistem di tubi con percorsi di diversa lunghezza che
+  Disponendo di un sistemi di tubi con percorsi di diversa lunghezza che
   portano dal nido di formiche al cibo, Goss ha osservato che le formiche,
   che inizialmente percorrevano tutti i percorsi in modo equivalente, con il
-  tempo utilizzarono solo quello corto (con qualche eccezzione statistica).
+  tempo utilizzarono solo quello corto (con qualche eccezione statistica).
 
   Il risultato e' stato analizzato in modo statistico nel seguente modo:
 
@@ -441,11 +441,11 @@
   red|line-width|2ln|<cline|<point|9|0>|<point|9.0|1.0>|<point|10.0|1.0>|<point|10.0|0.0>>>|<with|fill-color|pastel
   magenta|line-width|2ln|<cline|<point|10|4>|<point|11.0|4.0>|<point|11.0|0.0>|<point|10.0|0.0>>>|<text-at|nel
   10% delle|<point|6.5|2.2>>|<text-at|osservazioni le
-  |<point|6.4|1.8>>|<text-at|tra il 60-80%|<point|6.4|1.4>>|<text-at|selgono
+  |<point|6.4|1.8>>|<text-at|tra il 60-80%|<point|6.4|1.4>>|<text-at|scelgono
   il path|<point|6.4|1>>|<text-at|+ corto|<point|6.7|0.6>>|<text-at|nel 90%
   delle|<point|10.8|6.2>>|<text-at|osservazioni
   tra|<point|10.7|5.8>>|<text-at|l' 80-100%
-  seglie|<point|10.8|5.3>>|<text-at|il percorso +
+  sceglie|<point|10.8|5.3>>|<text-at|il percorso +
   |<point|10.8|4.8>>|<text-at|corto|<point|11|4.3>>|<text-at|100%|<point|11.4|0.3>>|<text-at|60%|<point|8.3|0.2>>|<text-at|Frequenza
   di osservazioni|<point|-1.0|7.2>>|<with|arrow-end|\<gtr\>|line-width|2ln|<line|<point|0|0>|<point|0.0|5.6>>>>>
 
@@ -494,7 +494,7 @@
     Sia <math|<with|font-series|bold|U<rsub|m>>> il numero di formiche tra le
     m formiche già passate che sono passate sul cammino U.
 
-    <math|<with|font-series|bold|L<rsub|m>>> igualmente è il numero tra le m
+    <math|<with|font-series|bold|L<rsub|m>>> ugualmente è il numero tra le m
     formiche di quelle che sono passate per il cammino L.
 
     Quindi: \ m=<math|U<rsub|m><rsup|>+L<rsub|m>> e
@@ -521,12 +521,12 @@
 
   \;
 
-  <subsection|Algoritmo informatico di ottimazione>
+  <subsection|Algoritmo informatico di ottimizzazione>
 
   Dorigo nel 1992 introduce l'ant-system con l'obbiettivo di interpretare le
   piste di ferormone in un contesto di ottimizzazione combinatoria.
 
-  In seguito, delle variate sono state presentat, per esempio
+  In seguito, delle variate sono state presentata, per esempio
   l'<with|font-series|bold|Ant Colony System> (ACS). Più performanti in
   alcuni problemi.
 
@@ -914,6 +914,1102 @@
   Dove <math|rand<rsub|d><around*|(||)>> è un vettore di <math|d> componenti
   aleatori di valore compreso tra [0,1[. Il coefficente <math|\<alpha\>> è
   scelto tra 0 e 1.
+
+  \;
+
+  <subsection|Pseudo Code>
+
+  <\cpp-code>
+    iteration = 0
+
+    //initialization of n firefly
+
+    xi = rand, i=1 to n, xi in S
+
+    //compute the initial intensity for each firefly\ 
+
+    Ii=f(xi)
+
+    while(not end-condition)
+
+    {
+
+    \ \ for i=1 to n
+
+    \ \ {
+
+    \ \ \ \ for j=1 to n
+
+    \ \ \ \ {
+
+    \ \ \ \ \ \ \ if Ii\<less\>Ij\ 
+
+    \ \ \ \ \ \ \ {
+
+    \ \ \ \ \ \ \ \ \ //The firefly move in direction of xj
+
+    \ \ \ \ \ \ \ \ \ //Compute new Ii
+
+    \ \ \ \ \ \ \ }
+
+    \ \ \ \ }
+
+    \ \ }
+
+    }
+  </cpp-code>
+
+  \;
+
+  <section|Algoritimi evolutivi>
+
+  <subsection|Introduzione>
+
+  E' un insieme di metaeuristiche ispirate alla evoluzione darwiniana:
+
+  <\quote-env>
+    ``Survival of the fittest.'' Darwin
+  </quote-env>
+
+  Sono delle metaeuristiche a popolazione che utilizzano dei processi di
+  <underline|mutazione>, <underline|incroci> e di <underline|selezione> per
+  esplorare lo spazio di ricerca <math|S>.
+
+  Sono dei metodi apparsi negli anni 70, in particolare:
+
+  <\itemize>
+    <item>Algoritmi genetici (Holland, John)
+
+    <item>Strategie d'evuluzione (Rechrnberg)
+
+    <item>Programmazione genetica (Fogel e Koza)
+  </itemize>
+
+  L'idea centrale di questi metodi e' di fare emergere dei buoni individui
+  copiando quello che la natura fa per creare delle specie meglio adattate al
+  loro ambiente.
+
+  <subsection|Algoritmi genetici>
+
+  Si avra' una popolazione di individui <math|x<rsub|i>>, ciascuno
+  rapressenta una soluzione possibile del problema, dunque una punto di
+  <math|x<rsub|i>\<in\>S>.
+
+  Il codaggio degli individui dentro a <math|S> e' interpretato come del
+  codice genetico (DNA) dell'individuo. Per questa analogia si parla spesso
+  di cromosomi per descrivere il codaggio.
+
+  Questa specifica si chiama <underline|genotipo>. Si definisce anche il
+  <underline|phenotipo> come il valore di fitness di questo individuo.
+
+  La fitness indica inoltre il grado di adattazione di ciascun individuo,
+  dunque gli individui con buon fitness sopravviveranno e evolveranno per
+  trovare fitness ancora migliori.
+
+  In seguito consideremo dei porblemi di massimizzazione della fitness. (e'
+  sempre possibile considerare un problema di minimizzazione di <math|f> come
+  un problema di massimizzazione di <math|-f>)
+
+  In biologia la fitness si misura come il numero di discendenti di ogni
+  individuo.
+
+  Nel nostro contesto si parlera' dunque di <underline|generazioni> invece di
+  iterazioni.
+
+  Si avra' una popolazione al tempo <math|t>, <math|P<around*|(|t|)>>, che
+  evolvera' verso una nuova popolazione al tempo <math|t+1>,
+  <math|P<around*|(|t+1|)>>, la generazione seguente.
+
+  <with|font-series|bold|NB:> In generale la dimensione della popolazione e'
+  costante durante l'evoluzione.
+
+  <subsection|Pseudo codice>
+
+  <\cpp-code>
+    generation = 0
+
+    //inizializzazione della popolazione
+
+    P(0)
+
+    while (not end-condtion)
+
+    {
+
+    \ \ generation ++
+
+    \ \ //compute individual fitness
+
+    \ \ f(x[1..n]);
+
+    \ \ //select individual
+
+    \ \ x = select(x[1..n]);
+
+    \ \ //crossover
+
+    \ \ x = crossover(x);
+
+    \ \ //mutation\ 
+
+    \ \ x = mutation(x)
+
+    }
+
+    return best_individual
+  </cpp-code>
+
+  In generale il migliore individuo della generazione <math|t> e' inserito
+  anche nella generazione seguente <math|t+1>, spesso sostituendo l'individuo
+  peggiore.
+
+  Infatti le operazioni di select e crossover non garantiscono che la
+  generazione seguente sia <math|\<geqslant\>> di quella presente.
+
+  Una altro modo di rapresentare l'algoritmo genetico e' il seguente:
+
+  <\equation*>
+    P<around*|(|t|)><below|\<longminus\>\<rightarrow\>|select>P<rsup|1><around*|(|t|)><below|\<longminus\>\<rightarrow\>|crossover>P<rsup|2><around*|(|t|)><below|\<longminus\>\<rightarrow\>|mutation>P<rsup|3><around*|(|t|)>=P<around*|(|t+1|)>
+  </equation*>
+
+  Dove <math|P<around*|(|t|)>\<nocomma\>,P<rprime|'><around*|(|t|)>\<ldots\>>
+  hanno tutti lo stesso numero di elementi.
+
+  In generale la dimensione della popolazione <math|n> e' scelta tra qualche
+  decina a qualche centinaia.
+
+  La dimensione constatne della popolazione durante la evoluzione implica
+  delle particolarita' per il select e crossover.
+
+  In generale la popolazione <math|P<around*|(|0|)>> iniziale e' aleatoria.\ 
+
+  La condizione di arresto puo' essere un numero massimo di generazioni, o un
+  tempo di stagnazione della fitness.
+
+  <subsubsection|Selezione>
+
+  L'obbiettivo della selezione e' di scegliere in <math|P<around*|(|t|)>>
+  degli individui che seranno presenti nella fase di crossover.
+
+  Si costruice <math|P<rprime|'><around*|(|t|)>> con un estrazione con
+  rimessa (ovvero gli elementi vengo conservati nell'array originale) di
+  <math|n> individui da <math|P<around*|(|t|)>>.
+
+  Tra gli <math|n > elementi di <math|P<rprime|'><around*|(|t|)>> sara'
+  dunque possibile che ci siano piu' individui uguali (copie).
+
+  Altrettanto possibile che degli individui di <math|P<around*|(|t|)>> non
+  siano presenti in <math|P<rprime|'><around*|(|t|)>>, quindi si estinguino.
+
+  La distribuzione della estrazione non e' uniforme ma dipendera' alla
+  fitness degli individui.
+
+  Possibili modi di selezione sono:
+
+  <\itemize>
+    <item>La probabilita' proporzionale alla fitness, la probabilita'
+    dell'individuo <math|i> sara'\ 
+
+    <\equation*>
+      p<rsub|i>=<frac|f<rsub|i>|<big|sum><rsup|n><rsub|j=1>f<rsub|j>>
+    </equation*>
+
+    dove <math|f> e' la fitness dell'individuo.
+
+    <item>Selezione per tornei\ 
+
+    <item>Selezione per rang
+  </itemize>
+
+  Quest'ultimi saranno discussi in seguito.
+
+  <subsubsection|Crossover>
+
+  In questa fase si prendono gli <math|n >individui (genitor) di
+  <math|P<rprime|'><around*|(|t|)>> per creare gli <math|n> individui
+  (discendenti) di <math|P<rprime|''><around*|(|t|)>>.
+
+  Per fare cio' si prendereanno gli individui a coppie e ogni 2 genitori
+  creara' 2 discendenti.
+
+  Per fare cio' le coppie saranno create cosi:
+
+  <\equation*>
+    <around*|(|s<rsub|1>,s<rsub|2>|)>,<around*|(|s<rsub|3>,s<rsub|4>|)>\<ldots\><around*|(|s<rsub|i>,s<rsub|i+1>|)>\<ldots\><around*|(|s<rsub|n-1>,s<rsub|n>|)>
+  </equation*>
+
+  Dove <math|s<rsub|j>> e' un individuo di <math|P<rprime|'><around*|(|t|)>>.
+
+  Cosi si avranno <math|<frac|n|2>> coppie di genitori uniche.
+
+  Si difinisce una probabilita' \ di crossover <math|p<rsub|cr>> per ogni
+  coppia:
+
+  <\equation*>
+    <tabular|<tformat|<cwith|1|-1|1|-1|cell-halign|c>|<table|<row|<cell|<around*|(|s<rsub|1>,s<rsub|2>|)>>|<cell|\<ldots\>>|<cell|<around*|(|s<rsub|n-1>,s<rsub|n>|)>>>|<row|<cell|\<downarrow\>p<rsub|cr>>|<cell|\<ldots\>>|<cell|\<downarrow\>p<rsub|cr>>>|<row|<cell|<around*|(|s<rprime|'><rsub|1>,s<rsub|2><rprime|'>|)>>|<cell|\<ldots\>>|<cell|<around*|(|s<rprime|'><rsub|n-1>,s<rprime|'><rsub|n>|)>>>>>>
+  </equation*>
+
+  Con probabilita' 1-<math|p<rsub|cr>> per la coppia
+  <math|<around*|(|s<rsub|i>,s<rsub|i+1>|)>> la coppia non produrra
+  discendenti ma verra' trasferita uguale in
+  <math|P<rprime|''><around*|(|t|)>>.
+
+  I discendenti sono prodotti a partire dei genotipi dei genitori
+  mescolandoli tra loro:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|s<rsub|i>>|<cell|>|<cell|<around*|[|A<rsub|i>,B<rsub|i>|]>>>|<row|<cell|s<rsub|i+1>>|<cell|>|<cell|<around*|[|A<rsub|i+1>,B<rsub|i+1>|]>>>|<row|<cell|>|<cell|>|<cell|Allora
+    i discendenti saranno>>|<row|<cell|s<rprime|'><rsub|i>>|<cell|>|<cell|<around*|[|A<rsub|i>,B<rsub|i+1>|]>>>|<row|<cell|s<rprime|'><rsub|i+1>>|<cell|>|<cell|<around*|[|A<rsub|i+1>,B<rsub|i>|]>>>>>
+  </eqnarray*>
+
+  Secondo il tipo di problema il crossover puo' essere creato in modi diversi
+  (per esempio per il TSP).
+
+  <subsubsection|Mutazione>
+
+  Su ciascun degli <math|n> individui di <math|P<rprime|''><around*|(|t|)>>
+  si applicano delle trasformazioni casuali al codice genetico con
+  probabilita' <math|p<rsub|mt>>.
+
+  Per esempio si potrebbero invertire ciascun bit con probabilita'
+  <math|p<rsub|mt>>.
+
+  \ 
+
+  <subsubsection|Diversificazione VS Intensificazione>
+
+  La Selezione favorisce l'intenficazione mentre la mutazione favorisce alla
+  diversificazione. Infine il crossover contribuisce ad entrambi i fattori.
+
+  Gl <with|font-series|bold|AG> hanno piu' parametri di guida:
+
+  <\itemize>
+    <item><math|n> la dimensione della popolazione
+
+    <item><math|p<rsub|cr>> la probabilita' di crossover
+
+    <item><math|p<rsub|mt>> la probabilita' di mutazione
+  </itemize>
+
+  <subsection|Esempio>
+
+  Vogliamo un <with|font-series|bold|AG> per risolvere il problema
+  <with|font-series|bold|MaxOne>, ovvero trovare la seguenza di bit
+  <math|x<rsub|1>,\<ldots\>,x<rsub|l>> che massimizza;
+
+  <\equation*>
+    f<around*|(|x|)>=<big|sum><rsup|l><rsub|i=1>x<rsub|i>
+  </equation*>
+
+  Ovviamente l'ottimo e' <math|x=1111\<ldots\>1>.
+
+  Studieremo in dettaglio un <with|font-series|bold|AG> con <math|n=6>
+  individui e per un problema <with|font-series|bold|MaxOne> di dimensione
+  <math|l=10> bits.
+
+  Si supponga la seguente popolazione iniziale:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|P<around*|(|0|)>>|<cell|fitness>|<cell|Probabilita<rprime|'>>>|<row|<cell|s<rsub|1>=1111010101>|<cell|f<around*|(|s<rsub|1>|)>=7>|<cell|p<rsub|1>=0.206>>|<row|<cell|s<rsub|2>=0111000101>|<cell|f<around*|(|s<rsub|2>|)>=5>|<cell|\<vdots\>>>|<row|<cell|s<rsub|3>=1110110101>|<cell|f<around*|(|s<rsub|3>|)>=7>|<cell|\<vdots\>>>|<row|<cell|s<rsub|4>=0100010011>|<cell|f<around*|(|s<rsub|4>|)>=4>|<cell|\<vdots\>>>|<row|<cell|s<rsub|5>=1110111101>|<cell|f<around*|(|s<rsub|5>|)>=8>|<cell|\<vdots\>>>|<row|<cell|s<rsub|6>=0100110000>|<cell|f<around*|(|s<rsub|6>|)>=3>|<cell|p<rsub|6>=0.09>>|<row|<cell|>|<cell|f<around*|(|P<around*|(|0|)>|)>=34>|<cell|>>>>
+  </eqnarray*>
+
+  Per la <with|font-series|bold|selezione> usiamo la probabilita'
+  proporzionale al fitness:\ 
+
+  <\equation*>
+    p<rsub|i>=<frac|f<around*|(|s<rsub|i>|)>|f<around*|(|P<around*|(|0|)>|)>>=<frac|f<around*|(|s<rsub|i>|)>|34>
+  </equation*>
+
+  Si estrae dunque <math|P<rsup|1><around*|(|0|)>>
+
+  <\equation*>
+    P<rsup|1><around*|(|0|)>=<around*|[|s<rprime|'><rsub|1>=s<rsub|1>,s<rprime|'><rsub|2>=s<rsub|3>,s<rprime|'><rsub|3>=s<rsub|5>,s<rprime|'><rsub|4>=s<rsub|2>,s<rprime|'><rsub|5>=s<rsub|4>,s<rsub|6><rprime|'>=s<rsub|5>|]>
+  </equation*>
+
+  Si noti che <math|s<rsub|5>> e' stato selezionato 2 volte mentre
+  <math|s<rsub|6>> 0.
+
+  Per la fase di <with|font-series|bold|crossing> per ogni coppia
+  <math|<around*|(|s<rsub|i>,s<rsub|i+1>|)>> si scegliera' di di fare un
+  crossing con probabilita' <math|p<rsub|cr>> e dunque generare una coppia di
+  figli, altrimenti questi verranno trasferiti in
+  <math|P<rprime|''><around*|(|0|)>>.
+
+  Prenderemo in questo caso una <math|p<rsub|cr>=0.6> e supponiamo che solo
+  le coppie <math|<around*|(|s<rprime|'><rsub|1>,s<rprime|'><rsub|2>|)>> e
+  <math|<around*|(|s<rprime|'><rsub|5>,s<rsub|6><rprime|'>|)>> generaranno
+  degli ibridi.\ 
+
+  Per la prima coppia avremo un punto di incrocio <math|k=2>:
+
+  <\equation*>
+    <tabular|<tformat|<table|<row|<cell|s<rprime|'><rsub|1>=11\<cdot\>11010101>>|<row|<cell|s<rprime|'><rsub|2>=11\<cdot\>10110101>>>>>
+  </equation*>
+
+  Dunque dopo il crossing otteneremo
+
+  <\equation*>
+    <tabular|<tformat|<table|<row|<cell|s<rprime|''><rsub|1>=11\<cdot\>10110101=s<rsub|2><rprime|'>>>|<row|<cell|s<rsub|2><rprime|''>=11\<cdot\>11010101=s<rsub|1><rprime|'>>>>>>
+  </equation*>
+
+  Non ci sara' duqneu nessun ammiglioramente in quanto la sequenza di bit
+  prima del punto di incrocio e' uguale per tute e due gli individui.
+
+  Per la seconda coppia di il punto di incrocio <math|k=5>
+
+  <\equation*>
+    <tabular|<tformat|<table|<row|<cell|s<rprime|'><rsub|5>=01000\<cdot\>10011>>|<row|<cell|s<rprime|'><rsub|6>=11101\<cdot\>11101>>>>>
+  </equation*>
+
+  Dopo il crossing
+
+  <\equation*>
+    <tabular|<tformat|<table|<row|<cell|s<rsub|5><rprime|''>=01000\<cdot\>11101>>|<row|<cell|s<rsub|6><rprime|''>=11101\<cdot\>10011>>>>>
+  </equation*>
+
+  Questa volta i due individui generati sono davvero differenti.
+
+  Ricapitolando la popolazione <math|P<rsup|2><around*|(|0|)>> sara dunque:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|P<rsup|2><around*|(|0|)>>|<cell|>|<cell|P<rsup|3><around*|(|0|)>=P<around*|(|1|)>>>|<row|<cell|s<rsub|1><rprime|''>=1111010101>|<cell|\<rightarrow\>>|<cell|s<rsub|1><rprime|'''>=1111<with|font-series|medium|<with|color|red|1>>10101\<rightarrow\>f<rsub|1>=8>>|<row|<cell|s<rsub|2><rprime|''>=1110110101>|<cell|\<rightarrow\>>|<cell|s<rsub|2><rprime|'''>=11101<with|color|red|<with|font-series|bold|<with|font-series|medium|0>>>0101\<rightarrow\>f<rsub|2>=6>>|<row|<cell|s<rsub|3><rprime|''>=1110111101>|<cell|\<rightarrow\>>|<cell|s<rsub|3><rprime|'''>=11101<with|color|red|<with|font-series|medium|0>>11<with|font-series|medium|<with|color|red|1>>1\<rightarrow\>f<rsub|3>=8>>|<row|<cell|s<rsub|4><rprime|''>=0111000101>|<cell|\<rightarrow\>>|<cell|s<rsub|4><rprime|'''>=0111000101\<rightarrow\>f<rsub|4>=5>>|<row|<cell|s<rsub|5><rprime|''>=0100011101>|<cell|\<rightarrow\>>|<cell|s<rsub|5><rprime|'''>=0100011101\<rightarrow\>f<rsub|5>=5>>|<row|<cell|s<rsub|6><rprime|''>=1110110011>|<cell|\<rightarrow\>>|<cell|s<rsub|6><rprime|'''>=11101100<with|font-series|bold|<with|font-series|medium|<with|color|red|1>>>1\<rightarrow\>f<rsub|6>=6>>>>
+  </eqnarray*>
+
+  Per la <with|font-series|bold|mutazione> ogni bit della catena avra' una
+  probabilita' di essere invertito di <math|<frac|1|10>>.
+
+  Questo significa che in media saranno invertiti 6 bit sui 60 totatli della
+  popolazione.
+
+  Dunque la fitness totale di <math|P<around*|(|1|)>> = 36 mentre quella di
+  <math|P<around*|(|0|)>=34>, ovvero <math|\<backsim\>10%> di
+  ammigliorazione.
+
+  <subsubsection|Esempio piu' realistico>
+
+  Un esempio piu' realistico puo' essere uno con la seguente configurazioni:
+
+  <math|n=100>, <math|l=128>, <with|font-series|bold|MaxOne>,
+  <math|p<rsub|cr>=0.8> e <math|p<rsub|mt>=0.05>
+
+  <with|prog-scripts|gnuplot|<center|<image|<tuple|<#252150532D41646F62652D322E3020455053462D322E300A25255469746C653A2074656D702E6570730A252543726561746F723A20676E75706C6F7420352E302070617463686C6576656C20330A25254372656174696F6E446174653A204D6F6E204E6F762020372031333A33373A353220323031360A2525446F63756D656E74466F6E74733A20286174656E64290A2525426F756E64696E67426F783A20353020353020343130203330320A2525456E64436F6D6D656E74730A2525426567696E50726F6C6F670A2F676E7564696374203235362064696374206465660A676E756469637420626567696E0A250A252054686520666F6C6C6F77696E6720747275652F66616C736520666C616773206D6179206265206564697465642062792068616E6420696620646573697265642E0A252054686520756E6974206C696E6520776964746820616E6420677261797363616C6520696D6167652067616D6D6120636F7272656374696F6E206D617920616C736F206265206368616E6765642E0A250A2F436F6C6F722066616C7365206465660A2F426C61636B746578742066616C7365206465660A2F536F6C69642066616C7365206465660A2F446173686C656E6774682031206465660A2F4C616E6473636170652066616C7365206465660A2F4C6576656C312066616C7365206465660A2F4C6576656C332066616C7365206465660A2F526F756E6465642066616C7365206465660A2F436C6970546F426F756E64696E67426F782066616C7365206465660A2F53757070726573735044464D61726B2066616C7365206465660A2F5472616E73706172656E745061747465726E732066616C7365206465660A2F676E756C696E65776964746820352E303030206465660A2F757365726C696E65776964746820676E756C696E657769647468206465660A2F47616D6D6120312E30206465660A2F4261636B67726F756E64436F6C6F72207B2D312E303030202D312E303030202D312E3030307D206465660A250A2F767368696674202D3436206465660A2F646C31207B0A202031302E3020446173686C656E67746820757365726C696E65776964746820676E756C696E65776964746820646976206D756C206D756C206D756C0A2020526F756E646564207B2063757272656E746C696E65776964746820302E3735206D756C20737562206475702030206C65207B20706F7020302E3031207D206966207D2069660A7D206465660A2F646C32207B0A202031302E3020446173686C656E67746820757365726C696E65776964746820676E756C696E65776964746820646976206D756C206D756C206D756C0A2020526F756E646564207B2063757272656E746C696E65776964746820302E3735206D756C20616464207D2069660A7D206465660A2F6870745F2033312E35206465660A2F7670745F2033312E35206465660A2F687074206870745F206465660A2F767074207670745F206465660A2F646F636C6970207B0A2020436C6970546F426F756E64696E67426F78207B0A202020206E657770617468203530203530206D6F7665746F20343130203530206C696E65746F2034313020333032206C696E65746F20353020333032206C696E65746F20636C6F7365706174680A20202020636C69700A20207D2069660A7D206465660A250A2520476E75706C6F742050726F6C6F672056657273696F6E20352E3120284F63742032303135290A250A252F53757070726573735044464D61726B2074727565206465660A250A2F4D207B6D6F7665746F7D2062696E64206465660A2F4C207B6C696E65746F7D2062696E64206465660A2F52207B726D6F7665746F7D2062696E64206465660A2F56207B726C696E65746F7D2062696E64206465660A2F4E207B6E657770617468206D6F7665746F7D2062696E64206465660A2F5A207B636C6F7365706174687D2062696E64206465660A2F43207B736574726762636F6C6F727D2062696E64206465660A2F66207B726C696E65746F2066696C6C7D2062696E64206465660A2F67207B736574677261797D2062696E64206465660A2F4773686F77207B73686F777D2064656620202025204D6179206265207265646566696E6564206C6174657220696E207468652066696C6520746F20737570706F7274205554462D380A2F76707432207670742032206D756C206465660A2F68707432206870742032206D756C206465660A2F4C73686F77207B63757272656E74706F696E74207374726F6B65204D2030207673686966742052200A09426C61636B74657874207B677361766520302073657467726179207465787473686F772067726573746F72657D207B7465787473686F777D206966656C73657D206465660A2F5273686F77207B63757272656E74706F696E74207374726F6B65204D2064757020737472696E67776964746820706F70206E65672076736869667420520A09426C61636B74657874207B677361766520302073657467726179207465787473686F772067726573746F72657D207B7465787473686F777D206966656C73657D206465660A2F4373686F77207B63757272656E74706F696E74207374726F6B65204D2064757020737472696E67776964746820706F70202D3220646976207673686966742052200A09426C61636B74657874207B677361766520302073657467726179207465787473686F772067726573746F72657D207B7465787473686F777D206966656C73657D206465660A2F5550207B647570207670745F206D756C202F767074206578636820646566206870745F206D756C202F6870742065786368206465660A20202F68707432206870742032206D756C20646566202F76707432207670742032206D756C206465667D206465660A2F444C207B436F6C6F72207B736574726762636F6C6F7220536F6C6964207B706F70205B5D7D206966203020736574646173687D0A207B706F7020706F7020706F702030207365746772617920536F6C6964207B706F70205B5D7D206966203020736574646173687D206966656C73657D206465660A2F424C207B7374726F6B6520757365726C696E6577696474682032206D756C207365746C696E6577696474680A09526F756E646564207B31207365746C696E656A6F696E2031207365746C696E656361707D2069667D206465660A2F414C207B7374726F6B6520757365726C696E657769647468203220646976207365746C696E6577696474680A09526F756E646564207B31207365746C696E656A6F696E2031207365746C696E656361707D2069667D206465660A2F554C207B64757020676E756C696E657769647468206D756C202F757365726C696E6577696474682065786368206465660A096475702031206C74207B706F7020317D206966203130206D756C202F75646C2065786368206465667D206465660A2F504C207B7374726F6B6520757365726C696E657769647468207365746C696E6577696474680A09526F756E646564207B31207365746C696E656A6F696E2031207365746C696E656361707D2069667D206465660A332E38207365746D697465726C696D69740A2520436C6173736963204C696E6520636F6C6F7273202876657273696F6E20352E30290A2F4C4377207B31203120317D206465660A2F4C4362207B30203020307D206465660A2F4C4361207B30203020307D206465660A2F4C4330207B31203020307D206465660A2F4C4331207B30203120307D206465660A2F4C4332207B30203020317D206465660A2F4C4333207B31203020317D206465660A2F4C4334207B30203120317D206465660A2F4C4335207B31203120307D206465660A2F4C4336207B30203020307D206465660A2F4C4337207B3120302E3320307D206465660A2F4C4338207B302E3520302E3520302E357D206465660A252044656661756C742064617368207061747465726E73202876657273696F6E20352E30290A2F4C5442207B424C205B5D204C436220444C7D206465660A2F4C5477207B504C205B5D203120736574677261797D206465660A2F4C5462207B504C205B5D204C436220444C7D206465660A2F4C5461207B414C205B312075646C206D756C20322075646C206D756C5D20302073657464617368204C436120736574726762636F6C6F727D206465660A2F4C5430207B504C205B5D204C433020444C7D206465660A2F4C5431207B504C205B3220646C31203320646C325D204C433120444C7D206465660A2F4C5432207B504C205B3120646C3120312E3520646C325D204C433220444C7D206465660A2F4C5433207B504C205B3620646C31203220646C32203120646C31203220646C325D204C433320444C7D206465660A2F4C5434207B504C205B3120646C31203220646C32203620646C31203220646C32203120646C31203220646C325D204C433420444C7D206465660A2F4C5435207B504C205B3420646C31203220646C325D204C433520444C7D206465660A2F4C5436207B504C205B312E3520646C3120312E3520646C3220312E3520646C3120312E3520646C3220312E3520646C31203620646C325D204C433620444C7D206465660A2F4C5437207B504C205B3320646C31203320646C32203120646C31203320646C325D204C433720444C7D206465660A2F4C5438207B504C205B3220646C31203220646C32203220646C31203620646C325D204C433820444C7D206465660A2F534C207B5B5D203020736574646173687D206465660A2F506E74207B7374726F6B65205B5D203020736574646173682067736176652031207365746C696E65636170204D203020302056207374726F6B652067726573746F72657D206465660A2F446961207B7374726F6B65205B5D20302073657464617368203220636F70792076707420616464204D0A2020687074206E656720767074206E656720562068707420767074206E656720560A202068707420767074205620687074206E656720767074205620636C6F736570617468207374726F6B650A2020506E747D206465660A2F506C73207B7374726F6B65205B5D203020736574646173682076707420737562204D2030207670743220560A202063757272656E74706F696E74207374726F6B65204D0A2020687074206E656720767074206E65672052206870743220302056207374726F6B650A207D206465660A2F426F78207B7374726F6B65205B5D20302073657464617368203220636F70792065786368206870742073756220657863682076707420616464204D0A2020302076707432206E656720562068707432203020562030207670743220560A202068707432206E65672030205620636C6F736570617468207374726F6B650A2020506E747D206465660A2F437273207B7374726F6B65205B5D203020736574646173682065786368206870742073756220657863682076707420616464204D0A2020687074322076707432206E656720562063757272656E74706F696E74207374726F6B65204D0A202068707432206E656720302052206870743220767074322056207374726F6B657D206465660A2F54726955207B7374726F6B65205B5D20302073657464617368203220636F70792076707420312E3132206D756C20616464204D0A2020687074206E656720767074202D312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E65672076707420312E3632206D756C205620636C6F736570617468207374726F6B650A2020506E747D206465660A2F53746172207B3220636F707920506C73204372737D206465660A2F426F7846207B7374726F6B65205B5D203020736574646173682065786368206870742073756220657863682076707420616464204D0A2020302076707432206E656720562068707432203020562030207670743220560A202068707432206E65672030205620636C6F7365706174682066696C6C7D206465660A2F5472695546207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20616464204D0A2020687074206E656720767074202D312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E65672076707420312E3632206D756C205620636C6F7365706174682066696C6C7D206465660A2F54726944207B7374726F6B65205B5D20302073657464617368203220636F70792076707420312E3132206D756C20737562204D0A2020687074206E65672076707420312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E656720767074202D312E3632206D756C205620636C6F736570617468207374726F6B650A2020506E747D206465660A2F5472694446207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20737562204D0A2020687074206E65672076707420312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E656720767074202D312E3632206D756C205620636C6F7365706174682066696C6C7D206465660A2F44696146207B7374726F6B65205B5D203020736574646173682076707420616464204D0A2020687074206E656720767074206E656720562068707420767074206E656720560A202068707420767074205620687074206E656720767074205620636C6F7365706174682066696C6C7D206465660A2F50656E74207B7374726F6B65205B5D20302073657464617368203220636F70792067736176650A20207472616E736C617465203020687074204D2034207B373220726F74617465203020687074204C7D207265706561740A2020636C6F736570617468207374726F6B652067726573746F726520506E747D206465660A2F50656E7446207B7374726F6B65205B5D203020736574646173682067736176650A20207472616E736C617465203020687074204D2034207B373220726F74617465203020687074204C7D207265706561740A2020636C6F7365706174682066696C6C2067726573746F72657D206465660A2F436972636C65207B7374726F6B65205B5D20302073657464617368203220636F70790A202068707420302033363020617263207374726F6B6520506E747D206465660A2F436972636C6546207B7374726F6B65205B5D2030207365746461736820687074203020333630206172632066696C6C7D206465660A2F4330207B424C205B5D20302073657464617368203220636F7079206D6F7665746F2076707420393020343530206172637D2062696E64206465660A2F4331207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420302039302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4332207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F707920767074203930203138302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4333207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F7079207670742030203138302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4334207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420313830203237302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4335207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F7079207670742030203930206172630A093220636F7079206D6F7665746F0A093220636F70792076707420313830203237302061726320636C6F7365706174682066696C6C0A09767074203020333630206172637D2062696E64206465660A2F4336207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F707920767074203930203237302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4337207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F7079207670742030203237302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4338207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420323730203336302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4339207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420323730203435302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F433130207B424C205B5D20302073657464617368203220636F7079203220636F7079206D6F7665746F2076707420323730203336302061726320636C6F7365706174682066696C6C0A093220636F7079206D6F7665746F0A093220636F707920767074203930203138302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F433131207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F7079207670742030203138302061726320636C6F7365706174682066696C6C0A093220636F7079206D6F7665746F0A093220636F70792076707420323730203336302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F433132207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420313830203336302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F433133207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420302039302061726320636C6F7365706174682066696C6C0A093220636F7079206D6F7665746F0A093220636F70792076707420313830203336302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F433134207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F707920767074203930203336302061726320636C6F7365706174682066696C6C0A09767074203020333630206172637D2062696E64206465660A2F433135207B424C205B5D20302073657464617368203220636F7079207670742030203336302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F526563207B6E6577706174682034203220726F6C6C206D6F7665746F203120696E646578203020726C696E65746F2030206578636820726C696E65746F0A096E6567203020726C696E65746F20636C6F7365706174687D2062696E64206465660A2F537175617265207B647570205265637D2062696E64206465660A2F42737175617265207B767074207375622065786368207670742073756220657863682076707432205371756172657D2062696E64206465660A2F5330207B424C205B5D20302073657464617368203220636F7079206D6F7665746F20302076707420726C696E65746F20424C20427371756172657D2062696E64206465660A2F5331207B424C205B5D20302073657464617368203220636F707920767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5332207B424C205B5D20302073657464617368203220636F707920657863682076707420737562206578636820767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5333207B424C205B5D20302073657464617368203220636F7079206578636820767074207375622065786368207670743220767074205265632066696C6C20427371756172657D2062696E64206465660A2F5334207B424C205B5D20302073657464617368203220636F7079206578636820767074207375622065786368207670742073756220767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5335207B424C205B5D20302073657464617368203220636F7079203220636F707920767074205371756172652066696C6C0A096578636820767074207375622065786368207670742073756220767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5336207B424C205B5D20302073657464617368203220636F70792065786368207670742073756220657863682076707420737562207670742076707432205265632066696C6C20427371756172657D2062696E64206465660A2F5337207B424C205B5D20302073657464617368203220636F70792065786368207670742073756220657863682076707420737562207670742076707432205265632066696C6C0A093220636F707920767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5338207B424C205B5D20302073657464617368203220636F7079207670742073756220767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5339207B424C205B5D20302073657464617368203220636F70792076707420737562207670742076707432205265632066696C6C20427371756172657D2062696E64206465660A2F533130207B424C205B5D20302073657464617368203220636F7079207670742073756220767074205371756172652066696C6C203220636F707920657863682076707420737562206578636820767074205371756172652066696C6C0A09427371756172657D2062696E64206465660A2F533131207B424C205B5D20302073657464617368203220636F7079207670742073756220767074205371756172652066696C6C203220636F7079206578636820767074207375622065786368207670743220767074205265632066696C6C0A09427371756172657D2062696E64206465660A2F533132207B424C205B5D20302073657464617368203220636F70792065786368207670742073756220657863682076707420737562207670743220767074205265632066696C6C20427371756172657D2062696E64206465660A2F533133207B424C205B5D20302073657464617368203220636F70792065786368207670742073756220657863682076707420737562207670743220767074205265632066696C6C0A093220636F707920767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F533134207B424C205B5D20302073657464617368203220636F70792065786368207670742073756220657863682076707420737562207670743220767074205265632066696C6C0A093220636F707920657863682076707420737562206578636820767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F533135207B424C205B5D20302073657464617368203220636F707920427371756172652066696C6C20427371756172657D2062696E64206465660A2F4430207B6773617665207472616E736C61746520343520726F7461746520302030205330207374726F6B652067726573746F72657D2062696E64206465660A2F4431207B6773617665207472616E736C61746520343520726F7461746520302030205331207374726F6B652067726573746F72657D2062696E64206465660A2F4432207B6773617665207472616E736C61746520343520726F7461746520302030205332207374726F6B652067726573746F72657D2062696E64206465660A2F4433207B6773617665207472616E736C61746520343520726F7461746520302030205333207374726F6B652067726573746F72657D2062696E64206465660A2F4434207B6773617665207472616E736C61746520343520726F7461746520302030205334207374726F6B652067726573746F72657D2062696E64206465660A2F4435207B6773617665207472616E736C61746520343520726F7461746520302030205335207374726F6B652067726573746F72657D2062696E64206465660A2F4436207B6773617665207472616E736C61746520343520726F7461746520302030205336207374726F6B652067726573746F72657D2062696E64206465660A2F4437207B6773617665207472616E736C61746520343520726F7461746520302030205337207374726F6B652067726573746F72657D2062696E64206465660A2F4438207B6773617665207472616E736C61746520343520726F7461746520302030205338207374726F6B652067726573746F72657D2062696E64206465660A2F4439207B6773617665207472616E736C61746520343520726F7461746520302030205339207374726F6B652067726573746F72657D2062696E64206465660A2F443130207B6773617665207472616E736C61746520343520726F746174652030203020533130207374726F6B652067726573746F72657D2062696E64206465660A2F443131207B6773617665207472616E736C61746520343520726F746174652030203020533131207374726F6B652067726573746F72657D2062696E64206465660A2F443132207B6773617665207472616E736C61746520343520726F746174652030203020533132207374726F6B652067726573746F72657D2062696E64206465660A2F443133207B6773617665207472616E736C61746520343520726F746174652030203020533133207374726F6B652067726573746F72657D2062696E64206465660A2F443134207B6773617665207472616E736C61746520343520726F746174652030203020533134207374726F6B652067726573746F72657D2062696E64206465660A2F443135207B6773617665207472616E736C61746520343520726F746174652030203020533135207374726F6B652067726573746F72657D2062696E64206465660A2F44696145207B7374726F6B65205B5D203020736574646173682076707420616464204D0A2020687074206E656720767074206E656720562068707420767074206E656720560A202068707420767074205620687074206E656720767074205620636C6F736570617468207374726F6B657D206465660A2F426F7845207B7374726F6B65205B5D203020736574646173682065786368206870742073756220657863682076707420616464204D0A2020302076707432206E656720562068707432203020562030207670743220560A202068707432206E65672030205620636C6F736570617468207374726F6B657D206465660A2F5472695545207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20616464204D0A2020687074206E656720767074202D312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E65672076707420312E3632206D756C205620636C6F736570617468207374726F6B657D206465660A2F5472694445207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20737562204D0A2020687074206E65672076707420312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E656720767074202D312E3632206D756C205620636C6F736570617468207374726F6B657D206465660A2F50656E7445207B7374726F6B65205B5D203020736574646173682067736176650A20207472616E736C617465203020687074204D2034207B373220726F74617465203020687074204C7D207265706561740A2020636C6F736570617468207374726F6B652067726573746F72657D206465660A2F4369726345207B7374726F6B65205B5D20302073657464617368200A202068707420302033363020617263207374726F6B657D206465660A2F4F7061717565207B677361766520636C6F736570617468203120736574677261792066696C6C2067726573746F72652030207365746772617920636C6F7365706174687D206465660A2F44696157207B7374726F6B65205B5D203020736574646173682076707420616464204D0A2020687074206E656720767074206E656720562068707420767074206E656720560A202068707420767074205620687074206E6567207670742056204F7061717565207374726F6B657D206465660A2F426F7857207B7374726F6B65205B5D203020736574646173682065786368206870742073756220657863682076707420616464204D0A2020302076707432206E656720562068707432203020562030207670743220560A202068707432206E656720302056204F7061717565207374726F6B657D206465660A2F5472695557207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20616464204D0A2020687074206E656720767074202D312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E65672076707420312E3632206D756C2056204F7061717565207374726F6B657D206465660A2F5472694457207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20737562204D0A2020687074206E65672076707420312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E656720767074202D312E3632206D756C2056204F7061717565207374726F6B657D206465660A2F50656E7457207B7374726F6B65205B5D203020736574646173682067736176650A20207472616E736C617465203020687074204D2034207B373220726F74617465203020687074204C7D207265706561740A20204F7061717565207374726F6B652067726573746F72657D206465660A2F4369726357207B7374726F6B65205B5D20302073657464617368200A202068707420302033363020617263204F7061717565207374726F6B657D206465660A2F426F7846696C6C207B677361766520526563203120736574677261792066696C6C2067726573746F72657D206465660A2F44656E73697479207B0A20202F46696C6C64656E2065786368206465660A202063757272656E74726762636F6C6F720A20202F436F6C42206578636820646566202F436F6C47206578636820646566202F436F6C522065786368206465660A20202F436F6C5220436F6C522046696C6C64656E206D756C2046696C6C64656E20737562203120616464206465660A20202F436F6C4720436F6C472046696C6C64656E206D756C2046696C6C64656E20737562203120616464206465660A20202F436F6C4220436F6C422046696C6C64656E206D756C2046696C6C64656E20737562203120616464206465660A2020436F6C5220436F6C4720436F6C4220736574726762636F6C6F727D206465660A2F426F78436F6C46696C6C207B67736176652052656320506F6C7946696C6C7D206465660A2F506F6C7946696C6C207B67736176652044656E736974792066696C6C2067726573746F72652067726573746F72657D206465660A2F68207B726C696E65746F20726C696E65746F20726C696E65746F20677361766520636C6F7365706174682066696C6C2067726573746F72657D2062696E64206465660A250A2520506F7374536372697074204C6576656C2031205061747465726E2046696C6C20726F7574696E6520666F722072656374616E676C65730A252055736167653A207820792077206820732061205858205061747465726E46696C6C0A2509782C79203D206C6F776572206C65667420636F726E6572206F6620626F7820746F2062652066696C6C65640A2509772C68203D20776964746820616E6420686569676874206F6620626F780A2509202061203D20616E676C6520696E2064656772656573206265747765656E206C696E657320616E6420782D617869730A2509205858203D20302F3120666F72206E6F2F7965732063726F73732D68617463680A250A2F5061747465726E46696C6C207B6773617665202F504661205B2039203220726F6C6C205D206465660A20205046612030206765742050466120322067657420322064697620616464205046612031206765742050466120332067657420322064697620616464207472616E736C6174650A2020504661203220676574202D322064697620504661203320676574202D32206469762050466120322067657420504661203320676574205265630A20205472616E73706172656E745061747465726E73207B7D207B6773617665203120736574677261792066696C6C2067726573746F72657D206966656C73650A2020636C69700A202063757272656E746C696E65776964746820302E35206D756C207365746C696E6577696474680A20202F5046732050466120322067657420647570206D756C2050466120332067657420647570206D756C206164642073717274206465660A2020302030204D2050466120352067657420726F7461746520504673202D322064697620647570207472616E736C6174650A202030203120504673205046612034206765742064697620312061646420666C6F6F72206376690A097B504661203420676574206D756C2030204D20302050467320567D20666F720A20203020504661203620676574206E65207B0A0930203120504673205046612034206765742064697620312061646420666C6F6F72206376690A097B504661203420676574206D756C20302032203120726F6C6C204D20504673203020567D20666F720A207D2069660A20207374726F6B652067726573746F72657D206465660A250A2F6C616E67756167656C6576656C2077686572650A207B706F70206C616E67756167656C6576656C7D207B317D206966656C73650A6475702032206C740A097B2F496E746572707265744C6576656C312074727565206465660A09202F496E746572707265744C6576656C332066616C7365206465667D0A097B2F496E746572707265744C6576656C31204C6576656C31206465660A0920322067740A09202020207B2F496E746572707265744C6576656C33204C6576656C33206465667D0A09202020207B2F496E746572707265744C6576656C332066616C7365206465667D0A09206966656C7365207D0A206966656C73650A250A2520506F7374536372697074206C6576656C2032207061747465726E2066696C6C20646566696E6974696F6E730A250A2F4C6576656C325061747465726E46696C6C207B0A2F54696C65387838207B2F5061696E74547970652032202F5061747465726E547970652031202F54696C696E67547970652031202F42426F78205B302030203820385D202F58537465702038202F595374657020387D0A0962696E64206465660A2F4B656570436F6C6F72207B63757272656E74726762636F6C6F72205B2F5061747465726E202F4465766963655247425D20736574636F6C6F7273706163657D2062696E64206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F7020302030204D20382038204C20302038204D20382030204C207374726F6B657D200A3E3E206D6174726978206D616B657061747465726E0A2F506174312065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F7020302030204D20382038204C20302038204D20382030204C207374726F6B650A09302034204D20342038204C20382034204C20342030204C20302034204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174322065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F7020302030204D20302038204C0A09382038204C20382030204C20302030204C2066696C6C7D0A3E3E206D6174726978206D616B657061747465726E0A2F506174332065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F70202D342038204D2038202D34204C0A0930203132204D2031322030204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174342065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F70202D342030204D2038203132204C0A0930202D34204D2031322038204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174352065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F70202D322038204D2034202D34204C0A0930203132204D2038202D34204C2034203132204D2031302030204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174362065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F70202D322030204D2034203132204C0A0930202D34204D2038203132204C2034202D34204D2031302038204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174372065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F702038202D32204D202D342034204C0A0931322030204D202D342038204C2031322034204D2030203130204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174382065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F702030202D32204D2031322034204C0A092D342030204D2031322038204C202D342034204D2038203130204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174392065786368206465660A2F5061747465726E31207B5061747465726E42676E64204B656570436F6C6F722050617431207365747061747465726E7D2062696E64206465660A2F5061747465726E32207B5061747465726E42676E64204B656570436F6C6F722050617432207365747061747465726E7D2062696E64206465660A2F5061747465726E33207B5061747465726E42676E64204B656570436F6C6F722050617433207365747061747465726E7D2062696E64206465660A2F5061747465726E34207B5061747465726E42676E64204B656570436F6C6F72204C616E647363617065207B506174357D207B506174347D206966656C7365207365747061747465726E7D2062696E64206465660A2F5061747465726E35207B5061747465726E42676E64204B656570436F6C6F72204C616E647363617065207B506174347D207B506174357D206966656C7365207365747061747465726E7D2062696E64206465660A2F5061747465726E36207B5061747465726E42676E64204B656570436F6C6F72204C616E647363617065207B506174397D207B506174367D206966656C7365207365747061747465726E7D2062696E64206465660A2F5061747465726E37207B5061747465726E42676E64204B656570436F6C6F72204C616E647363617065207B506174387D207B506174377D206966656C7365207365747061747465726E7D2062696E64206465660A7D206465660A250A250A25456E64206F6620506F7374536372697074204C6576656C203220636F64650A250A2F5061747465726E42676E64207B0A20205472616E73706172656E745061747465726E73207B7D207B6773617665203120736574677261792066696C6C2067726573746F72657D206966656C73650A7D206465660A250A25205375627374697475746520666F72204C6576656C2032207061747465726E2066696C6C20636F64657320776974680A2520677261797363616C65206966204C6576656C203220737570706F7274206973206E6F742073656C65637465642E0A250A2F4C6576656C315061747465726E46696C6C207B0A2F5061747465726E31207B302E3235302044656E736974797D2062696E64206465660A2F5061747465726E32207B302E3530302044656E736974797D2062696E64206465660A2F5061747465726E33207B302E3735302044656E736974797D2062696E64206465660A2F5061747465726E34207B302E3132352044656E736974797D2062696E64206465660A2F5061747465726E35207B302E3337352044656E736974797D2062696E64206465660A2F5061747465726E36207B302E3632352044656E736974797D2062696E64206465660A2F5061747465726E37207B302E3837352044656E736974797D2062696E64206465660A7D206465660A250A25204E6F77207465737420666F7220737570706F7274206F66204C6576656C203220636F64650A250A4C6576656C31207B4C6576656C315061747465726E46696C6C7D207B4C6576656C325061747465726E46696C6C7D206966656C73650A250A2F53796D626F6C2D4F626C69717565202F53796D626F6C2066696E64666F6E74205B312030202E3136372031203020305D206D616B65666F6E740A647570206C656E677468206469637420626567696E207B3120696E646578202F464944206571207B706F7020706F707D207B6465667D206966656C73657D20666F72616C6C0A63757272656E746469637420656E6420646566696E65666F6E7420706F700A250A2F4D4673686F77207B0A2020207B2064757020352067657420332067650A20202020207B2035206765742033206571207B67736176657D207B67726573746F72657D206966656C7365207D0A20202020207B647570206475702030206765742066696E64666F6E742065786368203120676574207363616C65666F6E7420736574666F6E740A20202020205B2063757272656E74706F696E74205D206578636820647570203220676574203020657863682052206475702035206765742032206E65207B6475702064757020360A20202020206765742065786368203420676574207B7465787473686F777D207B737472696E67776964746820706F70203020527D206966656C7365207D69662064757020352067657420302065710A20202020207B647570203320676574207B3220676574206E656720302065786368205220706F707D207B706F7020616C6F616420706F70204D7D206966656C73657D207B64757020350A20202020206765742031206571207B647570203220676574206578636820647570203320676574206578636820362067657420737472696E67776964746820706F70202D32206469760A2020202020647570203020527D207B64757020362067657420737472696E67776964746820706F70202D3220646976203020522036206765740A20202020207465787473686F77203220696E646578207B616C6F616420706F70204D206E65672033202D3120726F6C6C206E6567205220706F7020706F707D207B706F7020706F7020706F700A2020202020706F7020616C6F616420706F70204D7D206966656C7365207D6966656C7365207D6966656C7365207D0A20202020206966656C7365207D0A202020666F72616C6C7D206465660A2F47737769647468207B6475702074797065202F737472696E6774797065206571207B737472696E6777696474687D207B706F7020286E2920737472696E6777696474687D206966656C73657D206465660A2F4D467769647468207B302065786368207B206475702035206765742033206765207B2035206765742033206571207B2030207D207B20706F70207D206966656C7365207D0A207B6475702033206765747B647570206475702030206765742066696E64666F6E742065786368203120676574207363616C65666F6E7420736574666F6E740A20202020203620676574204773776964746820706F70206164647D207B706F707D206966656C73657D206966656C73657D20666F72616C6C7D206465660A2F4D4C73686F77207B2063757272656E74706F696E74207374726F6B65204D0A202030206578636820520A2020426C61636B74657874207B677361766520302073657467726179204D4673686F772067726573746F72657D207B4D4673686F777D206966656C7365207D2062696E64206465660A2F4D5273686F77207B2063757272656E74706F696E74207374726F6B65204D0A20206578636820647570204D467769647468206E65672033202D3120726F6C6C20520A2020426C61636B74657874207B677361766520302073657467726179204D4673686F772067726573746F72657D207B4D4673686F777D206966656C7365207D2062696E64206465660A2F4D4373686F77207B2063757272656E74706F696E74207374726F6B65204D0A20206578636820647570204D467769647468202D32206469762033202D3120726F6C6C20520A2020426C61636B74657874207B677361766520302073657467726179204D4673686F772067726573746F72657D207B4D4673686F777D206966656C7365207D2062696E64206465660A2F585973617665202020207B205B2820292031203220747275652066616C736520332028295D207D2062696E64206465660A2F5859726573746F7265207B205B2820292031203220747275652066616C736520342028295D207D2062696E64206465660A4C6576656C312053757070726573735044464D61726B206F72200A7B7D207B0A2F53446963742031302064696374206465660A73797374656D64696374202F7064666D61726B206B6E6F776E206E6F74207B0A20207573657264696374202F7064666D61726B2073797374656D64696374202F636C656172746F6D61726B20676574207075740A7D2069660A534469637420626567696E205B0A20202F5469746C65202874656D702E657073290A20202F5375626A6563742028676E75706C6F7420706C6F74290A20202F43726561746F722028676E75706C6F7420352E302070617463686C6576656C2033290A20202F417574686F7220286D617274696E6F290A2520202F50726F64756365722028676E75706C6F74290A2520202F4B6579776F7264732028290A20202F4372656174696F6E4461746520284D6F6E204E6F762020372031333A33373A35322032303136290A20202F444F43494E464F207064666D61726B0A656E640A7D206966656C73650A250A2520537570706F727420666F7220626F7865642074657874202D20457468616E2041204D657272697474204D617920323030350A250A2F496E697454657874426F78207B207573657264696374202F544279322033202D3120726F6C6C20707574207573657264696374202F544278322033202D3120726F6C6C207075740A20202020202020202020207573657264696374202F544279312033202D3120726F6C6C20707574207573657264696374202F544278312033202D3120726F6C6C207075740A092020202F426F78696E67207472756520646566207D206465660A2F457874656E6454657874426F78207B20426F78696E670A202020207B206773617665206475702066616C7365206368617270617468207061746862626F780A2020202020206475702054427932206774207B7573657264696374202F544279322033202D3120726F6C6C207075747D207B706F707D206966656C73650A2020202020206475702054427832206774207B7573657264696374202F544278322033202D3120726F6C6C207075747D207B706F707D206966656C73650A2020202020206475702054427931206C74207B7573657264696374202F544279312033202D3120726F6C6C207075747D207B706F707D206966656C73650A2020202020206475702054427831206C74207B7573657264696374202F544278312033202D3120726F6C6C207075747D207B706F707D206966656C73650A20202020202067726573746F7265207D206966207D206465660A2F506F7054657874426F78207B206E6577706174682054427831205442786D617267696E207375622054427931205442796D617267696E20737562204D0A20202020202020202020202020202054427831205442786D617267696E207375622054427932205442796D617267696E20616464204C0A092020202020202054427832205442786D617267696E206164642054427932205442796D617267696E20616464204C0A092020202020202054427832205442786D617267696E206164642054427931205442796D617267696E20737562204C20636C6F736570617468207D206465660A2F4472617754657874426F78207B20506F7054657874426F78207374726F6B65202F426F78696E672066616C7365206465667D206465660A2F46696C6C54657874426F78207B20677361766520506F7054657874426F7820312031203120736574726762636F6C6F722066696C6C2067726573746F7265202F426F78696E672066616C7365206465667D206465660A3020302030203020496E697454657874426F780A2F5442786D617267696E203230206465660A2F5442796D617267696E203230206465660A2F426F78696E672066616C7365206465660A2F7465787473686F77207B20457874656E6454657874426F78204773686F77207D206465660A250A2520726564756E64616E7420646566696E6974696F6E7320666F7220636F6D7061746962696C69747920776974682070726F6C6F6775652E7073206F6C646572207468616E20352E302E320A2F4C5442207B424C205B5D204C436220444C7D206465660A2F4C5462207B504C205B5D204C436220444C7D206465660A656E640A2525456E6450726F6C6F670A2525506167653A203120310A676E756469637420626567696E0A67736176650A646F636C69700A3530203530207472616E736C6174650A302E30353020302E303530207363616C650A3020736574677261790A6E6577706174680A2848656C766574696361292066696E64666F6E7420313430207363616C65666F6E7420736574666F6E740A4261636B67726F756E64436F6C6F722030206C742033203120726F6C6C2030206C7420657863682030206C74206F72206F72206E6F74207B4261636B67726F756E64436F6C6F72204320312E3030302030203020373230302E303020353034302E303020426F78436F6C46696C6C7D2069660A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A36383620343438204D0A3633203020560A36313938203020520A2D3633203020560A7374726F6B650A36303220343438204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020282030295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3638362031313339204D0A3633203020560A36313938203020520A2D3633203020560A7374726F6B650A3630322031313339204D0A5B205B2848656C76657469636129203134302E3020302E302074727565207472756520302028203230295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3638362031383330204D0A3633203020560A36313938203020520A2D3633203020560A7374726F6B650A3630322031383330204D0A5B205B2848656C76657469636129203134302E3020302E302074727565207472756520302028203430295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3638362032353231204D0A3633203020560A36313938203020520A2D3633203020560A7374726F6B650A3630322032353231204D0A5B205B2848656C76657469636129203134302E3020302E302074727565207472756520302028203630295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3638362033323132204D0A3633203020560A36313938203020520A2D3633203020560A7374726F6B650A3630322033323132204D0A5B205B2848656C76657469636129203134302E3020302E302074727565207472756520302028203830295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3638362033393033204D0A3633203020560A36313938203020520A2D3633203020560A7374726F6B650A3630322033393033204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820313030295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3638362034353935204D0A3633203020560A36313938203020520A2D3633203020560A7374726F6B650A3630322034353935204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820313230295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A36383620343438204D0A3020363320560A30203433363020520A30202D363320560A7374726F6B650A36383620333038204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020282030295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3139333820343438204D0A3020363320560A30203433363020520A30202D363320560A7374726F6B650A3139333820333038204D0A5B205B2848656C76657469636129203134302E3020302E302074727565207472756520302028203230295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3331393020343438204D0A3020363320560A30203433363020520A30202D363320560A7374726F6B650A3331393020333038204D0A5B205B2848656C76657469636129203134302E3020302E302074727565207472756520302028203430295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3434343320343438204D0A3020363320560A30203433363020520A30202D363320560A7374726F6B650A3434343320333038204D0A5B205B2848656C76657469636129203134302E3020302E302074727565207472756520302028203630295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3536393520343438204D0A3020363320560A30203433363020520A30202D363320560A7374726F6B650A3536393520333038204D0A5B205B2848656C76657469636129203134302E3020302E302074727565207472756520302028203830295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3639343720343438204D0A3020363320560A30203433363020520A30202D363320560A7374726F6B650A3639343720333038204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820313030295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A312E30303020554C0A4C54420A4C436220736574726762636F6C6F720A3638362034383731204E0A36383620343438204C0A36323631203020560A30203434323320560A2D36323631203020560A5A207374726F6B650A312E3030302055500A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A4C436220736574726762636F6C6F720A3131322032363539204D0A63757272656E74706F696E74206773617665207472616E736C617465202D32373020726F7461746520302030206D6F7665746F0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020286669746E657373295D0A5D202D34362E37204D4373686F770A67726573746F72650A4C54620A4C436220736574726762636F6C6F720A33383136203938204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202867656E65726174696F6E295D0A5D202D34362E37204D4373686F770A4C54620A2520426567696E20706C6F742023310A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A4C436220736574726762636F6C6F720A363239362034373338204D0A5B205B2848656C76657469636129203134302E3020302E302074727565207472756520302028665C28505C28745C295C29295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A363338302034373338204D0A333939203020560A3638362032353231204D0A36332033363220560A36332032313120560A36342031353020560A36332031313620560A363320393420560A363320383020560A363420373020560A363320363120560A363320353420560A363320353020560A363420343520560A363320343220560A363320333820560A363320333620560A363420333320560A363320333220560A363320323920560A363320323820560A363420323720560A363320323520560A363320323420560A363320323320560A363420323320560A363320323120560A363320323020560A363320323020560A363420313820560A363320313920560A363320313720560A363320313720560A363420313720560A363320313620560A363320313520560A363320313520560A363320313520560A363420313420560A363320313420560A363320313320560A363320313320560A363420313320560A363320313320560A363320313220560A363320313220560A363420313120560A363320313220560A363320313120560A363320313120560A363420313120560A363320313020560A363320313020560A363320313020560A363420313020560A363320313020560A3633203920560A363320313020560A3634203920560A3633203920560A3633203920560A3633203920560A3634203820560A3633203920560A3633203820560A3633203820560A3634203820560A3633203820560A3633203820560A3633203720560A3633203820560A3634203720560A3633203820560A3633203720560A3633203720560A3634203720560A3633203720560A3633203720560A3633203720560A3634203720560A3633203620560A3633203720560A3633203620560A3634203720560A3633203620560A3633203620560A3633203620560A3634203620560A3633203620560A3633203620560A3633203620560A3634203620560A3633203620560A3633203520560A39203120560A2520456E6420706C6F742023310A7374726F6B650A322E30303020554C0A4C54620A4C436220736574726762636F6C6F720A312E30303020554C0A4C54420A4C436220736574726762636F6C6F720A3638362034383731204E0A36383620343438204C0A36323631203020560A30203434323320560A2D36323631203020560A5A207374726F6B650A312E3030302055500A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A7374726F6B650A67726573746F72650A656E640A73686F77706167650A2525547261696C65720A2525446F63756D656E74466F6E74733A2048656C7665746963610A>|ps>||||>>>
+
+  In circa 60 generazioni l'algoritmo converge e trova la soluzione migliore.
+
+  <subsection|Ottimizzazione di funzioni continue>
+
+  Il funzionamento del <with|font-series|bold|AG> e' buono anche nei casi di
+  funzioni continue reali con molti massimi e minimi locali.
+
+  <underline|Esempio:> le funzioni di Rastrigin e Schwefeld che sono dei
+  benchmark tradizionali per gli AG:
+
+  <\equation*>
+    f<rsub|R><around*|(|x|)>=A*n+<big|sum><rsup|n><rsub|i=1><around*|[|x<rsub|i<rsup|>><rsup|2>-
+    A*cos<around*|(|2\<pi\>x<rsub|i>|)>|]><space|1em>in \<bbb-R\><rsup|n>
+  </equation*>
+
+  <\equation*>
+    f<rsub|S><around*|(|x|)>=B*n+ <big|sum><rsup|n><rsub|i=1><around*|[|x<rsub|i>*sin<around*|(|<sqrt|<around*|\||x<rsub|i>|\|>>|)>|]><space|1em>in
+    \<bbb-R\><rsup|n>
+  </equation*>
+
+  <math|f<rsub|S><around*|(|x|)>> per <math|\<bbb-R\>> semplice e'
+  <math|f<rsub|S><around*|(|x|)>=<around*|\||x*sin<around*|(|<sqrt|<around*|\||x|\|>>|)>|\|>+C>
+
+  \;
+
+  La difficolta' delle funzioni reali e' quello di definire lo spazio di
+  ricerca, le possiblita' sono due:
+
+  <\itemize>
+    <item><underline|Aritmetica a virgola fissa>, ogni punto di
+    <math|S\<subset\>\<bbb-R\><rsup|n>> e' codificato come una sequenza di
+    bit di lunghezza fissa. Si divide dunque l'intervallo di ricerca per il
+    numero di valori rappresentabili dalla sequenza di bit e dunque questa
+    definisce la precisione.
+
+    <item><underline|Aritmetica a virgola mobile>, i numeri in <math|S> sono
+    rapresentati come
+
+    <\equation*>
+      x=s\<times\>r<rsup|t>
+    </equation*>
+
+    dove <math|r> e' la base (in generale 2), <math|s> e' il valore \ mentre
+    <math|t> e' l'esponente.
+
+    <\equation*>
+      s=b<rsub|0>+<big|sum><rsub|k=1><rsup|p-1>b<rsub|k>*2<rsup|-k><space|1em>dove
+      b<rsub|i>\<in\><around*|[|0,1|]>
+    </equation*>
+
+    <\equation*>
+      t=<big|sum><rsub|k=p><rsup|n-1>b<rsub|k>*2<rsup|k+1-p>
+    </equation*>
+
+    \ Dunque ci sono <math|p> bits per rapresentare il valore
+    (<with|font-shape|italic|mantisse>) e <math|n-p> bit per rappresentare
+    l'esponente. <math|n> e' il numero di bit totali.
+
+    Lo standard IEEE 754 propone come valori <math|n=64>, <math|p=52> e
+    <math|q=11> bits e un bit di segno
+
+    Questo ci permette di avere 16 cifre significative e un esponente
+    compreso tra -1024 e 1024.\ 
+  </itemize>
+
+  <underline|Esempio>: sia la funzione di fitness
+  <math|f<rsub|><around*|(|x|)>=-<around*|\||x*sin<around*|(|<around*|\||x|\|>|)>|\|>+C>
+  \ con <math|x\<in\>\<bbb-R\>> e vogliamo trovare il minimo della funzione
+  <math|f> nel intervallo [-512,512].
+
+  <center|<\with|prog-scripts|gnuplot>
+    <image|<tuple|<#252150532D41646F62652D322E3020455053462D322E300A25255469746C653A2074656D702E6570730A252543726561746F723A20676E75706C6F7420352E302070617463686C6576656C20330A25254372656174696F6E446174653A204D6F6E204E6F762031342031303A35363A333920323031360A2525446F63756D656E74466F6E74733A20286174656E64290A2525426F756E64696E67426F783A20353020353020343130203330320A2525456E64436F6D6D656E74730A2525426567696E50726F6C6F670A2F676E7564696374203235362064696374206465660A676E756469637420626567696E0A250A252054686520666F6C6C6F77696E6720747275652F66616C736520666C616773206D6179206265206564697465642062792068616E6420696620646573697265642E0A252054686520756E6974206C696E6520776964746820616E6420677261797363616C6520696D6167652067616D6D6120636F7272656374696F6E206D617920616C736F206265206368616E6765642E0A250A2F436F6C6F722066616C7365206465660A2F426C61636B746578742066616C7365206465660A2F536F6C69642066616C7365206465660A2F446173686C656E6774682031206465660A2F4C616E6473636170652066616C7365206465660A2F4C6576656C312066616C7365206465660A2F4C6576656C332066616C7365206465660A2F526F756E6465642066616C7365206465660A2F436C6970546F426F756E64696E67426F782066616C7365206465660A2F53757070726573735044464D61726B2066616C7365206465660A2F5472616E73706172656E745061747465726E732066616C7365206465660A2F676E756C696E65776964746820352E303030206465660A2F757365726C696E65776964746820676E756C696E657769647468206465660A2F47616D6D6120312E30206465660A2F4261636B67726F756E64436F6C6F72207B2D312E303030202D312E303030202D312E3030307D206465660A250A2F767368696674202D3436206465660A2F646C31207B0A202031302E3020446173686C656E67746820757365726C696E65776964746820676E756C696E65776964746820646976206D756C206D756C206D756C0A2020526F756E646564207B2063757272656E746C696E65776964746820302E3735206D756C20737562206475702030206C65207B20706F7020302E3031207D206966207D2069660A7D206465660A2F646C32207B0A202031302E3020446173686C656E67746820757365726C696E65776964746820676E756C696E65776964746820646976206D756C206D756C206D756C0A2020526F756E646564207B2063757272656E746C696E65776964746820302E3735206D756C20616464207D2069660A7D206465660A2F6870745F2033312E35206465660A2F7670745F2033312E35206465660A2F687074206870745F206465660A2F767074207670745F206465660A2F646F636C6970207B0A2020436C6970546F426F756E64696E67426F78207B0A202020206E657770617468203530203530206D6F7665746F20343130203530206C696E65746F2034313020333032206C696E65746F20353020333032206C696E65746F20636C6F7365706174680A20202020636C69700A20207D2069660A7D206465660A250A2520476E75706C6F742050726F6C6F672056657273696F6E20352E3120284F63742032303135290A250A252F53757070726573735044464D61726B2074727565206465660A250A2F4D207B6D6F7665746F7D2062696E64206465660A2F4C207B6C696E65746F7D2062696E64206465660A2F52207B726D6F7665746F7D2062696E64206465660A2F56207B726C696E65746F7D2062696E64206465660A2F4E207B6E657770617468206D6F7665746F7D2062696E64206465660A2F5A207B636C6F7365706174687D2062696E64206465660A2F43207B736574726762636F6C6F727D2062696E64206465660A2F66207B726C696E65746F2066696C6C7D2062696E64206465660A2F67207B736574677261797D2062696E64206465660A2F4773686F77207B73686F777D2064656620202025204D6179206265207265646566696E6564206C6174657220696E207468652066696C6520746F20737570706F7274205554462D380A2F76707432207670742032206D756C206465660A2F68707432206870742032206D756C206465660A2F4C73686F77207B63757272656E74706F696E74207374726F6B65204D2030207673686966742052200A09426C61636B74657874207B677361766520302073657467726179207465787473686F772067726573746F72657D207B7465787473686F777D206966656C73657D206465660A2F5273686F77207B63757272656E74706F696E74207374726F6B65204D2064757020737472696E67776964746820706F70206E65672076736869667420520A09426C61636B74657874207B677361766520302073657467726179207465787473686F772067726573746F72657D207B7465787473686F777D206966656C73657D206465660A2F4373686F77207B63757272656E74706F696E74207374726F6B65204D2064757020737472696E67776964746820706F70202D3220646976207673686966742052200A09426C61636B74657874207B677361766520302073657467726179207465787473686F772067726573746F72657D207B7465787473686F777D206966656C73657D206465660A2F5550207B647570207670745F206D756C202F767074206578636820646566206870745F206D756C202F6870742065786368206465660A20202F68707432206870742032206D756C20646566202F76707432207670742032206D756C206465667D206465660A2F444C207B436F6C6F72207B736574726762636F6C6F7220536F6C6964207B706F70205B5D7D206966203020736574646173687D0A207B706F7020706F7020706F702030207365746772617920536F6C6964207B706F70205B5D7D206966203020736574646173687D206966656C73657D206465660A2F424C207B7374726F6B6520757365726C696E6577696474682032206D756C207365746C696E6577696474680A09526F756E646564207B31207365746C696E656A6F696E2031207365746C696E656361707D2069667D206465660A2F414C207B7374726F6B6520757365726C696E657769647468203220646976207365746C696E6577696474680A09526F756E646564207B31207365746C696E656A6F696E2031207365746C696E656361707D2069667D206465660A2F554C207B64757020676E756C696E657769647468206D756C202F757365726C696E6577696474682065786368206465660A096475702031206C74207B706F7020317D206966203130206D756C202F75646C2065786368206465667D206465660A2F504C207B7374726F6B6520757365726C696E657769647468207365746C696E6577696474680A09526F756E646564207B31207365746C696E656A6F696E2031207365746C696E656361707D2069667D206465660A332E38207365746D697465726C696D69740A2520436C6173736963204C696E6520636F6C6F7273202876657273696F6E20352E30290A2F4C4377207B31203120317D206465660A2F4C4362207B30203020307D206465660A2F4C4361207B30203020307D206465660A2F4C4330207B31203020307D206465660A2F4C4331207B30203120307D206465660A2F4C4332207B30203020317D206465660A2F4C4333207B31203020317D206465660A2F4C4334207B30203120317D206465660A2F4C4335207B31203120307D206465660A2F4C4336207B30203020307D206465660A2F4C4337207B3120302E3320307D206465660A2F4C4338207B302E3520302E3520302E357D206465660A252044656661756C742064617368207061747465726E73202876657273696F6E20352E30290A2F4C5442207B424C205B5D204C436220444C7D206465660A2F4C5477207B504C205B5D203120736574677261797D206465660A2F4C5462207B504C205B5D204C436220444C7D206465660A2F4C5461207B414C205B312075646C206D756C20322075646C206D756C5D20302073657464617368204C436120736574726762636F6C6F727D206465660A2F4C5430207B504C205B5D204C433020444C7D206465660A2F4C5431207B504C205B3220646C31203320646C325D204C433120444C7D206465660A2F4C5432207B504C205B3120646C3120312E3520646C325D204C433220444C7D206465660A2F4C5433207B504C205B3620646C31203220646C32203120646C31203220646C325D204C433320444C7D206465660A2F4C5434207B504C205B3120646C31203220646C32203620646C31203220646C32203120646C31203220646C325D204C433420444C7D206465660A2F4C5435207B504C205B3420646C31203220646C325D204C433520444C7D206465660A2F4C5436207B504C205B312E3520646C3120312E3520646C3220312E3520646C3120312E3520646C3220312E3520646C31203620646C325D204C433620444C7D206465660A2F4C5437207B504C205B3320646C31203320646C32203120646C31203320646C325D204C433720444C7D206465660A2F4C5438207B504C205B3220646C31203220646C32203220646C31203620646C325D204C433820444C7D206465660A2F534C207B5B5D203020736574646173687D206465660A2F506E74207B7374726F6B65205B5D203020736574646173682067736176652031207365746C696E65636170204D203020302056207374726F6B652067726573746F72657D206465660A2F446961207B7374726F6B65205B5D20302073657464617368203220636F70792076707420616464204D0A2020687074206E656720767074206E656720562068707420767074206E656720560A202068707420767074205620687074206E656720767074205620636C6F736570617468207374726F6B650A2020506E747D206465660A2F506C73207B7374726F6B65205B5D203020736574646173682076707420737562204D2030207670743220560A202063757272656E74706F696E74207374726F6B65204D0A2020687074206E656720767074206E65672052206870743220302056207374726F6B650A207D206465660A2F426F78207B7374726F6B65205B5D20302073657464617368203220636F70792065786368206870742073756220657863682076707420616464204D0A2020302076707432206E656720562068707432203020562030207670743220560A202068707432206E65672030205620636C6F736570617468207374726F6B650A2020506E747D206465660A2F437273207B7374726F6B65205B5D203020736574646173682065786368206870742073756220657863682076707420616464204D0A2020687074322076707432206E656720562063757272656E74706F696E74207374726F6B65204D0A202068707432206E656720302052206870743220767074322056207374726F6B657D206465660A2F54726955207B7374726F6B65205B5D20302073657464617368203220636F70792076707420312E3132206D756C20616464204D0A2020687074206E656720767074202D312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E65672076707420312E3632206D756C205620636C6F736570617468207374726F6B650A2020506E747D206465660A2F53746172207B3220636F707920506C73204372737D206465660A2F426F7846207B7374726F6B65205B5D203020736574646173682065786368206870742073756220657863682076707420616464204D0A2020302076707432206E656720562068707432203020562030207670743220560A202068707432206E65672030205620636C6F7365706174682066696C6C7D206465660A2F5472695546207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20616464204D0A2020687074206E656720767074202D312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E65672076707420312E3632206D756C205620636C6F7365706174682066696C6C7D206465660A2F54726944207B7374726F6B65205B5D20302073657464617368203220636F70792076707420312E3132206D756C20737562204D0A2020687074206E65672076707420312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E656720767074202D312E3632206D756C205620636C6F736570617468207374726F6B650A2020506E747D206465660A2F5472694446207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20737562204D0A2020687074206E65672076707420312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E656720767074202D312E3632206D756C205620636C6F7365706174682066696C6C7D206465660A2F44696146207B7374726F6B65205B5D203020736574646173682076707420616464204D0A2020687074206E656720767074206E656720562068707420767074206E656720560A202068707420767074205620687074206E656720767074205620636C6F7365706174682066696C6C7D206465660A2F50656E74207B7374726F6B65205B5D20302073657464617368203220636F70792067736176650A20207472616E736C617465203020687074204D2034207B373220726F74617465203020687074204C7D207265706561740A2020636C6F736570617468207374726F6B652067726573746F726520506E747D206465660A2F50656E7446207B7374726F6B65205B5D203020736574646173682067736176650A20207472616E736C617465203020687074204D2034207B373220726F74617465203020687074204C7D207265706561740A2020636C6F7365706174682066696C6C2067726573746F72657D206465660A2F436972636C65207B7374726F6B65205B5D20302073657464617368203220636F70790A202068707420302033363020617263207374726F6B6520506E747D206465660A2F436972636C6546207B7374726F6B65205B5D2030207365746461736820687074203020333630206172632066696C6C7D206465660A2F4330207B424C205B5D20302073657464617368203220636F7079206D6F7665746F2076707420393020343530206172637D2062696E64206465660A2F4331207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420302039302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4332207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F707920767074203930203138302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4333207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F7079207670742030203138302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4334207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420313830203237302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4335207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F7079207670742030203930206172630A093220636F7079206D6F7665746F0A093220636F70792076707420313830203237302061726320636C6F7365706174682066696C6C0A09767074203020333630206172637D2062696E64206465660A2F4336207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F707920767074203930203237302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4337207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F7079207670742030203237302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4338207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420323730203336302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4339207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420323730203435302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F433130207B424C205B5D20302073657464617368203220636F7079203220636F7079206D6F7665746F2076707420323730203336302061726320636C6F7365706174682066696C6C0A093220636F7079206D6F7665746F0A093220636F707920767074203930203138302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F433131207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F7079207670742030203138302061726320636C6F7365706174682066696C6C0A093220636F7079206D6F7665746F0A093220636F70792076707420323730203336302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F433132207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420313830203336302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F433133207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420302039302061726320636C6F7365706174682066696C6C0A093220636F7079206D6F7665746F0A093220636F70792076707420313830203336302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F433134207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F707920767074203930203336302061726320636C6F7365706174682066696C6C0A09767074203020333630206172637D2062696E64206465660A2F433135207B424C205B5D20302073657464617368203220636F7079207670742030203336302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F526563207B6E6577706174682034203220726F6C6C206D6F7665746F203120696E646578203020726C696E65746F2030206578636820726C696E65746F0A096E6567203020726C696E65746F20636C6F7365706174687D2062696E64206465660A2F537175617265207B647570205265637D2062696E64206465660A2F42737175617265207B767074207375622065786368207670742073756220657863682076707432205371756172657D2062696E64206465660A2F5330207B424C205B5D20302073657464617368203220636F7079206D6F7665746F20302076707420726C696E65746F20424C20427371756172657D2062696E64206465660A2F5331207B424C205B5D20302073657464617368203220636F707920767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5332207B424C205B5D20302073657464617368203220636F707920657863682076707420737562206578636820767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5333207B424C205B5D20302073657464617368203220636F7079206578636820767074207375622065786368207670743220767074205265632066696C6C20427371756172657D2062696E64206465660A2F5334207B424C205B5D20302073657464617368203220636F7079206578636820767074207375622065786368207670742073756220767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5335207B424C205B5D20302073657464617368203220636F7079203220636F707920767074205371756172652066696C6C0A096578636820767074207375622065786368207670742073756220767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5336207B424C205B5D20302073657464617368203220636F70792065786368207670742073756220657863682076707420737562207670742076707432205265632066696C6C20427371756172657D2062696E64206465660A2F5337207B424C205B5D20302073657464617368203220636F70792065786368207670742073756220657863682076707420737562207670742076707432205265632066696C6C0A093220636F707920767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5338207B424C205B5D20302073657464617368203220636F7079207670742073756220767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5339207B424C205B5D20302073657464617368203220636F70792076707420737562207670742076707432205265632066696C6C20427371756172657D2062696E64206465660A2F533130207B424C205B5D20302073657464617368203220636F7079207670742073756220767074205371756172652066696C6C203220636F707920657863682076707420737562206578636820767074205371756172652066696C6C0A09427371756172657D2062696E64206465660A2F533131207B424C205B5D20302073657464617368203220636F7079207670742073756220767074205371756172652066696C6C203220636F7079206578636820767074207375622065786368207670743220767074205265632066696C6C0A09427371756172657D2062696E64206465660A2F533132207B424C205B5D20302073657464617368203220636F70792065786368207670742073756220657863682076707420737562207670743220767074205265632066696C6C20427371756172657D2062696E64206465660A2F533133207B424C205B5D20302073657464617368203220636F70792065786368207670742073756220657863682076707420737562207670743220767074205265632066696C6C0A093220636F707920767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F533134207B424C205B5D20302073657464617368203220636F70792065786368207670742073756220657863682076707420737562207670743220767074205265632066696C6C0A093220636F707920657863682076707420737562206578636820767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F533135207B424C205B5D20302073657464617368203220636F707920427371756172652066696C6C20427371756172657D2062696E64206465660A2F4430207B6773617665207472616E736C61746520343520726F7461746520302030205330207374726F6B652067726573746F72657D2062696E64206465660A2F4431207B6773617665207472616E736C61746520343520726F7461746520302030205331207374726F6B652067726573746F72657D2062696E64206465660A2F4432207B6773617665207472616E736C61746520343520726F7461746520302030205332207374726F6B652067726573746F72657D2062696E64206465660A2F4433207B6773617665207472616E736C61746520343520726F7461746520302030205333207374726F6B652067726573746F72657D2062696E64206465660A2F4434207B6773617665207472616E736C61746520343520726F7461746520302030205334207374726F6B652067726573746F72657D2062696E64206465660A2F4435207B6773617665207472616E736C61746520343520726F7461746520302030205335207374726F6B652067726573746F72657D2062696E64206465660A2F4436207B6773617665207472616E736C61746520343520726F7461746520302030205336207374726F6B652067726573746F72657D2062696E64206465660A2F4437207B6773617665207472616E736C61746520343520726F7461746520302030205337207374726F6B652067726573746F72657D2062696E64206465660A2F4438207B6773617665207472616E736C61746520343520726F7461746520302030205338207374726F6B652067726573746F72657D2062696E64206465660A2F4439207B6773617665207472616E736C61746520343520726F7461746520302030205339207374726F6B652067726573746F72657D2062696E64206465660A2F443130207B6773617665207472616E736C61746520343520726F746174652030203020533130207374726F6B652067726573746F72657D2062696E64206465660A2F443131207B6773617665207472616E736C61746520343520726F746174652030203020533131207374726F6B652067726573746F72657D2062696E64206465660A2F443132207B6773617665207472616E736C61746520343520726F746174652030203020533132207374726F6B652067726573746F72657D2062696E64206465660A2F443133207B6773617665207472616E736C61746520343520726F746174652030203020533133207374726F6B652067726573746F72657D2062696E64206465660A2F443134207B6773617665207472616E736C61746520343520726F746174652030203020533134207374726F6B652067726573746F72657D2062696E64206465660A2F443135207B6773617665207472616E736C61746520343520726F746174652030203020533135207374726F6B652067726573746F72657D2062696E64206465660A2F44696145207B7374726F6B65205B5D203020736574646173682076707420616464204D0A2020687074206E656720767074206E656720562068707420767074206E656720560A202068707420767074205620687074206E656720767074205620636C6F736570617468207374726F6B657D206465660A2F426F7845207B7374726F6B65205B5D203020736574646173682065786368206870742073756220657863682076707420616464204D0A2020302076707432206E656720562068707432203020562030207670743220560A202068707432206E65672030205620636C6F736570617468207374726F6B657D206465660A2F5472695545207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20616464204D0A2020687074206E656720767074202D312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E65672076707420312E3632206D756C205620636C6F736570617468207374726F6B657D206465660A2F5472694445207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20737562204D0A2020687074206E65672076707420312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E656720767074202D312E3632206D756C205620636C6F736570617468207374726F6B657D206465660A2F50656E7445207B7374726F6B65205B5D203020736574646173682067736176650A20207472616E736C617465203020687074204D2034207B373220726F74617465203020687074204C7D207265706561740A2020636C6F736570617468207374726F6B652067726573746F72657D206465660A2F4369726345207B7374726F6B65205B5D20302073657464617368200A202068707420302033363020617263207374726F6B657D206465660A2F4F7061717565207B677361766520636C6F736570617468203120736574677261792066696C6C2067726573746F72652030207365746772617920636C6F7365706174687D206465660A2F44696157207B7374726F6B65205B5D203020736574646173682076707420616464204D0A2020687074206E656720767074206E656720562068707420767074206E656720560A202068707420767074205620687074206E6567207670742056204F7061717565207374726F6B657D206465660A2F426F7857207B7374726F6B65205B5D203020736574646173682065786368206870742073756220657863682076707420616464204D0A2020302076707432206E656720562068707432203020562030207670743220560A202068707432206E656720302056204F7061717565207374726F6B657D206465660A2F5472695557207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20616464204D0A2020687074206E656720767074202D312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E65672076707420312E3632206D756C2056204F7061717565207374726F6B657D206465660A2F5472694457207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20737562204D0A2020687074206E65672076707420312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E656720767074202D312E3632206D756C2056204F7061717565207374726F6B657D206465660A2F50656E7457207B7374726F6B65205B5D203020736574646173682067736176650A20207472616E736C617465203020687074204D2034207B373220726F74617465203020687074204C7D207265706561740A20204F7061717565207374726F6B652067726573746F72657D206465660A2F4369726357207B7374726F6B65205B5D20302073657464617368200A202068707420302033363020617263204F7061717565207374726F6B657D206465660A2F426F7846696C6C207B677361766520526563203120736574677261792066696C6C2067726573746F72657D206465660A2F44656E73697479207B0A20202F46696C6C64656E2065786368206465660A202063757272656E74726762636F6C6F720A20202F436F6C42206578636820646566202F436F6C47206578636820646566202F436F6C522065786368206465660A20202F436F6C5220436F6C522046696C6C64656E206D756C2046696C6C64656E20737562203120616464206465660A20202F436F6C4720436F6C472046696C6C64656E206D756C2046696C6C64656E20737562203120616464206465660A20202F436F6C4220436F6C422046696C6C64656E206D756C2046696C6C64656E20737562203120616464206465660A2020436F6C5220436F6C4720436F6C4220736574726762636F6C6F727D206465660A2F426F78436F6C46696C6C207B67736176652052656320506F6C7946696C6C7D206465660A2F506F6C7946696C6C207B67736176652044656E736974792066696C6C2067726573746F72652067726573746F72657D206465660A2F68207B726C696E65746F20726C696E65746F20726C696E65746F20677361766520636C6F7365706174682066696C6C2067726573746F72657D2062696E64206465660A250A2520506F7374536372697074204C6576656C2031205061747465726E2046696C6C20726F7574696E6520666F722072656374616E676C65730A252055736167653A207820792077206820732061205858205061747465726E46696C6C0A2509782C79203D206C6F776572206C65667420636F726E6572206F6620626F7820746F2062652066696C6C65640A2509772C68203D20776964746820616E6420686569676874206F6620626F780A2509202061203D20616E676C6520696E2064656772656573206265747765656E206C696E657320616E6420782D617869730A2509205858203D20302F3120666F72206E6F2F7965732063726F73732D68617463680A250A2F5061747465726E46696C6C207B6773617665202F504661205B2039203220726F6C6C205D206465660A20205046612030206765742050466120322067657420322064697620616464205046612031206765742050466120332067657420322064697620616464207472616E736C6174650A2020504661203220676574202D322064697620504661203320676574202D32206469762050466120322067657420504661203320676574205265630A20205472616E73706172656E745061747465726E73207B7D207B6773617665203120736574677261792066696C6C2067726573746F72657D206966656C73650A2020636C69700A202063757272656E746C696E65776964746820302E35206D756C207365746C696E6577696474680A20202F5046732050466120322067657420647570206D756C2050466120332067657420647570206D756C206164642073717274206465660A2020302030204D2050466120352067657420726F7461746520504673202D322064697620647570207472616E736C6174650A202030203120504673205046612034206765742064697620312061646420666C6F6F72206376690A097B504661203420676574206D756C2030204D20302050467320567D20666F720A20203020504661203620676574206E65207B0A0930203120504673205046612034206765742064697620312061646420666C6F6F72206376690A097B504661203420676574206D756C20302032203120726F6C6C204D20504673203020567D20666F720A207D2069660A20207374726F6B652067726573746F72657D206465660A250A2F6C616E67756167656C6576656C2077686572650A207B706F70206C616E67756167656C6576656C7D207B317D206966656C73650A6475702032206C740A097B2F496E746572707265744C6576656C312074727565206465660A09202F496E746572707265744C6576656C332066616C7365206465667D0A097B2F496E746572707265744C6576656C31204C6576656C31206465660A0920322067740A09202020207B2F496E746572707265744C6576656C33204C6576656C33206465667D0A09202020207B2F496E746572707265744C6576656C332066616C7365206465667D0A09206966656C7365207D0A206966656C73650A250A2520506F7374536372697074206C6576656C2032207061747465726E2066696C6C20646566696E6974696F6E730A250A2F4C6576656C325061747465726E46696C6C207B0A2F54696C65387838207B2F5061696E74547970652032202F5061747465726E547970652031202F54696C696E67547970652031202F42426F78205B302030203820385D202F58537465702038202F595374657020387D0A0962696E64206465660A2F4B656570436F6C6F72207B63757272656E74726762636F6C6F72205B2F5061747465726E202F4465766963655247425D20736574636F6C6F7273706163657D2062696E64206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F7020302030204D20382038204C20302038204D20382030204C207374726F6B657D200A3E3E206D6174726978206D616B657061747465726E0A2F506174312065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F7020302030204D20382038204C20302038204D20382030204C207374726F6B650A09302034204D20342038204C20382034204C20342030204C20302034204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174322065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F7020302030204D20302038204C0A09382038204C20382030204C20302030204C2066696C6C7D0A3E3E206D6174726978206D616B657061747465726E0A2F506174332065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F70202D342038204D2038202D34204C0A0930203132204D2031322030204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174342065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F70202D342030204D2038203132204C0A0930202D34204D2031322038204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174352065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F70202D322038204D2034202D34204C0A0930203132204D2038202D34204C2034203132204D2031302030204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174362065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F70202D322030204D2034203132204C0A0930202D34204D2038203132204C2034202D34204D2031302038204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174372065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F702038202D32204D202D342034204C0A0931322030204D202D342038204C2031322034204D2030203130204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174382065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F702030202D32204D2031322034204C0A092D342030204D2031322038204C202D342034204D2038203130204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174392065786368206465660A2F5061747465726E31207B5061747465726E42676E64204B656570436F6C6F722050617431207365747061747465726E7D2062696E64206465660A2F5061747465726E32207B5061747465726E42676E64204B656570436F6C6F722050617432207365747061747465726E7D2062696E64206465660A2F5061747465726E33207B5061747465726E42676E64204B656570436F6C6F722050617433207365747061747465726E7D2062696E64206465660A2F5061747465726E34207B5061747465726E42676E64204B656570436F6C6F72204C616E647363617065207B506174357D207B506174347D206966656C7365207365747061747465726E7D2062696E64206465660A2F5061747465726E35207B5061747465726E42676E64204B656570436F6C6F72204C616E647363617065207B506174347D207B506174357D206966656C7365207365747061747465726E7D2062696E64206465660A2F5061747465726E36207B5061747465726E42676E64204B656570436F6C6F72204C616E647363617065207B506174397D207B506174367D206966656C7365207365747061747465726E7D2062696E64206465660A2F5061747465726E37207B5061747465726E42676E64204B656570436F6C6F72204C616E647363617065207B506174387D207B506174377D206966656C7365207365747061747465726E7D2062696E64206465660A7D206465660A250A250A25456E64206F6620506F7374536372697074204C6576656C203220636F64650A250A2F5061747465726E42676E64207B0A20205472616E73706172656E745061747465726E73207B7D207B6773617665203120736574677261792066696C6C2067726573746F72657D206966656C73650A7D206465660A250A25205375627374697475746520666F72204C6576656C2032207061747465726E2066696C6C20636F64657320776974680A2520677261797363616C65206966204C6576656C203220737570706F7274206973206E6F742073656C65637465642E0A250A2F4C6576656C315061747465726E46696C6C207B0A2F5061747465726E31207B302E3235302044656E736974797D2062696E64206465660A2F5061747465726E32207B302E3530302044656E736974797D2062696E64206465660A2F5061747465726E33207B302E3735302044656E736974797D2062696E64206465660A2F5061747465726E34207B302E3132352044656E736974797D2062696E64206465660A2F5061747465726E35207B302E3337352044656E736974797D2062696E64206465660A2F5061747465726E36207B302E3632352044656E736974797D2062696E64206465660A2F5061747465726E37207B302E3837352044656E736974797D2062696E64206465660A7D206465660A250A25204E6F77207465737420666F7220737570706F7274206F66204C6576656C203220636F64650A250A4C6576656C31207B4C6576656C315061747465726E46696C6C7D207B4C6576656C325061747465726E46696C6C7D206966656C73650A250A2F53796D626F6C2D4F626C69717565202F53796D626F6C2066696E64666F6E74205B312030202E3136372031203020305D206D616B65666F6E740A647570206C656E677468206469637420626567696E207B3120696E646578202F464944206571207B706F7020706F707D207B6465667D206966656C73657D20666F72616C6C0A63757272656E746469637420656E6420646566696E65666F6E7420706F700A250A2F4D4673686F77207B0A2020207B2064757020352067657420332067650A20202020207B2035206765742033206571207B67736176657D207B67726573746F72657D206966656C7365207D0A20202020207B647570206475702030206765742066696E64666F6E742065786368203120676574207363616C65666F6E7420736574666F6E740A20202020205B2063757272656E74706F696E74205D206578636820647570203220676574203020657863682052206475702035206765742032206E65207B6475702064757020360A20202020206765742065786368203420676574207B7465787473686F777D207B737472696E67776964746820706F70203020527D206966656C7365207D69662064757020352067657420302065710A20202020207B647570203320676574207B3220676574206E656720302065786368205220706F707D207B706F7020616C6F616420706F70204D7D206966656C73657D207B64757020350A20202020206765742031206571207B647570203220676574206578636820647570203320676574206578636820362067657420737472696E67776964746820706F70202D32206469760A2020202020647570203020527D207B64757020362067657420737472696E67776964746820706F70202D3220646976203020522036206765740A20202020207465787473686F77203220696E646578207B616C6F616420706F70204D206E65672033202D3120726F6C6C206E6567205220706F7020706F707D207B706F7020706F7020706F700A2020202020706F7020616C6F616420706F70204D7D206966656C7365207D6966656C7365207D6966656C7365207D0A20202020206966656C7365207D0A202020666F72616C6C7D206465660A2F47737769647468207B6475702074797065202F737472696E6774797065206571207B737472696E6777696474687D207B706F7020286E2920737472696E6777696474687D206966656C73657D206465660A2F4D467769647468207B302065786368207B206475702035206765742033206765207B2035206765742033206571207B2030207D207B20706F70207D206966656C7365207D0A207B6475702033206765747B647570206475702030206765742066696E64666F6E742065786368203120676574207363616C65666F6E7420736574666F6E740A20202020203620676574204773776964746820706F70206164647D207B706F707D206966656C73657D206966656C73657D20666F72616C6C7D206465660A2F4D4C73686F77207B2063757272656E74706F696E74207374726F6B65204D0A202030206578636820520A2020426C61636B74657874207B677361766520302073657467726179204D4673686F772067726573746F72657D207B4D4673686F777D206966656C7365207D2062696E64206465660A2F4D5273686F77207B2063757272656E74706F696E74207374726F6B65204D0A20206578636820647570204D467769647468206E65672033202D3120726F6C6C20520A2020426C61636B74657874207B677361766520302073657467726179204D4673686F772067726573746F72657D207B4D4673686F777D206966656C7365207D2062696E64206465660A2F4D4373686F77207B2063757272656E74706F696E74207374726F6B65204D0A20206578636820647570204D467769647468202D32206469762033202D3120726F6C6C20520A2020426C61636B74657874207B677361766520302073657467726179204D4673686F772067726573746F72657D207B4D4673686F777D206966656C7365207D2062696E64206465660A2F585973617665202020207B205B2820292031203220747275652066616C736520332028295D207D2062696E64206465660A2F5859726573746F7265207B205B2820292031203220747275652066616C736520342028295D207D2062696E64206465660A4C6576656C312053757070726573735044464D61726B206F72200A7B7D207B0A2F53446963742031302064696374206465660A73797374656D64696374202F7064666D61726B206B6E6F776E206E6F74207B0A20207573657264696374202F7064666D61726B2073797374656D64696374202F636C656172746F6D61726B20676574207075740A7D2069660A534469637420626567696E205B0A20202F5469746C65202874656D702E657073290A20202F5375626A6563742028676E75706C6F7420706C6F74290A20202F43726561746F722028676E75706C6F7420352E302070617463686C6576656C2033290A20202F417574686F7220286D617274696E6F290A2520202F50726F64756365722028676E75706C6F74290A2520202F4B6579776F7264732028290A20202F4372656174696F6E4461746520284D6F6E204E6F762031342031303A35363A33392032303136290A20202F444F43494E464F207064666D61726B0A656E640A7D206966656C73650A250A2520537570706F727420666F7220626F7865642074657874202D20457468616E2041204D657272697474204D617920323030350A250A2F496E697454657874426F78207B207573657264696374202F544279322033202D3120726F6C6C20707574207573657264696374202F544278322033202D3120726F6C6C207075740A20202020202020202020207573657264696374202F544279312033202D3120726F6C6C20707574207573657264696374202F544278312033202D3120726F6C6C207075740A092020202F426F78696E67207472756520646566207D206465660A2F457874656E6454657874426F78207B20426F78696E670A202020207B206773617665206475702066616C7365206368617270617468207061746862626F780A2020202020206475702054427932206774207B7573657264696374202F544279322033202D3120726F6C6C207075747D207B706F707D206966656C73650A2020202020206475702054427832206774207B7573657264696374202F544278322033202D3120726F6C6C207075747D207B706F707D206966656C73650A2020202020206475702054427931206C74207B7573657264696374202F544279312033202D3120726F6C6C207075747D207B706F707D206966656C73650A2020202020206475702054427831206C74207B7573657264696374202F544278312033202D3120726F6C6C207075747D207B706F707D206966656C73650A20202020202067726573746F7265207D206966207D206465660A2F506F7054657874426F78207B206E6577706174682054427831205442786D617267696E207375622054427931205442796D617267696E20737562204D0A20202020202020202020202020202054427831205442786D617267696E207375622054427932205442796D617267696E20616464204C0A092020202020202054427832205442786D617267696E206164642054427932205442796D617267696E20616464204C0A092020202020202054427832205442786D617267696E206164642054427931205442796D617267696E20737562204C20636C6F736570617468207D206465660A2F4472617754657874426F78207B20506F7054657874426F78207374726F6B65202F426F78696E672066616C7365206465667D206465660A2F46696C6C54657874426F78207B20677361766520506F7054657874426F7820312031203120736574726762636F6C6F722066696C6C2067726573746F7265202F426F78696E672066616C7365206465667D206465660A3020302030203020496E697454657874426F780A2F5442786D617267696E203230206465660A2F5442796D617267696E203230206465660A2F426F78696E672066616C7365206465660A2F7465787473686F77207B20457874656E6454657874426F78204773686F77207D206465660A250A2520726564756E64616E7420646566696E6974696F6E7320666F7220636F6D7061746962696C69747920776974682070726F6C6F6775652E7073206F6C646572207468616E20352E302E320A2F4C5442207B424C205B5D204C436220444C7D206465660A2F4C5462207B504C205B5D204C436220444C7D206465660A656E640A2525456E6450726F6C6F670A2525506167653A203120310A676E756469637420626567696E0A67736176650A646F636C69700A3530203530207472616E736C6174650A302E30353020302E303530207363616C650A3020736574677261790A6E6577706174680A2848656C766574696361292066696E64666F6E7420313430207363616C65666F6E7420736574666F6E740A4261636B67726F756E64436F6C6F722030206C742033203120726F6C6C2030206C7420657863682030206C74206F72206F72206E6F74207B4261636B67726F756E64436F6C6F72204320312E3030302030203020373230302E303020353034302E303020426F78436F6C46696C6C7D2069660A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A35343620323830204D0A3633203020560A36333338203020520A2D3633203020560A7374726F6B650A34363220323830204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020282030295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3534362031313737204D0A3633203020560A36333338203020520A2D3633203020560A7374726F6B650A3436322031313737204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820313030295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3534362032303733204D0A3633203020560A36333338203020520A2D3633203020560A7374726F6B650A3436322032303733204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820323030295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3534362032393730204D0A3633203020560A36333338203020520A2D3633203020560A7374726F6B650A3436322032393730204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820333030295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3534362033383637204D0A3633203020560A36333338203020520A2D3633203020560A7374726F6B650A3436322033383637204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820343030295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3534362034373633204D0A3633203020560A36333338203020520A2D3633203020560A7374726F6B650A3436322034373633204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820353030295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3132343620323830204D0A3020363320560A30203435323820520A30202D363320560A7374726F6B650A3132343620313430204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020282D343030295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3234393620323830204D0A3020363320560A30203435323820520A30202D363320560A7374726F6B650A3234393620313430204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020282D323030295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3337343720323830204D0A3020363320560A30203435323820520A30202D363320560A7374726F6B650A3337343720313430204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020282030295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3439393720323830204D0A3020363320560A30203435323820520A30202D363320560A7374726F6B650A3439393720313430204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820323030295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3632343720323830204D0A3020363320560A30203435323820520A30202D363320560A7374726F6B650A3632343720313430204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820343030295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A312E30303020554C0A4C54420A4C436220736574726762636F6C6F720A3534362034383731204E0A35343620323830204C0A36343031203020560A30203435393120560A2D36343031203020560A5A207374726F6B650A312E3030302055500A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A2520426567696E20706C6F742023310A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A4C436220736574726762636F6C6F720A363239362034373338204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020283531322D7C782A73696E5C287C787C5C297C295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A363338302034373338204D0A333939203020560A3534362034353036204D0A35353220373738204C0A372032313620560A36203338313720560A35373220393438204C0A36202D383220560A36203337363320560A37202D3334393620560A36202D33373620560A37203335373520560A36202D3239393920560A36202D36363520560A37203333373220560A36202D3234393420560A37202D39343720560A36203331353720560A37202D3139383520560A36353520353439204C0A36203239333220560A37202D3134373420560A36373420353230204C0A37203236393520560A36202D39363120560A36393320353130204C0A37203234353020560A36202D34353220560A37313320353231204C0A36203231393620560A3620353420560A37333220353530204C0A36203139333620560A372035353320560A37353120353938204C0A36203136373120560A37203130343320560A37373020363635204C0A37203134303120560A36203135323320560A37383920373530204C0A37203131323920560A36203139383920560A38303920383532204C0A362038353520560A37203234343020560A38323820393731204C0A362035383120560A37203238373420560A36202D3333323020560A372033303820560A36203332393020560A36202D3334343820560A3720333720560A36203334373020560A37202D3333343320560A36202D32333120560A36203333303420560A37202D3238393520560A36202D34393420560A37203331323420560A36202D3234343120560A36202D37353020560A37203239333220560A36202D3139383120560A39353020393837204C0A36203237333120560A36202D3135313820560A39363920393536204C0A36203235313920560A37202D3130353520560A39383820393433204C0A37203232393920560A36202D35393420560A36202D3137303120560A37203230373320560A36202D31333720560A37202D3139313320560A36203138333920560A362033313520560A37202D3231313520560A36203136303120560A372037353920560A36202D3233303420560A36203133353920560A37203131393320560A36202D3234373920560A37203131313420560A36203136313620560A36202D3236343220560A372038363820560A36203230323520560A37202D3237393020560A362036323220560A36203234313920560A37202D3239323320560A362033373620560A37203237393720560A36202D3330343220560A372031333320560A36203331353620560A36202D3331343420560A37202D31303820560A36203330313720560A37202D3237353320560A36202D33343520560A36203238353920560A37202D3233343720560A36202D35373620560A37203236393020560A36202D3139333620560A36202D38303220560A37203235313120560A36202D3135323220560A37202D3130323020560A36203233323420560A36202D3131303920560A37202D3132333120560A36203231333020560A37202D36393720560A36202D3134333220560A36203139323820560A37202D32383720560A36202D3136323420560A37203137323120560A362031313620560A37202D3138303620560A36203135313020560A362035313420560A37202D3139373720560A36203132393520560A372039303220560A36202D3231333520560A36203130373820560A37203132383020560A36202D3232383320560A372038363020560A36203136343620560A36202D3234313720560A372036343120560A36203139393920560A37202D3235333820560A362034323320560A36203233333720560A37202D3236343520560A362032303620560A37203236353820560A36202D3237333920560A36202D3720560A37203237313520560A36202D3235373120560A37202D32313820560A36203235373720560A37202D3232313320560A36202D34323320560A36203234323920560A37202D3138353120560A36202D36323320560A37203232373420560A36202D3134383720560A36202D38313820560A37203231313020560A36202D3131323120560A37202D3130303520560A36203139343020560A36202D37353820560A37202D3131383420560A36203137363420560A37202D33393820560A36202D3133353320560A36203135383220560A37202D343220560A36202D3135313520560A37203133393820560A362033303820560A36202D3136363620560A7374726F6B6520313635342031383833204D0A37203132303920560A362036353020560A37202D3138303820560A36203130323020560A372039383320560A36202D3139333820560A362038323820560A37203133303520560A36202D3230353720560A372036333720560A36203136313520560A36202D3231363420560A372034343620560A36203139313220560A37202D3232363020560A362032353720560A36203231393520560A37202D3233343420560A3620373020560A37203234303120560A36202D3233353320560A36202D31313320560A37203232383120560A36202D3230343220560A37202D32393220560A36203231353420560A36202D3137323820560A37202D34363720560A36203230323020560A37202D3134313120560A36202D36333620560A37203138373820560A36202D3130393520560A36202D37393920560A37203137333220560A36202D37383020560A37202D39353420560A36203135373920560A36202D34363820560A37202D3131303220560A36203134323320560A37202D31353920560A36202D3132343320560A36203132363420560A372031343320560A36202D3133373420560A37203131303220560A362034333820560A36202D3134393620560A372039333920560A362037323420560A37202D3136303820560A362037373420560A36203130303220560A37202D3137313120560A362036313020560A37203132363820560A36202D3138303420560A372034343720560A36203135323320560A36202D3138383620560A372032383520560A36203137363620560A37202D3139353920560A362031323520560A36203139393520560A37202D3230323020560A36202D333120560A37203139373120560A36202D3138333220560A36202D31383420560A37203138363320560A36202D3135363520560A37202D33333320560A36203137343920560A36202D3132393620560A37202D34373620560A36203136323920560A37202D3130323820560A36202D36313420560A36203135303420560A37202D37363120560A36202D37343520560A37203133373620560A36202D34393820560A37202D38373020560A36203132343420560A36202D32333820560A37202D39383820560A36203131313020560A3720313720560A36202D3130393920560A362039373420560A372032363520560A36202D3132303120560A372038333620560A362035303520560A36202D3132393520560A372036393920560A362037333720560A37202D3133383120560A362035363120560A362039353920560A37202D3134353720560A7374726F6B6520323332312032393139204D0A362034323520560A37203131373120560A36202D3135323620560A362032393020560A37203133373220560A36202D3135383420560A372031353720560A36203135363120560A37202D3136333420560A3620323820560A36203136343720560A37202D3135383520560A36202D393920560A37203135353820560A36202D3133363420560A36202D32323120560A37203134363320560A36202D3131343320560A37202D33333720560A36203133363220560A36202D39323120560A37202D34353020560A36203132353920560A37202D37303220560A36202D35353720560A36203131353320560A37202D34383620560A36202D36353920560A37203130343620560A36202D32373520560A36202D37353420560A372039333520560A36202D363820560A37202D38343220560A362038323420560A372031333220560A36202D39323420560A362037313320560A372033323520560A36202D39393820560A372036303120560A362035313120560A36202D3130363620560A372034393020560A362036383820560A37202D3131323520560A362033383020560A362038353620560A37202D3131373720560A362032373220560A37203130313420560A36202D3132323220560A362031363720560A37203131363120560A36202D3132353920560A3720363420560A36203132393820560A36202D3132383920560A37202D333420560A36203132333720560A37202D3131323520560A36202D31333120560A37203131363120560A36202D39353020560A36202D32323220560A37203130383120560A36202D37373620560A37202D33303820560A362039393820560A36202D36303420560A37202D33393120560A362039313420560A37202D34333620560A36202D34363720560A362038323820560A37202D32373320560A36202D35333920560A372037343220560A36202D31313420560A36202D36303520560A372036353520560A3620333920560A37202D36363520560A362035363820560A362031383520560A37202D37313820560A362034383220560A372033323420560A36202D37363720560A372033393720560A362034353520560A36202D38303820560A372033313420560A362035373820560A37202D38343320560A362032333320560A362036393220560A37202D38373320560A362031353420560A372037393820560A36202D38393720560A3620373920560A372038393320560A36202D39313320560A7374726F6B6520323938372033393233204D0A37203620560A362039303520560A36202D38353120560A37202D363220560A362038343420560A37202D37313920560A36202D31323820560A362037383320560A37202D35393120560A36202D31383820560A372037313920560A36202D34363620560A37202D32343520560A362036353620560A36202D33343520560A37202D32393720560A362035393220560A37202D32333020560A36202D33343420560A362035323820560A37202D31313820560A36202D33383720560A372034363520560A36202D313420560A36202D34323420560A372034303220560A3620383520560A37202D34353720560A362033343220560A362031373720560A37202D34383520560A362032383320560A372032363120560A36202D35303720560A362032323620560A372033333820560A36202D35323420560A372031373020560A362034303920560A37202D35333820560A362031313920560A362034373020560A37202D35343620560A3620373120560A372035323320560A36202D35343920560A3620323520560A372035353920560A36202D35333820560A37202D313820560A362035313520560A36202D34353120560A37202D353620560A362034373020560A37202D33363820560A36202D393120560A362034323620560A37202D32393020560A36202D31323120560A372033383220560A36202D32313620560A36202D31343720560A372033333820560A36202D31343720560A37202D31373020560A362032393620560A37202D383320560A36202D31383920560A362032353620560A37202D323720560A36202D32303320560A372032313720560A3620323520560A36202D32313320560A372031383020560A3620363920560A37202D32313920560A362031343620560A362031303720560A37202D32323220560A362031313520560A372031333720560A36202D32323020560A3620383620560A372031363220560A36202D32313620560A3720363120560A362031373920560A36202D32303720560A3720333920560A362031383920560A37202D31393620560A3620323020560A372031393420560A36202D31383320560A36203520560A372031373320560A36202D31343720560A37202D3720560A362031343420560A36202D31303820560A37202D313520560A362031313720560A37202D373520560A7374726F6B6520333635342034373731204D0A36202D313920560A3620393120560A37202D343620560A36202D323020560A3720363720560A36202D323420560A36202D313720560A3720343620560A36202D3820560A37202D313120560A3620323720560A36203120560A37202D3120560A3620313220560A37203020560A36202D313220560A37203120560A36202D3120560A36202D323720560A3720313120560A36203820560A37202D343620560A3620313720560A3620323420560A37202D363720560A3620323020560A3720343620560A36202D393120560A3620313920560A3720373520560A36202D31313720560A3720313520560A362031303820560A36202D31343420560A37203720560A362031343720560A37202D31373320560A36202D3520560A362031383320560A37202D31393420560A36202D323020560A372031393620560A36202D31383920560A37202D333920560A362032303720560A36202D31373920560A37202D363120560A362032313620560A37202D31363220560A36202D383620560A362032323020560A37202D31333720560A36202D31313520560A372032323220560A36202D31303720560A36202D31343620560A372032313920560A36202D363920560A37202D31383020560A362032313320560A36202D323520560A37202D32313720560A362032303320560A3720323720560A36202D32353620560A362031383920560A3720383320560A36202D32393620560A372031373020560A362031343720560A37202D33333820560A362031343720560A362032313620560A37202D33383220560A362031323120560A372032393020560A36202D34323620560A3620393120560A372033363820560A36202D34373020560A3720353620560A362034353120560A36202D35313520560A3720313820560A362035333820560A37202D35353920560A36202D323520560A362035343920560A37202D35323320560A36202D373120560A372035343620560A36202D34373020560A36202D31313920560A372035333820560A36202D34303920560A37202D31373020560A362035323420560A37202D33333820560A36202D32323620560A362035303720560A37202D32363120560A36202D32383320560A372034383520560A36202D31373720560A7374726F6B6520343332302034333834204D0A36202D33343220560A372034353720560A36202D383520560A37202D34303220560A362034323420560A3620313420560A37202D34363520560A362033383720560A372031313820560A36202D35323820560A362033343420560A372032333020560A36202D35393220560A372032393720560A362033343520560A36202D36353620560A372032343520560A362034363620560A37202D37313920560A362031383820560A372035393120560A36202D37383320560A362031323820560A372037313920560A36202D38343420560A3720363220560A362038353120560A36202D39303520560A37202D3620560A362039313320560A37202D38393320560A36202D373920560A362038393720560A37202D37393820560A36202D31353420560A372038373320560A36202D36393220560A36202D32333320560A372038343320560A36202D35373820560A37202D33313420560A362038303820560A36202D34353520560A37202D33393720560A362037363720560A37202D33323420560A36202D34383220560A372037313820560A36202D31383520560A36202D35363820560A372036363520560A36202D333920560A37202D36353520560A362036303520560A362031313420560A37202D37343220560A362035333920560A372032373320560A36202D38323820560A362034363720560A372034333620560A36202D39313420560A372033393120560A362036303420560A36202D39393820560A372033303820560A362037373620560A37202D3130383120560A362032323220560A362039353020560A37202D3131363120560A362031333120560A37203131323520560A36202D3132333720560A3720333420560A36203132383920560A36202D3132393820560A37202D363420560A36203132353920560A37202D3131363120560A36202D31363720560A36203132323220560A37202D3130313420560A36202D32373220560A37203131373720560A36202D38353620560A36202D33383020560A37203131323520560A36202D36383820560A37202D34393020560A36203130363620560A36202D35313120560A37202D36303120560A362039393820560A37202D33323520560A36202D37313320560A362039323420560A37202D31333220560A36202D38323420560A372038343220560A3620363820560A37202D39333520560A362037353420560A362032373520560A7374726F6B6520343938362034313433204D0A37202D3130343620560A362036353920560A372034383620560A36202D3131353320560A362035353720560A372037303220560A36202D3132353920560A372034353020560A362039323120560A36202D3133363220560A372033333720560A36203131343320560A37202D3134363320560A362032323120560A36203133363420560A37202D3135353820560A3620393920560A37203135383520560A36202D3136343720560A36202D323820560A37203136333420560A36202D3135363120560A37202D31353720560A36203135383420560A37202D3133373220560A36202D32393020560A36203135323620560A37202D3131373120560A36202D34323520560A37203134353720560A36202D39353920560A36202D35363120560A37203133383120560A36202D37333720560A37202D36393920560A36203132393520560A36202D35303520560A37202D38333620560A36203132303120560A37202D32363520560A36202D39373420560A36203130393920560A37202D313720560A36202D3131313020560A372039383820560A362032333820560A36202D3132343420560A372038373020560A362034393820560A37202D3133373620560A362037343520560A372037363120560A36202D3135303420560A362036313420560A37203130323820560A36202D3136323920560A372034373620560A36203132393620560A36202D3137343920560A372033333320560A36203135363520560A37202D3138363320560A362031383420560A36203138333220560A37202D3139373120560A3620333120560A37203230323020560A36202D3139393520560A36202D31323520560A37203139353920560A36202D3137363620560A37202D32383520560A36203138383620560A36202D3135323320560A37202D34343720560A36203138303420560A37202D3132363820560A36202D36313020560A37203137313120560A36202D3130303220560A36202D37373420560A37203136303820560A36202D37323420560A37202D39333920560A36203134393620560A36202D34333820560A37202D3131303220560A36203133373420560A37202D31343320560A36202D3132363420560A36203132343320560A372031353920560A36202D3134323320560A37203131303220560A362034363820560A36202D3135373920560A372039353420560A362037383020560A37202D3137333220560A362037393920560A36203130393520560A37202D3138373820560A362036333620560A37203134313120560A7374726F6B6520353635332034333030204D0A36202D3230323020560A372034363720560A36203137323820560A36202D3231353420560A372032393220560A36203230343220560A37202D3232383120560A362031313320560A36203233353320560A37202D3234303120560A36202D373020560A37203233343420560A36202D3231393520560A36202D32353720560A37203232363020560A36202D3139313220560A37202D34343620560A36203231363420560A36202D3136313520560A37202D36333720560A36203230353720560A37202D3133303520560A36202D38323820560A36203139333820560A37202D39383320560A36202D3130323020560A37203138303820560A36202D36353020560A37202D3132303920560A36203136363620560A36202D33303820560A37202D3133393820560A36203135313520560A3720343220560A36202D3135383220560A36203133353320560A372033393820560A36202D3137363420560A37203131383420560A362037353820560A36202D3139343020560A37203130303520560A36203131323120560A37202D3231313020560A362038313820560A36203134383720560A37202D3232373420560A362036323320560A37203138353120560A36202D3234323920560A362034323320560A37203232313320560A36202D3235373720560A372032313820560A36203235373120560A37202D3237313520560A36203720560A36203237333920560A37202D3236353820560A36202D32303620560A37203236343520560A36202D3233333720560A36202D34323320560A37203235333820560A36202D3139393920560A37202D36343120560A36203234313720560A36202D3136343620560A37202D38363020560A36203232383320560A37202D3132383020560A36202D3130373820560A36203231333520560A37202D39303220560A36202D3132393520560A37203139373720560A36202D35313420560A36202D3135313020560A37203138303620560A36202D31313620560A37202D3137323120560A36203136323420560A372032383720560A36202D3139323820560A36203134333220560A372036393720560A36202D3231333020560A37203132333120560A36203131303920560A36202D3233323420560A37203130323020560A36203135323220560A37202D3235313120560A362038303220560A36203139333620560A37202D3236393020560A362035373620560A37203233343720560A36202D3238353920560A362033343520560A37203237353320560A36202D3330313720560A372031303820560A36203331343420560A7374726F6B6520363331392034383637204D0A36202D3331353620560A37202D31333320560A36203330343220560A37202D3237393720560A36202D33373620560A37203239323320560A36202D3234313920560A36202D36323220560A37203237393020560A36202D3230323520560A37202D38363820560A36203236343220560A36202D3136313620560A37202D3131313420560A36203234373920560A37202D3131393320560A36202D3133353920560A36203233303420560A37202D37353920560A36202D3136303120560A37203231313520560A36202D33313520560A36202D3138333920560A37203139313320560A362031333720560A37202D3230373320560A36203137303120560A362035393420560A37202D3232393920560A36203134373720560A37203130353520560A36202D3235313920560A37203132343420560A36203135313820560A36202D3237333120560A37203130303120560A36203139383120560A37202D3239333220560A362037353020560A36203234343120560A37202D3331323420560A362034393420560A37203238393520560A36202D3333303420560A362032333120560A37203333343320560A36202D3334373020560A37202D333720560A36203334343820560A36202D3332393020560A37202D33303820560A36203333323020560A37202D3238373420560A36202D35383120560A36203331373620560A37202D3234343020560A36202D38353520560A37203330313620560A36202D3139383920560A37202D3131323920560A36203238333920560A36202D3135323320560A37202D3134303120560A36203236343720560A37202D3130343320560A36202D3136373120560A36203234343120560A37202D35353320560A36202D3139333620560A37203232323120560A36202D353420560A36202D3231393620560A37203139383720560A362034353220560A37202D3234353020560A36203137343420560A362039363120560A37202D3236393520560A36203134383720560A37203134373420560A36202D3239333220560A36203132323220560A37203139383520560A36202D3331353720560A372039343720560A36203234393420560A37202D3333373220560A362036363520560A36203239393920560A37202D3335373520560A362033373620560A37203334393620560A36202D3337363320560A3620383220560A37203338363320560A36202D3338313720560A37202D32313620560A36203337323820560A2520456E6420706C6F742023310A7374726F6B650A322E30303020554C0A4C54620A4C436220736574726762636F6C6F720A312E30303020554C0A4C54420A4C436220736574726762636F6C6F720A3534362034383731204E0A35343620323830204C0A36343031203020560A30203435393120560A2D36343031203020560A5A207374726F6B650A312E3030302055500A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A7374726F6B650A67726573746F72650A656E640A73686F77706167650A2525547261696C65720A2525446F63756D656E74466F6E74733A2048656C7665746963610A>|ps>||||><name|>
+  </with>>
+
+  <samp|<center|<verbatim|set samples 1000; plot [-512:512][0:512]
+  abs(x*sin(abs(x)))>>>
+
+  Data la simmetria possiamo analizzare solo il lato positvo [0,512].\ 
+
+  Se scegliamo di rapresentare <math|S> con l'aritmetica a virgola fissa, e
+  scegliamo come lunghezza della catena <math|n=10> possiamo rapresentare
+  1024 soluzioni.
+
+  Lo spazio di ricerca sara' dunque:\ 
+
+  <\equation*>
+    x=<frac|512|1023>S<space|2em>S\<in\><around*|{|0,1,\<ldots\>,1023|}>
+  </equation*>
+
+  \;
+
+  La precisione dunque e' solo di <math|\<sim\>0.5> (<math|<frac|513|1023>>).
+
+  Per aumentare la precisione bisogna dunque il numero di bit, inoltre con
+  <math|S> piu' grandi il problema sarebbe ancora piu' grande.
+
+  Per il nostro esempio su <math|f<around*|(|x|)>> l'AG avra' <math|N=50>
+  individui i quali risultati sono per una esecuzione specifica:
+
+  <center|<tabular|<tformat|<cwith|1|1|1|-1|cell-background|pastel
+  grey>|<table|<row|<cell|Generazione>|<cell|Migliore Fitness>|<cell|Fitness
+  Media>>|<row|<cell|0>|<cell|104>|<cell|268>>|<row|<cell|3>|<cell|52>|<cell|78>>|<row|<cell|9>|<cell|0.00178>|<cell|32>>|<row|<cell|<math|\<vdots\>>>|<cell|<math|\<vdots\>>>|<cell|<math|\<vdots\>>>>|<row|<cell|69>|<cell|0.00178
+  (global)>|<cell|0.15>>>>>>
+
+  Abbiamo trovato il minimo globale dopo solo 9 generazioni, lo sforzo di
+  calcolo e' dunque solo 50<math|\<times\>>9.
+
+  Vediamo anche in questo esempio che la fitness media tende a quella
+  ottimale, questo riflette il fatto che tutti gli individui tendono a quello
+  ottimale.
+
+  Per problemi piu' complessi bisogno utilizzare rparessentazioni a virgola
+  flottante. In questo cas le mutazioni e il crossover verranno applicate si
+  sulla base che sull'esponente. Le probabilita' della base e del esponente
+  non saranno necessariamente uguale.
+
+  Con questo le AG possono muoversi in paesaggi molto complicati.
+
+  <subsection|Altri metodi di selezione>
+
+  <\equation*>
+    P<around*|(|*t|)><below|\<longminus\>\<rightarrow\>|selection>P<rsup|1><around*|(|t|)>
+  </equation*>
+
+  La selezione e' una operazione stocastica che produce <math|n> individui in
+  <math|P<rsup|1>> a partire dagli <math|n> individui di <math|P>.\ 
+
+  <\itemize>
+    <item>Selezione proporzionale alla fitness:
+
+    <\equation*>
+      p<rsub|i>=<frac|f<rsub|i>|<big|sum><rsub|j>f<rsub|j>>
+    </equation*>
+
+    Se <math|f<rsub|>> e' negativa si puo sempre aggiungere una costante
+    <math|C> in modo che <math|f<rsub|i>+C\<gtr\>0<space|1em>\<forall\>i>.
+
+    Mano a mano che l'evoluzione continua gli individui si somigliano sempre
+    di piu' e quindi diviene molto difficili da distinguere. Dunque per
+    migliorare il processo di selezione si puo' redefinire il \ la fitness
+    come:
+
+    <\equation*>
+      f<rsub|t>=f<rsub|i>-<below|min|j\<in\>P><around*|(|f<rsub|j>|)>
+    </equation*>
+
+    <with|gr-mode|<tuple|edit|carc>|gr-frame|<tuple|scale|1cm|<tuple|0.5gw|0.5gh>>|gr-geometry|<tuple|geometry|1par|0.11335par|center>|gr-arrow-end|\|\<gtr\>|gr-arrow-begin|\<less\>\||gr-grid|<tuple|empty>|gr-grid-old|<tuple|cartesian|<point|0|0>|1>|gr-edit-grid-aspect|<tuple|<tuple|axes|none>|<tuple|1|none>|<tuple|10|none>>|gr-edit-grid|<tuple|empty>|gr-edit-grid-old|<tuple|cartesian|<point|0|0>|1>|<graphics||<with|arrow-end|\||arrow-begin|\||<line|<point|-6|0>|<point|6.0|0.0>>>|<with|arrow-end|\||arrow-begin|\||<line|<point|6|0>|<point|3.0|0.0>>>|<text-at|0|<point|-6|-0.4>>|<text-at|<math|f<rsub|max>>|<point|6|-0.4>>|<text-at|<math|f<rsub|min>>|<point|3|-0.4>>|<with|arrow-end|\|\<gtr\>|arrow-begin|\<less\>\||<line|<point|3|0.3>|<point|6.0|0.3>>>>>
+
+    Si ridefinisce l'intervallo dei valori di fitness in uno piu'
+    significativo.
+
+    <item>Selezione per rango:
+
+    Si ordinano gli individui in base alla loro fitness dalla migliore alla
+    meno buona, questo gli dona quindi un rango compreso tra
+    <math|1\<ldots\>n>, indipendente dal valore numerico della fitness.
+
+    La probabilita' di selezionare l'individuo <math|i> sara' una funzione
+    dipendente dal suo rango.
+
+    <with|prog-scripts|gnuplot|<image|<tuple|<#252150532D41646F62652D322E3020455053462D322E300A25255469746C653A2074656D702E6570730A252543726561746F723A20676E75706C6F7420352E302070617463686C6576656C20330A25254372656174696F6E446174653A204D6F6E204E6F762031342031323A31343A343120323031360A2525446F63756D656E74466F6E74733A20286174656E64290A2525426F756E64696E67426F783A20353020353020343130203330320A2525456E64436F6D6D656E74730A2525426567696E50726F6C6F670A2F676E7564696374203235362064696374206465660A676E756469637420626567696E0A250A252054686520666F6C6C6F77696E6720747275652F66616C736520666C616773206D6179206265206564697465642062792068616E6420696620646573697265642E0A252054686520756E6974206C696E6520776964746820616E6420677261797363616C6520696D6167652067616D6D6120636F7272656374696F6E206D617920616C736F206265206368616E6765642E0A250A2F436F6C6F722066616C7365206465660A2F426C61636B746578742066616C7365206465660A2F536F6C69642066616C7365206465660A2F446173686C656E6774682031206465660A2F4C616E6473636170652066616C7365206465660A2F4C6576656C312066616C7365206465660A2F4C6576656C332066616C7365206465660A2F526F756E6465642066616C7365206465660A2F436C6970546F426F756E64696E67426F782066616C7365206465660A2F53757070726573735044464D61726B2066616C7365206465660A2F5472616E73706172656E745061747465726E732066616C7365206465660A2F676E756C696E65776964746820352E303030206465660A2F757365726C696E65776964746820676E756C696E657769647468206465660A2F47616D6D6120312E30206465660A2F4261636B67726F756E64436F6C6F72207B2D312E303030202D312E303030202D312E3030307D206465660A250A2F767368696674202D3436206465660A2F646C31207B0A202031302E3020446173686C656E67746820757365726C696E65776964746820676E756C696E65776964746820646976206D756C206D756C206D756C0A2020526F756E646564207B2063757272656E746C696E65776964746820302E3735206D756C20737562206475702030206C65207B20706F7020302E3031207D206966207D2069660A7D206465660A2F646C32207B0A202031302E3020446173686C656E67746820757365726C696E65776964746820676E756C696E65776964746820646976206D756C206D756C206D756C0A2020526F756E646564207B2063757272656E746C696E65776964746820302E3735206D756C20616464207D2069660A7D206465660A2F6870745F2033312E35206465660A2F7670745F2033312E35206465660A2F687074206870745F206465660A2F767074207670745F206465660A2F646F636C6970207B0A2020436C6970546F426F756E64696E67426F78207B0A202020206E657770617468203530203530206D6F7665746F20343130203530206C696E65746F2034313020333032206C696E65746F20353020333032206C696E65746F20636C6F7365706174680A20202020636C69700A20207D2069660A7D206465660A250A2520476E75706C6F742050726F6C6F672056657273696F6E20352E3120284F63742032303135290A250A252F53757070726573735044464D61726B2074727565206465660A250A2F4D207B6D6F7665746F7D2062696E64206465660A2F4C207B6C696E65746F7D2062696E64206465660A2F52207B726D6F7665746F7D2062696E64206465660A2F56207B726C696E65746F7D2062696E64206465660A2F4E207B6E657770617468206D6F7665746F7D2062696E64206465660A2F5A207B636C6F7365706174687D2062696E64206465660A2F43207B736574726762636F6C6F727D2062696E64206465660A2F66207B726C696E65746F2066696C6C7D2062696E64206465660A2F67207B736574677261797D2062696E64206465660A2F4773686F77207B73686F777D2064656620202025204D6179206265207265646566696E6564206C6174657220696E207468652066696C6520746F20737570706F7274205554462D380A2F76707432207670742032206D756C206465660A2F68707432206870742032206D756C206465660A2F4C73686F77207B63757272656E74706F696E74207374726F6B65204D2030207673686966742052200A09426C61636B74657874207B677361766520302073657467726179207465787473686F772067726573746F72657D207B7465787473686F777D206966656C73657D206465660A2F5273686F77207B63757272656E74706F696E74207374726F6B65204D2064757020737472696E67776964746820706F70206E65672076736869667420520A09426C61636B74657874207B677361766520302073657467726179207465787473686F772067726573746F72657D207B7465787473686F777D206966656C73657D206465660A2F4373686F77207B63757272656E74706F696E74207374726F6B65204D2064757020737472696E67776964746820706F70202D3220646976207673686966742052200A09426C61636B74657874207B677361766520302073657467726179207465787473686F772067726573746F72657D207B7465787473686F777D206966656C73657D206465660A2F5550207B647570207670745F206D756C202F767074206578636820646566206870745F206D756C202F6870742065786368206465660A20202F68707432206870742032206D756C20646566202F76707432207670742032206D756C206465667D206465660A2F444C207B436F6C6F72207B736574726762636F6C6F7220536F6C6964207B706F70205B5D7D206966203020736574646173687D0A207B706F7020706F7020706F702030207365746772617920536F6C6964207B706F70205B5D7D206966203020736574646173687D206966656C73657D206465660A2F424C207B7374726F6B6520757365726C696E6577696474682032206D756C207365746C696E6577696474680A09526F756E646564207B31207365746C696E656A6F696E2031207365746C696E656361707D2069667D206465660A2F414C207B7374726F6B6520757365726C696E657769647468203220646976207365746C696E6577696474680A09526F756E646564207B31207365746C696E656A6F696E2031207365746C696E656361707D2069667D206465660A2F554C207B64757020676E756C696E657769647468206D756C202F757365726C696E6577696474682065786368206465660A096475702031206C74207B706F7020317D206966203130206D756C202F75646C2065786368206465667D206465660A2F504C207B7374726F6B6520757365726C696E657769647468207365746C696E6577696474680A09526F756E646564207B31207365746C696E656A6F696E2031207365746C696E656361707D2069667D206465660A332E38207365746D697465726C696D69740A2520436C6173736963204C696E6520636F6C6F7273202876657273696F6E20352E30290A2F4C4377207B31203120317D206465660A2F4C4362207B30203020307D206465660A2F4C4361207B30203020307D206465660A2F4C4330207B31203020307D206465660A2F4C4331207B30203120307D206465660A2F4C4332207B30203020317D206465660A2F4C4333207B31203020317D206465660A2F4C4334207B30203120317D206465660A2F4C4335207B31203120307D206465660A2F4C4336207B30203020307D206465660A2F4C4337207B3120302E3320307D206465660A2F4C4338207B302E3520302E3520302E357D206465660A252044656661756C742064617368207061747465726E73202876657273696F6E20352E30290A2F4C5442207B424C205B5D204C436220444C7D206465660A2F4C5477207B504C205B5D203120736574677261797D206465660A2F4C5462207B504C205B5D204C436220444C7D206465660A2F4C5461207B414C205B312075646C206D756C20322075646C206D756C5D20302073657464617368204C436120736574726762636F6C6F727D206465660A2F4C5430207B504C205B5D204C433020444C7D206465660A2F4C5431207B504C205B3220646C31203320646C325D204C433120444C7D206465660A2F4C5432207B504C205B3120646C3120312E3520646C325D204C433220444C7D206465660A2F4C5433207B504C205B3620646C31203220646C32203120646C31203220646C325D204C433320444C7D206465660A2F4C5434207B504C205B3120646C31203220646C32203620646C31203220646C32203120646C31203220646C325D204C433420444C7D206465660A2F4C5435207B504C205B3420646C31203220646C325D204C433520444C7D206465660A2F4C5436207B504C205B312E3520646C3120312E3520646C3220312E3520646C3120312E3520646C3220312E3520646C31203620646C325D204C433620444C7D206465660A2F4C5437207B504C205B3320646C31203320646C32203120646C31203320646C325D204C433720444C7D206465660A2F4C5438207B504C205B3220646C31203220646C32203220646C31203620646C325D204C433820444C7D206465660A2F534C207B5B5D203020736574646173687D206465660A2F506E74207B7374726F6B65205B5D203020736574646173682067736176652031207365746C696E65636170204D203020302056207374726F6B652067726573746F72657D206465660A2F446961207B7374726F6B65205B5D20302073657464617368203220636F70792076707420616464204D0A2020687074206E656720767074206E656720562068707420767074206E656720560A202068707420767074205620687074206E656720767074205620636C6F736570617468207374726F6B650A2020506E747D206465660A2F506C73207B7374726F6B65205B5D203020736574646173682076707420737562204D2030207670743220560A202063757272656E74706F696E74207374726F6B65204D0A2020687074206E656720767074206E65672052206870743220302056207374726F6B650A207D206465660A2F426F78207B7374726F6B65205B5D20302073657464617368203220636F70792065786368206870742073756220657863682076707420616464204D0A2020302076707432206E656720562068707432203020562030207670743220560A202068707432206E65672030205620636C6F736570617468207374726F6B650A2020506E747D206465660A2F437273207B7374726F6B65205B5D203020736574646173682065786368206870742073756220657863682076707420616464204D0A2020687074322076707432206E656720562063757272656E74706F696E74207374726F6B65204D0A202068707432206E656720302052206870743220767074322056207374726F6B657D206465660A2F54726955207B7374726F6B65205B5D20302073657464617368203220636F70792076707420312E3132206D756C20616464204D0A2020687074206E656720767074202D312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E65672076707420312E3632206D756C205620636C6F736570617468207374726F6B650A2020506E747D206465660A2F53746172207B3220636F707920506C73204372737D206465660A2F426F7846207B7374726F6B65205B5D203020736574646173682065786368206870742073756220657863682076707420616464204D0A2020302076707432206E656720562068707432203020562030207670743220560A202068707432206E65672030205620636C6F7365706174682066696C6C7D206465660A2F5472695546207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20616464204D0A2020687074206E656720767074202D312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E65672076707420312E3632206D756C205620636C6F7365706174682066696C6C7D206465660A2F54726944207B7374726F6B65205B5D20302073657464617368203220636F70792076707420312E3132206D756C20737562204D0A2020687074206E65672076707420312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E656720767074202D312E3632206D756C205620636C6F736570617468207374726F6B650A2020506E747D206465660A2F5472694446207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20737562204D0A2020687074206E65672076707420312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E656720767074202D312E3632206D756C205620636C6F7365706174682066696C6C7D206465660A2F44696146207B7374726F6B65205B5D203020736574646173682076707420616464204D0A2020687074206E656720767074206E656720562068707420767074206E656720560A202068707420767074205620687074206E656720767074205620636C6F7365706174682066696C6C7D206465660A2F50656E74207B7374726F6B65205B5D20302073657464617368203220636F70792067736176650A20207472616E736C617465203020687074204D2034207B373220726F74617465203020687074204C7D207265706561740A2020636C6F736570617468207374726F6B652067726573746F726520506E747D206465660A2F50656E7446207B7374726F6B65205B5D203020736574646173682067736176650A20207472616E736C617465203020687074204D2034207B373220726F74617465203020687074204C7D207265706561740A2020636C6F7365706174682066696C6C2067726573746F72657D206465660A2F436972636C65207B7374726F6B65205B5D20302073657464617368203220636F70790A202068707420302033363020617263207374726F6B6520506E747D206465660A2F436972636C6546207B7374726F6B65205B5D2030207365746461736820687074203020333630206172632066696C6C7D206465660A2F4330207B424C205B5D20302073657464617368203220636F7079206D6F7665746F2076707420393020343530206172637D2062696E64206465660A2F4331207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420302039302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4332207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F707920767074203930203138302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4333207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F7079207670742030203138302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4334207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420313830203237302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4335207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F7079207670742030203930206172630A093220636F7079206D6F7665746F0A093220636F70792076707420313830203237302061726320636C6F7365706174682066696C6C0A09767074203020333630206172637D2062696E64206465660A2F4336207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F707920767074203930203237302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4337207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F7079207670742030203237302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4338207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420323730203336302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4339207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420323730203435302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F433130207B424C205B5D20302073657464617368203220636F7079203220636F7079206D6F7665746F2076707420323730203336302061726320636C6F7365706174682066696C6C0A093220636F7079206D6F7665746F0A093220636F707920767074203930203138302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F433131207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F7079207670742030203138302061726320636C6F7365706174682066696C6C0A093220636F7079206D6F7665746F0A093220636F70792076707420323730203336302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F433132207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420313830203336302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F433133207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420302039302061726320636C6F7365706174682066696C6C0A093220636F7079206D6F7665746F0A093220636F70792076707420313830203336302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F433134207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F707920767074203930203336302061726320636C6F7365706174682066696C6C0A09767074203020333630206172637D2062696E64206465660A2F433135207B424C205B5D20302073657464617368203220636F7079207670742030203336302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F526563207B6E6577706174682034203220726F6C6C206D6F7665746F203120696E646578203020726C696E65746F2030206578636820726C696E65746F0A096E6567203020726C696E65746F20636C6F7365706174687D2062696E64206465660A2F537175617265207B647570205265637D2062696E64206465660A2F42737175617265207B767074207375622065786368207670742073756220657863682076707432205371756172657D2062696E64206465660A2F5330207B424C205B5D20302073657464617368203220636F7079206D6F7665746F20302076707420726C696E65746F20424C20427371756172657D2062696E64206465660A2F5331207B424C205B5D20302073657464617368203220636F707920767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5332207B424C205B5D20302073657464617368203220636F707920657863682076707420737562206578636820767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5333207B424C205B5D20302073657464617368203220636F7079206578636820767074207375622065786368207670743220767074205265632066696C6C20427371756172657D2062696E64206465660A2F5334207B424C205B5D20302073657464617368203220636F7079206578636820767074207375622065786368207670742073756220767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5335207B424C205B5D20302073657464617368203220636F7079203220636F707920767074205371756172652066696C6C0A096578636820767074207375622065786368207670742073756220767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5336207B424C205B5D20302073657464617368203220636F70792065786368207670742073756220657863682076707420737562207670742076707432205265632066696C6C20427371756172657D2062696E64206465660A2F5337207B424C205B5D20302073657464617368203220636F70792065786368207670742073756220657863682076707420737562207670742076707432205265632066696C6C0A093220636F707920767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5338207B424C205B5D20302073657464617368203220636F7079207670742073756220767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5339207B424C205B5D20302073657464617368203220636F70792076707420737562207670742076707432205265632066696C6C20427371756172657D2062696E64206465660A2F533130207B424C205B5D20302073657464617368203220636F7079207670742073756220767074205371756172652066696C6C203220636F707920657863682076707420737562206578636820767074205371756172652066696C6C0A09427371756172657D2062696E64206465660A2F533131207B424C205B5D20302073657464617368203220636F7079207670742073756220767074205371756172652066696C6C203220636F7079206578636820767074207375622065786368207670743220767074205265632066696C6C0A09427371756172657D2062696E64206465660A2F533132207B424C205B5D20302073657464617368203220636F70792065786368207670742073756220657863682076707420737562207670743220767074205265632066696C6C20427371756172657D2062696E64206465660A2F533133207B424C205B5D20302073657464617368203220636F70792065786368207670742073756220657863682076707420737562207670743220767074205265632066696C6C0A093220636F707920767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F533134207B424C205B5D20302073657464617368203220636F70792065786368207670742073756220657863682076707420737562207670743220767074205265632066696C6C0A093220636F707920657863682076707420737562206578636820767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F533135207B424C205B5D20302073657464617368203220636F707920427371756172652066696C6C20427371756172657D2062696E64206465660A2F4430207B6773617665207472616E736C61746520343520726F7461746520302030205330207374726F6B652067726573746F72657D2062696E64206465660A2F4431207B6773617665207472616E736C61746520343520726F7461746520302030205331207374726F6B652067726573746F72657D2062696E64206465660A2F4432207B6773617665207472616E736C61746520343520726F7461746520302030205332207374726F6B652067726573746F72657D2062696E64206465660A2F4433207B6773617665207472616E736C61746520343520726F7461746520302030205333207374726F6B652067726573746F72657D2062696E64206465660A2F4434207B6773617665207472616E736C61746520343520726F7461746520302030205334207374726F6B652067726573746F72657D2062696E64206465660A2F4435207B6773617665207472616E736C61746520343520726F7461746520302030205335207374726F6B652067726573746F72657D2062696E64206465660A2F4436207B6773617665207472616E736C61746520343520726F7461746520302030205336207374726F6B652067726573746F72657D2062696E64206465660A2F4437207B6773617665207472616E736C61746520343520726F7461746520302030205337207374726F6B652067726573746F72657D2062696E64206465660A2F4438207B6773617665207472616E736C61746520343520726F7461746520302030205338207374726F6B652067726573746F72657D2062696E64206465660A2F4439207B6773617665207472616E736C61746520343520726F7461746520302030205339207374726F6B652067726573746F72657D2062696E64206465660A2F443130207B6773617665207472616E736C61746520343520726F746174652030203020533130207374726F6B652067726573746F72657D2062696E64206465660A2F443131207B6773617665207472616E736C61746520343520726F746174652030203020533131207374726F6B652067726573746F72657D2062696E64206465660A2F443132207B6773617665207472616E736C61746520343520726F746174652030203020533132207374726F6B652067726573746F72657D2062696E64206465660A2F443133207B6773617665207472616E736C61746520343520726F746174652030203020533133207374726F6B652067726573746F72657D2062696E64206465660A2F443134207B6773617665207472616E736C61746520343520726F746174652030203020533134207374726F6B652067726573746F72657D2062696E64206465660A2F443135207B6773617665207472616E736C61746520343520726F746174652030203020533135207374726F6B652067726573746F72657D2062696E64206465660A2F44696145207B7374726F6B65205B5D203020736574646173682076707420616464204D0A2020687074206E656720767074206E656720562068707420767074206E656720560A202068707420767074205620687074206E656720767074205620636C6F736570617468207374726F6B657D206465660A2F426F7845207B7374726F6B65205B5D203020736574646173682065786368206870742073756220657863682076707420616464204D0A2020302076707432206E656720562068707432203020562030207670743220560A202068707432206E65672030205620636C6F736570617468207374726F6B657D206465660A2F5472695545207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20616464204D0A2020687074206E656720767074202D312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E65672076707420312E3632206D756C205620636C6F736570617468207374726F6B657D206465660A2F5472694445207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20737562204D0A2020687074206E65672076707420312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E656720767074202D312E3632206D756C205620636C6F736570617468207374726F6B657D206465660A2F50656E7445207B7374726F6B65205B5D203020736574646173682067736176650A20207472616E736C617465203020687074204D2034207B373220726F74617465203020687074204C7D207265706561740A2020636C6F736570617468207374726F6B652067726573746F72657D206465660A2F4369726345207B7374726F6B65205B5D20302073657464617368200A202068707420302033363020617263207374726F6B657D206465660A2F4F7061717565207B677361766520636C6F736570617468203120736574677261792066696C6C2067726573746F72652030207365746772617920636C6F7365706174687D206465660A2F44696157207B7374726F6B65205B5D203020736574646173682076707420616464204D0A2020687074206E656720767074206E656720562068707420767074206E656720560A202068707420767074205620687074206E6567207670742056204F7061717565207374726F6B657D206465660A2F426F7857207B7374726F6B65205B5D203020736574646173682065786368206870742073756220657863682076707420616464204D0A2020302076707432206E656720562068707432203020562030207670743220560A202068707432206E656720302056204F7061717565207374726F6B657D206465660A2F5472695557207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20616464204D0A2020687074206E656720767074202D312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E65672076707420312E3632206D756C2056204F7061717565207374726F6B657D206465660A2F5472694457207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20737562204D0A2020687074206E65672076707420312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E656720767074202D312E3632206D756C2056204F7061717565207374726F6B657D206465660A2F50656E7457207B7374726F6B65205B5D203020736574646173682067736176650A20207472616E736C617465203020687074204D2034207B373220726F74617465203020687074204C7D207265706561740A20204F7061717565207374726F6B652067726573746F72657D206465660A2F4369726357207B7374726F6B65205B5D20302073657464617368200A202068707420302033363020617263204F7061717565207374726F6B657D206465660A2F426F7846696C6C207B677361766520526563203120736574677261792066696C6C2067726573746F72657D206465660A2F44656E73697479207B0A20202F46696C6C64656E2065786368206465660A202063757272656E74726762636F6C6F720A20202F436F6C42206578636820646566202F436F6C47206578636820646566202F436F6C522065786368206465660A20202F436F6C5220436F6C522046696C6C64656E206D756C2046696C6C64656E20737562203120616464206465660A20202F436F6C4720436F6C472046696C6C64656E206D756C2046696C6C64656E20737562203120616464206465660A20202F436F6C4220436F6C422046696C6C64656E206D756C2046696C6C64656E20737562203120616464206465660A2020436F6C5220436F6C4720436F6C4220736574726762636F6C6F727D206465660A2F426F78436F6C46696C6C207B67736176652052656320506F6C7946696C6C7D206465660A2F506F6C7946696C6C207B67736176652044656E736974792066696C6C2067726573746F72652067726573746F72657D206465660A2F68207B726C696E65746F20726C696E65746F20726C696E65746F20677361766520636C6F7365706174682066696C6C2067726573746F72657D2062696E64206465660A250A2520506F7374536372697074204C6576656C2031205061747465726E2046696C6C20726F7574696E6520666F722072656374616E676C65730A252055736167653A207820792077206820732061205858205061747465726E46696C6C0A2509782C79203D206C6F776572206C65667420636F726E6572206F6620626F7820746F2062652066696C6C65640A2509772C68203D20776964746820616E6420686569676874206F6620626F780A2509202061203D20616E676C6520696E2064656772656573206265747765656E206C696E657320616E6420782D617869730A2509205858203D20302F3120666F72206E6F2F7965732063726F73732D68617463680A250A2F5061747465726E46696C6C207B6773617665202F504661205B2039203220726F6C6C205D206465660A20205046612030206765742050466120322067657420322064697620616464205046612031206765742050466120332067657420322064697620616464207472616E736C6174650A2020504661203220676574202D322064697620504661203320676574202D32206469762050466120322067657420504661203320676574205265630A20205472616E73706172656E745061747465726E73207B7D207B6773617665203120736574677261792066696C6C2067726573746F72657D206966656C73650A2020636C69700A202063757272656E746C696E65776964746820302E35206D756C207365746C696E6577696474680A20202F5046732050466120322067657420647570206D756C2050466120332067657420647570206D756C206164642073717274206465660A2020302030204D2050466120352067657420726F7461746520504673202D322064697620647570207472616E736C6174650A202030203120504673205046612034206765742064697620312061646420666C6F6F72206376690A097B504661203420676574206D756C2030204D20302050467320567D20666F720A20203020504661203620676574206E65207B0A0930203120504673205046612034206765742064697620312061646420666C6F6F72206376690A097B504661203420676574206D756C20302032203120726F6C6C204D20504673203020567D20666F720A207D2069660A20207374726F6B652067726573746F72657D206465660A250A2F6C616E67756167656C6576656C2077686572650A207B706F70206C616E67756167656C6576656C7D207B317D206966656C73650A6475702032206C740A097B2F496E746572707265744C6576656C312074727565206465660A09202F496E746572707265744C6576656C332066616C7365206465667D0A097B2F496E746572707265744C6576656C31204C6576656C31206465660A0920322067740A09202020207B2F496E746572707265744C6576656C33204C6576656C33206465667D0A09202020207B2F496E746572707265744C6576656C332066616C7365206465667D0A09206966656C7365207D0A206966656C73650A250A2520506F7374536372697074206C6576656C2032207061747465726E2066696C6C20646566696E6974696F6E730A250A2F4C6576656C325061747465726E46696C6C207B0A2F54696C65387838207B2F5061696E74547970652032202F5061747465726E547970652031202F54696C696E67547970652031202F42426F78205B302030203820385D202F58537465702038202F595374657020387D0A0962696E64206465660A2F4B656570436F6C6F72207B63757272656E74726762636F6C6F72205B2F5061747465726E202F4465766963655247425D20736574636F6C6F7273706163657D2062696E64206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F7020302030204D20382038204C20302038204D20382030204C207374726F6B657D200A3E3E206D6174726978206D616B657061747465726E0A2F506174312065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F7020302030204D20382038204C20302038204D20382030204C207374726F6B650A09302034204D20342038204C20382034204C20342030204C20302034204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174322065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F7020302030204D20302038204C0A09382038204C20382030204C20302030204C2066696C6C7D0A3E3E206D6174726978206D616B657061747465726E0A2F506174332065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F70202D342038204D2038202D34204C0A0930203132204D2031322030204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174342065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F70202D342030204D2038203132204C0A0930202D34204D2031322038204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174352065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F70202D322038204D2034202D34204C0A0930203132204D2038202D34204C2034203132204D2031302030204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174362065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F70202D322030204D2034203132204C0A0930202D34204D2038203132204C2034202D34204D2031302038204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174372065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F702038202D32204D202D342034204C0A0931322030204D202D342038204C2031322034204D2030203130204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174382065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F702030202D32204D2031322034204C0A092D342030204D2031322038204C202D342034204D2038203130204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174392065786368206465660A2F5061747465726E31207B5061747465726E42676E64204B656570436F6C6F722050617431207365747061747465726E7D2062696E64206465660A2F5061747465726E32207B5061747465726E42676E64204B656570436F6C6F722050617432207365747061747465726E7D2062696E64206465660A2F5061747465726E33207B5061747465726E42676E64204B656570436F6C6F722050617433207365747061747465726E7D2062696E64206465660A2F5061747465726E34207B5061747465726E42676E64204B656570436F6C6F72204C616E647363617065207B506174357D207B506174347D206966656C7365207365747061747465726E7D2062696E64206465660A2F5061747465726E35207B5061747465726E42676E64204B656570436F6C6F72204C616E647363617065207B506174347D207B506174357D206966656C7365207365747061747465726E7D2062696E64206465660A2F5061747465726E36207B5061747465726E42676E64204B656570436F6C6F72204C616E647363617065207B506174397D207B506174367D206966656C7365207365747061747465726E7D2062696E64206465660A2F5061747465726E37207B5061747465726E42676E64204B656570436F6C6F72204C616E647363617065207B506174387D207B506174377D206966656C7365207365747061747465726E7D2062696E64206465660A7D206465660A250A250A25456E64206F6620506F7374536372697074204C6576656C203220636F64650A250A2F5061747465726E42676E64207B0A20205472616E73706172656E745061747465726E73207B7D207B6773617665203120736574677261792066696C6C2067726573746F72657D206966656C73650A7D206465660A250A25205375627374697475746520666F72204C6576656C2032207061747465726E2066696C6C20636F64657320776974680A2520677261797363616C65206966204C6576656C203220737570706F7274206973206E6F742073656C65637465642E0A250A2F4C6576656C315061747465726E46696C6C207B0A2F5061747465726E31207B302E3235302044656E736974797D2062696E64206465660A2F5061747465726E32207B302E3530302044656E736974797D2062696E64206465660A2F5061747465726E33207B302E3735302044656E736974797D2062696E64206465660A2F5061747465726E34207B302E3132352044656E736974797D2062696E64206465660A2F5061747465726E35207B302E3337352044656E736974797D2062696E64206465660A2F5061747465726E36207B302E3632352044656E736974797D2062696E64206465660A2F5061747465726E37207B302E3837352044656E736974797D2062696E64206465660A7D206465660A250A25204E6F77207465737420666F7220737570706F7274206F66204C6576656C203220636F64650A250A4C6576656C31207B4C6576656C315061747465726E46696C6C7D207B4C6576656C325061747465726E46696C6C7D206966656C73650A250A2F53796D626F6C2D4F626C69717565202F53796D626F6C2066696E64666F6E74205B312030202E3136372031203020305D206D616B65666F6E740A647570206C656E677468206469637420626567696E207B3120696E646578202F464944206571207B706F7020706F707D207B6465667D206966656C73657D20666F72616C6C0A63757272656E746469637420656E6420646566696E65666F6E7420706F700A250A2F4D4673686F77207B0A2020207B2064757020352067657420332067650A20202020207B2035206765742033206571207B67736176657D207B67726573746F72657D206966656C7365207D0A20202020207B647570206475702030206765742066696E64666F6E742065786368203120676574207363616C65666F6E7420736574666F6E740A20202020205B2063757272656E74706F696E74205D206578636820647570203220676574203020657863682052206475702035206765742032206E65207B6475702064757020360A20202020206765742065786368203420676574207B7465787473686F777D207B737472696E67776964746820706F70203020527D206966656C7365207D69662064757020352067657420302065710A20202020207B647570203320676574207B3220676574206E656720302065786368205220706F707D207B706F7020616C6F616420706F70204D7D206966656C73657D207B64757020350A20202020206765742031206571207B647570203220676574206578636820647570203320676574206578636820362067657420737472696E67776964746820706F70202D32206469760A2020202020647570203020527D207B64757020362067657420737472696E67776964746820706F70202D3220646976203020522036206765740A20202020207465787473686F77203220696E646578207B616C6F616420706F70204D206E65672033202D3120726F6C6C206E6567205220706F7020706F707D207B706F7020706F7020706F700A2020202020706F7020616C6F616420706F70204D7D206966656C7365207D6966656C7365207D6966656C7365207D0A20202020206966656C7365207D0A202020666F72616C6C7D206465660A2F47737769647468207B6475702074797065202F737472696E6774797065206571207B737472696E6777696474687D207B706F7020286E2920737472696E6777696474687D206966656C73657D206465660A2F4D467769647468207B302065786368207B206475702035206765742033206765207B2035206765742033206571207B2030207D207B20706F70207D206966656C7365207D0A207B6475702033206765747B647570206475702030206765742066696E64666F6E742065786368203120676574207363616C65666F6E7420736574666F6E740A20202020203620676574204773776964746820706F70206164647D207B706F707D206966656C73657D206966656C73657D20666F72616C6C7D206465660A2F4D4C73686F77207B2063757272656E74706F696E74207374726F6B65204D0A202030206578636820520A2020426C61636B74657874207B677361766520302073657467726179204D4673686F772067726573746F72657D207B4D4673686F777D206966656C7365207D2062696E64206465660A2F4D5273686F77207B2063757272656E74706F696E74207374726F6B65204D0A20206578636820647570204D467769647468206E65672033202D3120726F6C6C20520A2020426C61636B74657874207B677361766520302073657467726179204D4673686F772067726573746F72657D207B4D4673686F777D206966656C7365207D2062696E64206465660A2F4D4373686F77207B2063757272656E74706F696E74207374726F6B65204D0A20206578636820647570204D467769647468202D32206469762033202D3120726F6C6C20520A2020426C61636B74657874207B677361766520302073657467726179204D4673686F772067726573746F72657D207B4D4673686F777D206966656C7365207D2062696E64206465660A2F585973617665202020207B205B2820292031203220747275652066616C736520332028295D207D2062696E64206465660A2F5859726573746F7265207B205B2820292031203220747275652066616C736520342028295D207D2062696E64206465660A4C6576656C312053757070726573735044464D61726B206F72200A7B7D207B0A2F53446963742031302064696374206465660A73797374656D64696374202F7064666D61726B206B6E6F776E206E6F74207B0A20207573657264696374202F7064666D61726B2073797374656D64696374202F636C656172746F6D61726B20676574207075740A7D2069660A534469637420626567696E205B0A20202F5469746C65202874656D702E657073290A20202F5375626A6563742028676E75706C6F7420706C6F74290A20202F43726561746F722028676E75706C6F7420352E302070617463686C6576656C2033290A20202F417574686F7220286D617274696E6F290A2520202F50726F64756365722028676E75706C6F74290A2520202F4B6579776F7264732028290A20202F4372656174696F6E4461746520284D6F6E204E6F762031342031323A31343A34312032303136290A20202F444F43494E464F207064666D61726B0A656E640A7D206966656C73650A250A2520537570706F727420666F7220626F7865642074657874202D20457468616E2041204D657272697474204D617920323030350A250A2F496E697454657874426F78207B207573657264696374202F544279322033202D3120726F6C6C20707574207573657264696374202F544278322033202D3120726F6C6C207075740A20202020202020202020207573657264696374202F544279312033202D3120726F6C6C20707574207573657264696374202F544278312033202D3120726F6C6C207075740A092020202F426F78696E67207472756520646566207D206465660A2F457874656E6454657874426F78207B20426F78696E670A202020207B206773617665206475702066616C7365206368617270617468207061746862626F780A2020202020206475702054427932206774207B7573657264696374202F544279322033202D3120726F6C6C207075747D207B706F707D206966656C73650A2020202020206475702054427832206774207B7573657264696374202F544278322033202D3120726F6C6C207075747D207B706F707D206966656C73650A2020202020206475702054427931206C74207B7573657264696374202F544279312033202D3120726F6C6C207075747D207B706F707D206966656C73650A2020202020206475702054427831206C74207B7573657264696374202F544278312033202D3120726F6C6C207075747D207B706F707D206966656C73650A20202020202067726573746F7265207D206966207D206465660A2F506F7054657874426F78207B206E6577706174682054427831205442786D617267696E207375622054427931205442796D617267696E20737562204D0A20202020202020202020202020202054427831205442786D617267696E207375622054427932205442796D617267696E20616464204C0A092020202020202054427832205442786D617267696E206164642054427932205442796D617267696E20616464204C0A092020202020202054427832205442786D617267696E206164642054427931205442796D617267696E20737562204C20636C6F736570617468207D206465660A2F4472617754657874426F78207B20506F7054657874426F78207374726F6B65202F426F78696E672066616C7365206465667D206465660A2F46696C6C54657874426F78207B20677361766520506F7054657874426F7820312031203120736574726762636F6C6F722066696C6C2067726573746F7265202F426F78696E672066616C7365206465667D206465660A3020302030203020496E697454657874426F780A2F5442786D617267696E203230206465660A2F5442796D617267696E203230206465660A2F426F78696E672066616C7365206465660A2F7465787473686F77207B20457874656E6454657874426F78204773686F77207D206465660A250A2520726564756E64616E7420646566696E6974696F6E7320666F7220636F6D7061746962696C69747920776974682070726F6C6F6775652E7073206F6C646572207468616E20352E302E320A2F4C5442207B424C205B5D204C436220444C7D206465660A2F4C5462207B504C205B5D204C436220444C7D206465660A656E640A2525456E6450726F6C6F670A2525506167653A203120310A676E756469637420626567696E0A67736176650A646F636C69700A3530203530207472616E736C6174650A302E30353020302E303530207363616C650A3020736574677261790A6E6577706174680A2848656C766574696361292066696E64666F6E7420313430207363616C65666F6E7420736574666F6E740A4261636B67726F756E64436F6C6F722030206C742033203120726F6C6C2030206C7420657863682030206C74206F72206F72206E6F74207B4261636B67726F756E64436F6C6F72204320312E3030302030203020373230302E303020353034302E303020426F78436F6C46696C6C7D2069660A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A36333020323830204D0A3633203020560A36323534203020520A2D3633203020560A7374726F6B650A35343620323830204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020282030295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3633302031303435204D0A3633203020560A36323534203020520A2D3633203020560A7374726F6B650A3534362031303435204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820302E3035295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3633302031383130204D0A3633203020560A36323534203020520A2D3633203020560A7374726F6B650A3534362031383130204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820302E31295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3633302032353736204D0A3633203020560A36323534203020520A2D3633203020560A7374726F6B650A3534362032353736204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820302E3135295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3633302033333431204D0A3633203020560A36323534203020520A2D3633203020560A7374726F6B650A3534362033333431204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820302E32295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3633302034313036204D0A3633203020560A36323534203020520A2D3633203020560A7374726F6B650A3534362034313036204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820302E3235295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3633302034383731204D0A3633203020560A36323534203020520A2D3633203020560A7374726F6B650A3534362034383731204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820302E33295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A36333020323830204D0A3020363320560A30203435323820520A30202D363320560A7374726F6B650A36333020313430204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020282031295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3133333220323830204D0A3020363320560A30203435323820520A30202D363320560A7374726F6B650A3133333220313430204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020282032295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3230333420323830204D0A3020363320560A30203435323820520A30202D363320560A7374726F6B650A3230333420313430204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020282033295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3237333620323830204D0A3020363320560A30203435323820520A30202D363320560A7374726F6B650A3237333620313430204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020282034295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3334333820323830204D0A3020363320560A30203435323820520A30202D363320560A7374726F6B650A3334333820313430204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020282035295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3431333920323830204D0A3020363320560A30203435323820520A30202D363320560A7374726F6B650A3431333920313430204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020282036295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3438343120323830204D0A3020363320560A30203435323820520A30202D363320560A7374726F6B650A3438343120313430204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020282037295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3535343320323830204D0A3020363320560A30203435323820520A30202D363320560A7374726F6B650A3535343320313430204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020282038295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3632343520323830204D0A3020363320560A30203435323820520A30202D363320560A7374726F6B650A3632343520313430204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020282039295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3639343720323830204D0A3020363320560A30203435323820520A30202D363320560A7374726F6B650A3639343720313430204D0A5B205B2848656C76657469636129203134302E3020302E302074727565207472756520302028203130295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A312E30303020554C0A4C54420A4C436220736574726762636F6C6F720A3633302034383731204E0A36333020323830204C0A36333137203020560A30203435393120560A2D36333137203020560A5A207374726F6B650A312E3030302055500A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A2520426567696E20706C6F742023310A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A4C436220736574726762636F6C6F720A363239362034373338204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020286C696E6561726520623D312E39295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A363338302034373338204D0A333939203020560A3633302033313838204D0A3634202D323820560A3634202D323820560A3633202D323820560A3634202D323820560A3634202D323720560A3634202D323820560A3634202D323820560A3633202D323820560A3634202D323820560A3634202D323820560A3634202D323720560A3634202D323820560A3634202D323820560A3633202D323820560A3634202D323820560A3634202D323820560A3634202D323720560A3634202D323820560A3633202D323820560A3634202D323820560A3634202D323820560A3634202D323720560A3634202D323820560A3633202D323820560A3634202D323820560A3634202D323820560A3634202D323820560A3634202D323720560A3633202D323820560A3634202D323820560A3634202D323820560A3634202D323820560A3634202D323820560A3633202D323720560A3634202D323820560A3634202D323820560A3634202D323820560A3634202D323820560A3634202D323820560A3633202D323720560A3634202D323820560A3634202D323820560A3634202D323820560A3634202D323820560A3633202D323720560A3634202D323820560A3634202D323820560A3634202D323820560A3634202D323820560A3633202D323820560A3634202D323720560A3634202D323820560A3634202D323820560A3634202D323820560A3633202D323820560A3634202D323820560A3634202D323720560A3634202D323820560A3634202D323820560A3633202D323820560A3634202D323820560A3634202D323720560A3634202D323820560A3634202D323820560A3634202D323820560A3633202D323820560A3634202D323820560A3634202D323720560A3634202D323820560A3634202D323820560A3633202D323820560A3634202D323820560A3634202D323820560A3634202D323720560A3634202D323820560A3633202D323820560A3634202D323820560A3634202D323820560A3634202D323720560A3634202D323820560A3633202D323820560A3634202D323820560A3634202D323820560A3634202D323820560A3634202D323720560A3633202D323820560A3634202D323820560A3634202D323820560A3634202D323820560A3634202D323820560A3634202D323720560A3633202D323820560A3634202D323820560A3634202D323820560A3634202D323820560A3634202D323720560A3633202D323820560A3634202D323820560A3634202D323820560A2520456E6420706C6F742023310A2520426567696E20706C6F742023320A7374726F6B650A4C54620A4C54310A4C436220736574726762636F6C6F720A4C436220736574726762636F6C6F720A363239362034353938204D0A5B205B2848656C76657469636129203134302E3020302E302074727565207472756520302028756E69666F726D65295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C54310A4C436220736574726762636F6C6F720A363338302034353938204D0A333939203020560A3633302031383130204D0A3634203020560A3634203020560A3633203020560A3634203020560A3634203020560A3634203020560A3634203020560A3633203020560A3634203020560A3634203020560A3634203020560A3634203020560A3634203020560A3633203020560A3634203020560A3634203020560A3634203020560A3634203020560A3633203020560A3634203020560A3634203020560A3634203020560A3634203020560A3633203020560A3634203020560A3634203020560A3634203020560A3634203020560A3633203020560A3634203020560A3634203020560A3634203020560A3634203020560A3633203020560A3634203020560A3634203020560A3634203020560A3634203020560A3634203020560A3633203020560A3634203020560A3634203020560A3634203020560A3634203020560A3633203020560A3634203020560A3634203020560A3634203020560A3634203020560A3633203020560A3634203020560A3634203020560A3634203020560A3634203020560A3633203020560A3634203020560A3634203020560A3634203020560A3634203020560A3633203020560A3634203020560A3634203020560A3634203020560A3634203020560A3634203020560A3633203020560A3634203020560A3634203020560A3634203020560A3634203020560A3633203020560A3634203020560A3634203020560A3634203020560A3634203020560A3633203020560A3634203020560A3634203020560A3634203020560A3634203020560A3633203020560A3634203020560A3634203020560A3634203020560A3634203020560A3633203020560A3634203020560A3634203020560A3634203020560A3634203020560A3634203020560A3633203020560A3634203020560A3634203020560A3634203020560A3634203020560A3633203020560A3634203020560A3634203020560A2520456E6420706C6F742023320A2520426567696E20706C6F742023330A7374726F6B650A4C54620A4C54320A4C436220736574726762636F6C6F720A4C436220736574726762636F6C6F720A363239362034343538204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020286C696E6561726520623D312E31295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C54320A4C436220736574726762636F6C6F720A363338302034343538204D0A333939203020560A3633302031393633204D0A3634202D3320560A3634202D3320560A3633202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3633202D3320560A3634202D3320560A3634202D3420560A3634202D3320560A3634202D3320560A3634202D3320560A3633202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3633202D3320560A3634202D3320560A3634202D3420560A3634202D3320560A3634202D3320560A3633202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3633202D3320560A3634202D3320560A3634202D3320560A3634202D3420560A3634202D3320560A3633202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3633202D3320560A3634202D3320560A3634202D3320560A3634202D3420560A3634202D3320560A3633202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3633202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3634202D3420560A3633202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3633202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3634202D3420560A3633202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3633202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3634202D3420560A3633202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3633202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3633202D3420560A3634202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3633202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3634202D3320560A3633202D3420560A3634202D3320560A3634202D3320560A2520456E6420706C6F742023330A7374726F6B650A322E30303020554C0A4C54620A4C436220736574726762636F6C6F720A312E30303020554C0A4C54420A4C436220736574726762636F6C6F720A3633302034383731204E0A36333020323830204C0A36333137203020560A30203435393120560A2D36333137203020560A5A207374726F6B650A312E3030302055500A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A7374726F6B650A67726573746F72650A656E640A73686F77706167650A2525547261696C65720A2525446F63756D656E74466F6E74733A2048656C7665746963610A>|ps>||||>>
+
+    ovviamente:\ 
+
+    <\equation*>
+      <big|sum><rsup|n><rsub|i=1>p<rsub|i>=1.0
+    </equation*>
+
+    Per avere una distribuzione lineare dipendente dal rango si avra':
+
+    <\equation*>
+      p<rsub|i>=<frac|1|n><around*|[|\<beta\>-2<around*|(|\<beta\>-1|)><frac|i-1|n-1>|]>
+    </equation*>
+
+    con <math|1\<leqslant\>\<beta\>\<leqslant\>2 > dove 2 e' il valore che
+    amplifica al meglio la selezione di selezionare di buoni fitness
+
+    <item>Selezione per torneo:
+
+    Per construire <math|P<rsup|1><around*|(|t|)>> si realizzano <math|n>
+    tornei costituiti da <math|k> individui presi da <math|P<around*|(|t|)>>
+    presi <underline|aleatoriamente e uniformemente con ripescaggio. >
+
+    Questi <math|k> individui saranno messi in competizione e il migliore
+    messo in <math|P<rsup|1><around*|(|t|)>>. Dopo <math|n> tornei si avra'
+    <math|P<rsup|1>> completo.\ 
+
+    Un modo semplice di svolgere il torneo e quello di fare vincere
+    l'individuo con fitness migliore.\ 
+
+    <\itemize>
+      <item>se <math|k=1> si avra' dunque una selezione uniforme aleatoria
+
+      <item><underline|se <math|k=n> si copiera' <math|n> volte il migliore
+      individuo in <math|P<rsup|1>>>
+
+      <item>in generale <math|k\<in\><around*|{|2,3\<ldots\>,10|}>> e sempre
+      <math|k\<ll\>n>.
+    </itemize>
+
+    <underline|Nota:> con i tornei si possono comparare degli individui senza
+    dover specificare una fitness. Per esempio con dei robot da evolvere si
+    potrebbero comparare donando dei compiti da svolgere e selezionarli sulle
+    performance di questi compiti senza dover modellizare queste performance.
+  </itemize>
+
+  I metodi di selezione favoriscono il migliore indviduo. La questione che ci
+  si puo' porre e' di sapere se questo va invadere tutta la popolazione
+  durante il corso dell'evoluzione.\ 
+
+  Ovviamente le mutazioni e il crossover cercano di opporsi a questo
+  fenomeno. Ma un metodo di selezione troppo forte diminuira' comunque la
+  diversita' della popolazione.
+
+  Il <with|font-shape|italic|``takeover time''> e' una misura della
+  intensita' della selezione. Questo si misura sopprimendo il crossover e la
+  mutazione e contanto il numero di iterazioni necessari per rempire la
+  popolazione di copie dell'individuo migliore.
+
+  Misuriamo per esempio il tempo di <with|font-shape|italic|takeover>
+  <math|\<tau\>> su degli esempi numerici, il numero di copie cresce in modo
+  esponenziale con i metodi di selezione precedente.
+
+  Intutivamente se <math|m> e' il numero di copie del migliore individuo, si
+  puo sperare che <math|m<around*|(|t|)>> abbia la seguente formua:
+
+  <\equation*>
+    <frac|\<partial\>m|\<partial\>t>=\<alpha\><frac|m|n>*<around*|(|1-<frac|m|n>|)>
+  </equation*>
+
+  dove la prima parte <math|<around*|(|\<alpha\>*<frac|m|n>|)>> e' la
+  probabilita' di scegliere il migliore individuo e la seconda il numero di
+  posti disponibile <math|<around*|(|1-<frac|m|n>|)>.>
+
+  Questo si chiama una equazione logistica, in un tempo
+  <math|\<tau\>=log<around*|(|n|)>> si a che
+  <math|m<around*|(|t|)>\<cong\><frac|n|2>>.\ 
+
+  Possiamo verificare cio per la selezione proporzionale:
+
+  Si hanno <math|n> individui di fitness:
+  <math|<around*|{|f<rsub|1>,f<rsub|2>\<ldots\>f<rsub|n>|}>> con
+  <math|f<rsub|1>\<gtr\>f<rsub|2>\<gtr\>\<ldots\>\<gtr\>f<rsub|n>\<gtr\>0>.
+
+  Quindi <math|m<around*|(|t|)>> e' il numero di copie che dell'individuo con
+  fitntess <math|f<rsub|1>>:
+
+  <\equation*>
+    m<around*|(|t+1|)>=n*<frac|m<around*|(|t|)>f<rsub|1>|F<rsub|tot><around*|(|t|)>>\<nocomma\>,<space|1em>F<rsub|tot><around*|(|t|)>=<big|sum><rsub|i=0><rsup|n>f<rsub|i><around*|(|t|)>
+  </equation*>
+
+  dove <math|n> e' il numero di estrazioni,
+  <math|<frac|f<rsub|1>|F<rsub|tot><around*|(|t|)>>> e' la probabilita' che
+  il migliore individuo venga estratto e <math|m<around*|(|t|)>> eil numero
+  di copie presenti.
+
+  <\equation*>
+    F<rsub|tot><around*|(|t|)>\<leqslant\>m<around*|(|t|)>f<rsub|1>+<around*|(|n-m<around*|(|t|)>|)>f<rsub|2>
+  </equation*>
+
+  dunque:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|m<around*|(|t+1|)>>|<cell|\<geqslant\>>|<cell|n<frac|m<around*|(|t|)>f<rsub|1>|m<around*|(|t|)>f<rsub|1>+<around*|(|n-m<around*|(|t|)>|)>f<rsub|2>>>>|<row|<cell|>|<cell|\<geqslant\>>|<cell|m<around*|(|t|)>+n<frac|m<around*|(|t|)>f<rsub|1>|m<around*|(|t|)>f<rsub|1>-<around*|(|n-m<around*|(|t|)>|)>f<rsub|2>>-m<frac|m<around*|(|t|)>*f<rsub|1>+<around*|(|n-m<around*|(|t|)>|)>f<rsub|2>|m<around*|(|t|)>f<rsub|1>+<around*|(|n-m<around*|(|t|)>|)>f<rsub|2>>>>|<row|<cell|>|<cell|\<geqslant\>>|<cell|m<around*|(|t|)>+<frac|n*m<around*|(|t|)><around*|(|f1-f2|)>-m<rsup|2><around*|(|f<rsub|1>-f<rsub|2>|)>|m<around*|(|t|)>*f<rsub|1>-<around*|(|n-m<around*|(|t|)>|)>f<rsub|2>>>>>>
+  </eqnarray*>
+
+  Si definisce <math|\<Delta\>f=f<rsub|1>-f<rsub|2>\<gtr\>0\<rightarrow\><frac|\<Delta\>f|f<rsub|1>>\<less\>1>
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|m<around*|(|t+1|)>>|<cell|\<geqslant\>>|<cell|m<around*|(|t|)>+<frac|n*m<around*|(|t|)>\<Delta\>f-m<rsup|2>\<Delta\>f|m<around*|(|*t|)><around*|(|f<rsub|1>+f<rsub|2>|)>-n*f<rsub|2>>>>|<row|<cell|>|<cell|\<geqslant\>>|<cell|m<around*|(|t|)>+<frac|n*m\<Delta\>f<around*|(|1-<frac|m|n>|)>|n*f<rsub|1>+\<Delta\>f<around*|(|n-m|)>>>>|<row|<cell|>|<cell|>|<cell|si
+    divide sopra e sotto per n/f<rsub|1>>>|<row|<cell|>|<cell|\<geqslant\>>|<cell|m<around*|(|t|)>+m<frac|\<Delta\>f|f<rsub|1>><around*|(|1-<frac|m|n>|)><around*|(|<frac|1|1-<around*|(|1-<frac|n|m>|)><frac|\<Delta\>f<rsub|>|f<rsub|1>>>|)>>>>>
+  </eqnarray*>
+
+  \ dato che <math|m\<leqslant\>n> e <math|<frac|\<Delta\>f|f<rsub|1>>\<less\>1>
+  allora:
+
+  <\equation*>
+    <frac|1|1-<around*|(|1-<frac|n|m>|)><frac|\<Delta\>f|f<rsub|1>>>\<gtr\>1
+  </equation*>
+
+  dunque:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|m<around*|(|t+1|)>-m<around*|(|t|)>>|<cell|\<geqslant\>>|<cell|m<around*|(|t|)><frac|\<Delta\>f|f<rsub|1>><around*|(|1-<frac|m<around*|(|t|)>|n>|)>>>>>
+  </eqnarray*>
+
+  Dunque la crescenza di <math|m> e' piu' rapida di quella predetta dalla
+  equazione logistica. Dunque <math|\<tau\>> e' logaritmica in <math|n>.
+
+  \;
+
+  Possiamo fare le stesse osservazioni per la selezione per torneo:
+
+  Con un torneo di <math|k> individui la probabilita' di non selezionare il
+  migliore individuo tra i membri di un torneo e':
+
+  <\equation*>
+    <around*|(|1-<frac|m<around*|(|t|)>|n>|)><rsup|k>
+  </equation*>
+
+  dove <math|<frac|m<around*|(|t|)>|n>> e' la probabilita' di selezionare il
+  migliore.
+
+  Dunque la probabilita' che il migliore sia scelto all'interno di un torneo
+  e'\ 
+
+  <\equation*>
+    1-<around*|(|1-<frac|m<around*|(|t|)>|n>|)><rsup|k>
+  </equation*>
+
+  dunque dato che ci sono <math|n> tornei:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|m<around*|(|t+1|)>>|<cell|=>|<cell|n*<around*|[|1-<around*|(|1-<frac|m<around*|(|t|)>|n>|)><rsup|k>|]>\<geqslant\>n<around*|[|1-<around*|(|1-<frac|n|m<around*|(|t|)>>|)><rsup|2>|]>>>|<row|<cell|>|<cell|\<geqslant\>>|<cell|n<around*|[|1-<around*|(|1-<frac|2n|m<around*|(|t|)>>+<frac|n<rsup|2>|m<around*|(|t|)><rsup|2>>|)>|]>>>|<row|<cell|>|<cell|\<geqslant\>>|<cell|n<around*|(|<frac|2m<around*|(|t|)>|n>-<frac|m<around*|(|t|)><rsup|2>|n<rsup|2>>|)>>>|<row|<cell|>|<cell|\<geqslant\>>|<cell|m<around*|(|t|)>-
+    m<around*|(|t|)><around*|(|1-<frac|m<around*|(|t|)>|n>|)>>>>>
+  </eqnarray*>
+
+  si nota ancora che la selezione usata e' molto intensa e si rischia di
+  perdere rapidamente la diversita' della popolazione. In seguito vedremo dei
+  metodi di selezione piu' lenti.
+
+  <subsection|Altre operazioni di crossover e mutazione>
+
+  1. Si puo' avere un <underline|crossover a due o piu' punti>, invece di
+  dividere gli individui in due parti (prendendo un punto di crossover
+  casuale) si possono dividere in tre o piu' parti (prendendo sempre dei
+  punti aleatori):
+
+  <math|<around*|\||A|\|>B<around*|\||C|\|>>,<math|<around*|\||A<rprime|'>|\|>B<rprime|'><around*|\||C<rprime|'>|\|>\<Rightarrow\><around*|\||A|\|>B<rprime|'><around*|\||C|\|>><math|,<around*|\||A<rprime|'>|\|>B<around*|\||C<rprime|'>|\|>>
+
+  2. Si puo' invece un <underline|crossover uniforme>, prendedndo due
+  individui rapresentati nel seguente modo
+
+  <\math>
+    <around*|[|b<rsub|0>,b<rsub|1>,\<ldots\>,b<rsub|n>|]>
+
+    <around*|[|b<rsub|0><rprime|'>,b<rsub|1><rprime|'>,\<ldots\>,b<rsub|n><rprime|'>|]>
+  </math>
+
+  Si possono dunque costruire un individuo figlio scambiando ogni bit
+  <math|b<rsub|i>,b<rsub|i><rprime|'>> con probabilita' <math|<frac|1|2>>.
+
+  \;
+
+  Molti problemi, come quelli di tipo combinatorio, un crossover classico non
+  funzion, per esempio per il <with|font-series|bold|TSP>:
+
+  <math|I<rsub|0>=1\<rightarrow\>3\<rightarrow\>2<around*|\|||\<nobracket\>>\<rightarrow\>4\<rightarrow\>5>
+
+  <math|I<rsub|1>=5\<rightarrow\>2\<rightarrow\>1<around*|\||\<rightarrow\>
+  3\<rightarrow\> 4|\<nobracket\>>>
+
+  Usando il crossover classico il risultato sarebbe il seguente
+
+  <\math>
+    I<rsub|0><rprime|'>=1\<rightarrow\>3\<rightarrow\>2<around*|\||\<rightarrow\>3\<rightarrow\>4|\<nobracket\>>
+
+    I<rprime|'><rsub|1>=5\<rightarrow\>2\<rightarrow\>1<around*|\||\<rightarrow\>4\<rightarrow\>5|\<nobracket\>>
+  </math>
+
+  <underline|Questi due individui pero' non sono validi!>
+
+  Una possibilita' e' dunque quella di prendere la prima parte del crossover
+  e aggiungere come seconda parte gli elementi mancanti nel ordine in cui
+  appaiono nella altra soluzione, nel nostro caso:
+
+  <\math>
+    I<rprime|'><rsub|0>=1\<rightarrow\>3\<rightarrow\>2<around*|\||\<rightarrow\>5\<rightarrow\>4|\<nobracket\>>
+
+    I<rprime|'><rsub|1>=5\<rightarrow\>2\<rightarrow\>1<around*|\||\<rightarrow\>3\<rightarrow\>4|\<nobracket\>>
+  </math>
+
+  Anche le mutazioni in molti casi non funzionano, ancora un volta nel nostro
+  caso:
+
+  <center|<math|1\<rightarrow\>3\<rightarrow\>2\<rightarrow\>4\<rightarrow\>5<space|1em><below|\<longminus\>\<rightarrow\>|muta
+  il 3 elemento><space|1em>1\<rightarrow\>3\<rightarrow\>4\<rightarrow\>4\<rightarrow\>5>>
+
+  Alcune possibilita' di mutazioni sono semplicemente:
+
+  <\itemize>
+    <item>Permutare due elementi
+
+    <item>Permutare due parti del percorso (quindi + elementi alla volta)
+
+    <item>Spostare un elemento in una altra posizione (shiftando gli
+    elementi)
+  </itemize>
+
+  <subsection|I teoremi degli schemi>
+
+  Come abbiamo visto nell'esempio del posizionamento delle antenne GSM, gli
+  <with|font-series|bold|AG> cercano la soluzione ottimale giustapponendo dei
+  pezzi delle soluzioni piu' promettenti.
+
+  I teoremi degli schemi esprime in maneiera matematica come i migliori pezzi
+  della soluzione sono amplificati e preservati.
+
+  <math|\<rightarrow\>> E' un tentativo di dimostrare la convergenza delle
+  <with|font-series|bold|AG>.
+
+  Si utilizzera' dinuovo delle catene di bit, uno <underline|schema> e' una
+  espressione regolare semplice di bits.
+
+  Per esempio uno schema puo' essere <math|S=<around*|(|1\<ast\> \<ast\> 1
+  \<ast\> 0|)>>, per esempio la catena (1 0 0 1 0 0) appartiene allo schema
+  <math|S>.
+
+  L'<underline|ordine> <math|o<around*|(|S|)>> di uno schema <math|S> e' il
+  numero di posizioni fisse dello schema, nel nostro caso
+  <math|o<around*|(|1\<ast\> \<ast\> 1 \<ast\> 0|)>=3>.
+
+  La <underline|lunghezza> <math|\<delta\><around*|(|S|)>> di uno schema e'
+  la distanza tra la prima e l'ultima posizione fissa, nel nostro caso
+  <math|\<delta\><around*|(|1\<ast\> \<ast\> 1 \<ast\> 0|)>=6-1=5> , per un
+  caso <math|\<delta\><around*|(|*\<ast\> \<ast\> 1 \<ast\>|)>=3-3=0>.
+
+  Si cerchera' di stimare l'evoluzione del numero di individui che possiede
+  uno schema <math|S> dato.
+
+  Si definisce la fitnesse medio di uno schema <math|S>
+
+  <\equation*>
+    <below|f<around*|(|t,S|)>|P<around*|(|t|)>>=<frac|1|M<around*|(|t,S|)>><big|sum><rsub|i=1><rsup|M<around*|(|t,S|)>>f<around*|(|v<rsub|i>|)>
+  </equation*>
+
+  dove <math|v<rsub|1>, v<rsub|2>,\<ldots\>,v<rsub|M<around*|(|S|)>>> sono
+  gli <math|M<around*|(|t,S|)>> individui della popolazione
+  <math|P<around*|(|t|)>> che soddisfano lo schema <math|S.>
+
+  Si puo' anche definire la fitness totale della popolazione
+  <math|P<around*|(|t|)> >al tempo <math|t>
+
+  <\equation*>
+    F<around*|(|t|)>=<big|sum><rsub|v\<in\>P<around*|(|t|)>>f<around*|(|v|)>
+  </equation*>
+
+  La fitness totale media e':
+
+  <\equation*>
+    <wide|F|\<bar\>><around*|(|t|)>=<frac|1|n>F<around*|(|t|)>
+  </equation*>
+
+  con <math|n> la dimensione totale della popolazione.
+
+  Vogliamo calcolare <math|M<around*|(|t+1,S|)>> il numero di individui che
+  contengono lo schema <math|S> al tempo <math|t+1> in funzione di
+  <math|M<around*|(|t,S|)>>. La teoria degli schemi calcola questo numero
+  cosi:
+
+  <\equation*>
+    M<around*|(|t+1,S|)>=\<alpha\>M<around*|(|t,S|)>\<times\><around*|[|<text|Prob>
+    S sopr al crossover|]>\<times\><around*|[|<text|Prob> S sopr alla
+    mutazione|]>
+  </equation*>
+
+  <math|\<alpha\>M<around*|(|t,S|)>> e' il numero di individui con <math|S>
+  selezionati dal processo di selezione.\ 
+
+  Il caclcolo dei termini (che indicheranno se lo schema <math|S> e'
+  amplifacato o preservato) sono:
+
+  <underline|Gli effetti della selezione:>
+
+  Con una selezione proporzionale
+
+  <\equation*>
+    M<around*|(|t+1,S|)>=n<frac|M<around*|(|t,S|)>\<cdot\>f<around*|(|t,S|)>|F<around*|(|t|)>>=M<around*|(|t,S|)>\<cdot\><frac|f<around*|(|t,S|)>|<wide|F|\<bar\>><around*|(|t|)>>
+  </equation*>
+
+  Se <math|<frac|f<around*|(|t,S|)>|F<around*|(|t|)>>\<gtr\>1> (ovvero se
+  <math|f<around*|(|t,S|)>> e' + grande della fitness media totale) lo schema
+  <math|S> sara' amplifacato dalla selezione.
+
+  <underline|Probabilita' che <math|S> sopravviva al crossover>
+
+  Uno schema <math|S> e' distrutto dal crossover se i punti di incrocio cade
+  all'interno dello schma. Con uno schrma <math|S> di lungheza
+  <math|\<delta\><around*|(|S|)>> ci saranno dunque
+  <math|\<delta\><around*|(|S|)>> punti di incrocio distruttivi.
+
+  Se gli individui sono catene di <math|m> bits ci sono dunque <math|m-1>
+  possibili punti di incroci equiprovabili, la probabilita' dunque di
+  distruggere lo schema <math|S > e' inferiore a:
+
+  <\equation*>
+    <frac|\<delta\><around*|(|S|)>|m-1>
+  </equation*>
+
+  Inferiore perche' nel caso due individui abbiamo entrambi lo schema
+  <math|S> nella stessa posizione lo schema sopravvivera' in tutti i casi.
+
+  Dunque lo schema <math|S> soprivvevera' con una probabilita':
+
+  <\equation*>
+    1-P<rsub|c>\<cdot\><frac|\<delta\><around*|(|S|)>|m-1>
+  </equation*>
+
+  dove <math|P<rsub|c>> e' la probabilita' di crossover.
+
+  A questo punto abbiamo ottenuto questa formula:
+
+  <\equation*>
+    M<around*|(|t+1,S|)>=M<around*|(|t,S|)>\<cdot\><frac|f<around*|(|t,S|)>|<wide|F|\<bar\>><around*|(|*t|)>>\<cdot\><around*|[|1-P<rsub|c>\<cdot\><frac|\<delta\><around*|(|S|)>|m-1>|]>\<cdot\><around*|[|<text|prob
+    di sop. alle mutazioni>|]>
+  </equation*>
+
+  <underline|Probabilita' che <math|S> sopravviva alle mutazioni>
+
+  Uno schema <math|S> e' distrutto se si muta uno dei suoi punti fissi.
+
+  Sia <math|P<rsub|m>> la probabilita' di mutare ciascuno degli <math|m> bits
+  dell'individuo.
+
+  La probabilita' di non mutare <math|o<around*|(|S|)>> bits fissi di
+  <math|S> e'\ 
+
+  <\equation*>
+    <around*|(|1-P<rsub|m>|)><rsup|o<around*|(|S|)>>
+  </equation*>
+
+  In generale <math|P<rsub|m>\<ll\>1> e quindi possiamo approssimare
+
+  <\equation*>
+    <around*|(|1-P<rsub|m>|)><rsup|o<around*|(|S|)>>\<thickapprox\>1-o<around*|(|S|)>\<cdot\>P<rsub|m>
+  </equation*>
+
+  Possiamo anche fare la seguente approsimazione:
+
+  <\equation*>
+    P<rsub|m>\<cdot\>P<rsub|c>\<approx\>0
+  </equation*>
+
+  e quindi quando facciamo il prodotto
+
+  <\equation*>
+    <around*|[|1-P<rsub|c>\<cdot\><frac|\<delta\><around*|(|S|)>|m-1>|]>\<cdot\><around*|[|1-o<around*|(|S|)>\<cdot\>P<rsub|m>|]>=<around*|[|1-P<rsub|c>\<cdot\><frac|\<delta\><around*|(|S|)>|m-1>-o<around*|(|S|)>\<cdot\>P<rsub|m>|]>
+  </equation*>
+
+  E finalmente si ottiene che
+
+  <\equation*>
+    M<around*|(|t+1,S|)>=M<around*|(|t,S|)>\<cdot\><frac|f<around*|(|t,S|)>|<wide|F|\<bar\>><around*|(|*t|)>>\<cdot\><around*|[|1-P<rsub|c>\<cdot\><frac|\<delta\><around*|(|S|)>|m-1>-o<around*|(|S|)>\<cdot\>P<rsub|m>|]>
+  </equation*>
+
+  Se <math|<frac|f<around*|(|t,S|)>|<wide|F|\<bar\>><around*|(|*t|)>>\<cdot\><around*|[|1-P<rsub|c>\<cdot\><frac|\<delta\><around*|(|S|)>|m-1>-o<around*|(|S|)>\<cdot\>P<rsub|m>|]>\<gtr\>1>
+  allora si avra' una amplificazione di <math|S>. Dunque per ottenere una
+  amplificazione di <math|S> bisognera' avere una fitness media dello schema
+  <math|f<around*|(|t,S|)> maggiore della fitness media totale
+  <wide|F|\<bar\>><around*|(|t|)>>. Inoltre che lo schema <math|S> abbia
+  lunghezza <math|\<delta\><around*|(|S|)>> e ordine <math|o<around*|(|S|)>>
+  piccola.
+
+  <with|font-series|bold|Dunque <math|S> per essere amplificato deve essere
+  ``buono'' e corto.>
+
+  Si spera dunque che la soluzione ottimale sia ottenuta per giustapposizione
+  di schemi corti e buoni, chiamati <underline|building blocks>. Purtorppo ci
+  sono degli esempi che mostrano che gli <with|font-series|bold|AG> si
+  sbaglino e siano attratti da zone sub-ottimali.
+
+  <subsection|Popolazioni strutturate>
+
+  Fino ad adesso abbiamo sempre supposto che tutti gli individui \ della
+  popolazione possano interagire l'un con l'altro, senza costrizioni, per
+  esempio geografiche. In biologia questo tipo di popolazioni si chiamano
+  <underline|panmictiche>.
+
+  Ma nell'evoluzione delle specie, non si potra' veramente riprodursi con
+  qualsiasi individui aribitrariamente e indipendentemente dalla distanza.
+
+  Di conseguenza avremo una popolazione piu' diversa \ di quella che
+  otterremmo con una popolazione panmictica.
+
+  Per questo speriamo che questo tipo di popolazione sia benefico per gli
+  algoritmi <with|font-series|bold|AG>. Questo permettera' di mantenere la
+  popolazione e qundi di migliorare il tempo di convergenza verso l'individuo
+  massimale.
+
+  Inoltre questo permettera' una parallelizzazione piu' semplice del processo
+  di evoluzione.
+
+  Ci sono due modi principali per costruire delle popolazioni strutturate:
+
+  <\enumerate>
+    <item>le <with|font-shape|italic|multi-popolazioni>
+
+    <item>le popolazioni <with|font-shape|italic|cellulari>
+  </enumerate>
+
+  <subsubsection|Le multi-popolazioni>
+
+  Ci si dona un insieme di popolazioni <math|P<rsub|1>,P<rsub|2>\<ldots\>P<rsub|k>>
+  che co-evolve. Possiamo immaginarli come facenti parte di un grafo di
+  interazione
+
+  <center|<small-figure|<with|gr-mode|<tuple|edit|text-at>|gr-frame|<tuple|scale|1cm|<tuple|0.899962gw|0.440006gh>>|gr-geometry|<tuple|geometry|0.386668par|0.360014par|center>|gr-arrow-end|\|\<gtr\>|gr-arrow-begin|\<less\>\||<graphics||<carc|<point|-1.71047882211804|1.51150638743431>|<point|-0.58863429241834|1.53267347302764>|<point|-0.46163336636993|0.85533520076941>>|<carc|<point|-4.65970608248092|-0.75216792993044>|<point|-3.53786155278122|-0.73100084433711>|<point|-3.41086062673281|-1.40833911659534>>|<carc|<point|-1.31344685515747|-0.97338867285739>|<point|-0.19160232545777|-0.95222158726406>|<point|-0.06460139940936|-1.62955985952229>>|<with|arrow-end|\|\<gtr\>|arrow-begin|\<less\>\||<line|<point|-3.4925|1.93786>|<point|-1.71047882211804|1.51150638743431>>>|<with|arrow-end|\|\<gtr\>|arrow-begin|\<less\>\||<line|<point|-0.837653|0.430837>|<point|-0.642651089735979|-0.698382401350006>>>|<with|arrow-end|\|\<gtr\>|arrow-begin|\<less\>\||<line|<point|-3.41086|-1.40834>|<point|-1.45805862788412|-1.45037941193823>>>|<carc|<point|-4.74134537489926|2.5940355430972>|<point|-3.61950084519956|2.61520262869053>|<point|-3.72536|1.6024>>|<text-at||<point|-3.72536|1.6024>>|<text-at|<math|P<rsub|1>>|<point|-4.28730652202672|2.13827887286678>>|<text-at|<math|P<rsub|2>>|<point|-1.30278475988887|1.03760418044715>>|<text-at|<math|P<rsub|3>>|<point|-0.815947876703268|-1.56591480354544>>|<text-at|<math|P<rsub|4>>|<point|-4.26613970101865|-1.37541341447281>>|<with|arrow-end|\|\<gtr\>|arrow-begin|\<less\>\||<line|<point|-3.72536|1.6024>|<point|-1.31344685515747|-0.97338867285739>>>>>|>>
+
+  Queste linee rapressentano le possibilita' di scambio tra gli individui
+  delle diverse popolazioni (migrazioni).
+
+  Si applica l'<with|font-series|bold|AG> a ciascuna popolazione come nei
+  casi precedenti.\ 
+
+  Di tanto in tanto i migliori elementi di ciascuna poplazione
+  <math|P<rsub|i>> saranno copiati e rimpiazati con degli individui di una
+  popolazione <math|P<rsub|j> > collegata a <math|P<rsub|i>>.
+
+  In generale le popolazioni sono collegate con una topologia ad anello di
+  questo tipo:
+
+  <center|<small-figure|<with|gr-mode|<tuple|group-edit|props>|gr-frame|<tuple|scale|1cm|<tuple|0.899962gw|0.440006gh>>|gr-geometry|<tuple|geometry|0.386668par|0.360014par|center>|gr-arrow-begin|\<less\>\||<graphics||<carc|<point|-1.71047882211804|1.51150638743431>|<point|-0.58863429241834|1.53267347302764>|<point|-0.46163336636993|0.85533520076941>>|<carc|<point|-4.65970608248092|-0.75216792993044>|<point|-3.53786155278122|-0.73100084433711>|<point|-3.41086062673281|-1.40833911659534>>|<carc|<point|-1.31344685515747|-0.97338867285739>|<point|-0.19160232545777|-0.95222158726406>|<point|-0.06460139940936|-1.62955985952229>>|<with|arrow-end|\|\<gtr\>|<line|<point|-3.4925|1.93786>|<point|-1.71047882211804|1.51150638743431>>>|<with|arrow-end|\|\<gtr\>|<line|<point|-0.837653|0.430837>|<point|-0.642651089735979|-0.698382401350006>>>|<with|arrow-begin|\<less\>\||<line|<point|-3.41086|-1.40834>|<point|-1.45805862788412|-1.45037941193823>>>|<carc|<point|-4.74134537489926|2.5940355430972>|<point|-3.61950084519956|2.61520262869053>|<point|-3.72536|1.6024>>|<text-at|<math|P<rsub|1>>|<point|-4.28730652202672|2.13827887286678>>|<text-at|<math|P<rsub|2>>|<point|-1.30278475988887|1.03760418044715>>|<text-at|<math|P<rsub|3>>|<point|-0.815947876703268|-1.56591480354544>>|<text-at|<math|P<rsub|4>>|<point|-4.26613970101865|-1.37541341447281>>|<with|arrow-begin|\<less\>\||<line|<point|-4.14902280380547|1.44613536803342>|<point|-4.28321132346096|-0.49639689686254>>>>>|>>
+
+  Bisogna specificare alcuni punti:
+
+  <\itemize>
+    <item>Mantenere un numeri di individui per popolazione assai grande
+    (tipicamente 50 individui)
+
+    <item>Scegliere tra il 5% e il 10% di popolazione migrante
+
+    <item>Le migrazioni avvengono ogni 10 generazioni
+  </itemize>
+
+  Gli scambi si fanno in modo asincrono: e' la popolazione emettitrice che
+  decide chi e quando inviare i migranti. La popolazione ricevente accetta i
+  migranti quando pronta. Questo permette di implementare una
+  parellilizzazione molto efficace (un processo per popolazione) e senza
+  problematiche di equilibrio della carica.
+
+  Un qeustione importante rimane la scelta del numero delle popolazioni e la
+  loro dimensione, con un totale di 1000 individui si potrebbero avere le
+  seguenti configurazioni:
+
+  <center|<small-table|<tabular|<tformat|<table|<row|<cell|<tabular|<tformat|<cwith|2|-1|1|-1|cell-halign|c>|<table|<row|<cell|Popolazioni>|<cell|Individui>>|<row|<cell|1>|<cell|1000>>|<row|<cell|2>|<cell|500>>|<row|<cell|<math|\<vdots\>>>|<cell|<math|\<vdots\>>>>|<row|<cell|10>|<cell|100>>|<row|<cell|<math|\<vdots\>>>|<cell|<math|\<vdots\>>>>|<row|<cell|1000>|<cell|1>>>>>>>>>>|>>
+
+  Possiamo scegliere la configurazione che minimizza il tempo di convergenza,
+  o piu' precisamente il numero di evoluzioni totatali della fitness, per
+  esempio:
+
+  <with|prog-scripts|gnuplot|<center|<image|<tuple|<#252150532D41646F62652D322E3020455053462D322E300A25255469746C653A2074656D702E6570730A252543726561746F723A20676E75706C6F7420352E302070617463686C6576656C20330A25254372656174696F6E446174653A204D6F6E204E6F762032312031323A33343A333220323031360A2525446F63756D656E74466F6E74733A20286174656E64290A2525426F756E64696E67426F783A20353020353020343130203330320A2525456E64436F6D6D656E74730A2525426567696E50726F6C6F670A2F676E7564696374203235362064696374206465660A676E756469637420626567696E0A250A252054686520666F6C6C6F77696E6720747275652F66616C736520666C616773206D6179206265206564697465642062792068616E6420696620646573697265642E0A252054686520756E6974206C696E6520776964746820616E6420677261797363616C6520696D6167652067616D6D6120636F7272656374696F6E206D617920616C736F206265206368616E6765642E0A250A2F436F6C6F722066616C7365206465660A2F426C61636B746578742066616C7365206465660A2F536F6C69642066616C7365206465660A2F446173686C656E6774682031206465660A2F4C616E6473636170652066616C7365206465660A2F4C6576656C312066616C7365206465660A2F4C6576656C332066616C7365206465660A2F526F756E6465642066616C7365206465660A2F436C6970546F426F756E64696E67426F782066616C7365206465660A2F53757070726573735044464D61726B2066616C7365206465660A2F5472616E73706172656E745061747465726E732066616C7365206465660A2F676E756C696E65776964746820352E303030206465660A2F757365726C696E65776964746820676E756C696E657769647468206465660A2F47616D6D6120312E30206465660A2F4261636B67726F756E64436F6C6F72207B2D312E303030202D312E303030202D312E3030307D206465660A250A2F767368696674202D3436206465660A2F646C31207B0A202031302E3020446173686C656E67746820757365726C696E65776964746820676E756C696E65776964746820646976206D756C206D756C206D756C0A2020526F756E646564207B2063757272656E746C696E65776964746820302E3735206D756C20737562206475702030206C65207B20706F7020302E3031207D206966207D2069660A7D206465660A2F646C32207B0A202031302E3020446173686C656E67746820757365726C696E65776964746820676E756C696E65776964746820646976206D756C206D756C206D756C0A2020526F756E646564207B2063757272656E746C696E65776964746820302E3735206D756C20616464207D2069660A7D206465660A2F6870745F2033312E35206465660A2F7670745F2033312E35206465660A2F687074206870745F206465660A2F767074207670745F206465660A2F646F636C6970207B0A2020436C6970546F426F756E64696E67426F78207B0A202020206E657770617468203530203530206D6F7665746F20343130203530206C696E65746F2034313020333032206C696E65746F20353020333032206C696E65746F20636C6F7365706174680A20202020636C69700A20207D2069660A7D206465660A250A2520476E75706C6F742050726F6C6F672056657273696F6E20352E3120284F63742032303135290A250A252F53757070726573735044464D61726B2074727565206465660A250A2F4D207B6D6F7665746F7D2062696E64206465660A2F4C207B6C696E65746F7D2062696E64206465660A2F52207B726D6F7665746F7D2062696E64206465660A2F56207B726C696E65746F7D2062696E64206465660A2F4E207B6E657770617468206D6F7665746F7D2062696E64206465660A2F5A207B636C6F7365706174687D2062696E64206465660A2F43207B736574726762636F6C6F727D2062696E64206465660A2F66207B726C696E65746F2066696C6C7D2062696E64206465660A2F67207B736574677261797D2062696E64206465660A2F4773686F77207B73686F777D2064656620202025204D6179206265207265646566696E6564206C6174657220696E207468652066696C6520746F20737570706F7274205554462D380A2F76707432207670742032206D756C206465660A2F68707432206870742032206D756C206465660A2F4C73686F77207B63757272656E74706F696E74207374726F6B65204D2030207673686966742052200A09426C61636B74657874207B677361766520302073657467726179207465787473686F772067726573746F72657D207B7465787473686F777D206966656C73657D206465660A2F5273686F77207B63757272656E74706F696E74207374726F6B65204D2064757020737472696E67776964746820706F70206E65672076736869667420520A09426C61636B74657874207B677361766520302073657467726179207465787473686F772067726573746F72657D207B7465787473686F777D206966656C73657D206465660A2F4373686F77207B63757272656E74706F696E74207374726F6B65204D2064757020737472696E67776964746820706F70202D3220646976207673686966742052200A09426C61636B74657874207B677361766520302073657467726179207465787473686F772067726573746F72657D207B7465787473686F777D206966656C73657D206465660A2F5550207B647570207670745F206D756C202F767074206578636820646566206870745F206D756C202F6870742065786368206465660A20202F68707432206870742032206D756C20646566202F76707432207670742032206D756C206465667D206465660A2F444C207B436F6C6F72207B736574726762636F6C6F7220536F6C6964207B706F70205B5D7D206966203020736574646173687D0A207B706F7020706F7020706F702030207365746772617920536F6C6964207B706F70205B5D7D206966203020736574646173687D206966656C73657D206465660A2F424C207B7374726F6B6520757365726C696E6577696474682032206D756C207365746C696E6577696474680A09526F756E646564207B31207365746C696E656A6F696E2031207365746C696E656361707D2069667D206465660A2F414C207B7374726F6B6520757365726C696E657769647468203220646976207365746C696E6577696474680A09526F756E646564207B31207365746C696E656A6F696E2031207365746C696E656361707D2069667D206465660A2F554C207B64757020676E756C696E657769647468206D756C202F757365726C696E6577696474682065786368206465660A096475702031206C74207B706F7020317D206966203130206D756C202F75646C2065786368206465667D206465660A2F504C207B7374726F6B6520757365726C696E657769647468207365746C696E6577696474680A09526F756E646564207B31207365746C696E656A6F696E2031207365746C696E656361707D2069667D206465660A332E38207365746D697465726C696D69740A2520436C6173736963204C696E6520636F6C6F7273202876657273696F6E20352E30290A2F4C4377207B31203120317D206465660A2F4C4362207B30203020307D206465660A2F4C4361207B30203020307D206465660A2F4C4330207B31203020307D206465660A2F4C4331207B30203120307D206465660A2F4C4332207B30203020317D206465660A2F4C4333207B31203020317D206465660A2F4C4334207B30203120317D206465660A2F4C4335207B31203120307D206465660A2F4C4336207B30203020307D206465660A2F4C4337207B3120302E3320307D206465660A2F4C4338207B302E3520302E3520302E357D206465660A252044656661756C742064617368207061747465726E73202876657273696F6E20352E30290A2F4C5442207B424C205B5D204C436220444C7D206465660A2F4C5477207B504C205B5D203120736574677261797D206465660A2F4C5462207B504C205B5D204C436220444C7D206465660A2F4C5461207B414C205B312075646C206D756C20322075646C206D756C5D20302073657464617368204C436120736574726762636F6C6F727D206465660A2F4C5430207B504C205B5D204C433020444C7D206465660A2F4C5431207B504C205B3220646C31203320646C325D204C433120444C7D206465660A2F4C5432207B504C205B3120646C3120312E3520646C325D204C433220444C7D206465660A2F4C5433207B504C205B3620646C31203220646C32203120646C31203220646C325D204C433320444C7D206465660A2F4C5434207B504C205B3120646C31203220646C32203620646C31203220646C32203120646C31203220646C325D204C433420444C7D206465660A2F4C5435207B504C205B3420646C31203220646C325D204C433520444C7D206465660A2F4C5436207B504C205B312E3520646C3120312E3520646C3220312E3520646C3120312E3520646C3220312E3520646C31203620646C325D204C433620444C7D206465660A2F4C5437207B504C205B3320646C31203320646C32203120646C31203320646C325D204C433720444C7D206465660A2F4C5438207B504C205B3220646C31203220646C32203220646C31203620646C325D204C433820444C7D206465660A2F534C207B5B5D203020736574646173687D206465660A2F506E74207B7374726F6B65205B5D203020736574646173682067736176652031207365746C696E65636170204D203020302056207374726F6B652067726573746F72657D206465660A2F446961207B7374726F6B65205B5D20302073657464617368203220636F70792076707420616464204D0A2020687074206E656720767074206E656720562068707420767074206E656720560A202068707420767074205620687074206E656720767074205620636C6F736570617468207374726F6B650A2020506E747D206465660A2F506C73207B7374726F6B65205B5D203020736574646173682076707420737562204D2030207670743220560A202063757272656E74706F696E74207374726F6B65204D0A2020687074206E656720767074206E65672052206870743220302056207374726F6B650A207D206465660A2F426F78207B7374726F6B65205B5D20302073657464617368203220636F70792065786368206870742073756220657863682076707420616464204D0A2020302076707432206E656720562068707432203020562030207670743220560A202068707432206E65672030205620636C6F736570617468207374726F6B650A2020506E747D206465660A2F437273207B7374726F6B65205B5D203020736574646173682065786368206870742073756220657863682076707420616464204D0A2020687074322076707432206E656720562063757272656E74706F696E74207374726F6B65204D0A202068707432206E656720302052206870743220767074322056207374726F6B657D206465660A2F54726955207B7374726F6B65205B5D20302073657464617368203220636F70792076707420312E3132206D756C20616464204D0A2020687074206E656720767074202D312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E65672076707420312E3632206D756C205620636C6F736570617468207374726F6B650A2020506E747D206465660A2F53746172207B3220636F707920506C73204372737D206465660A2F426F7846207B7374726F6B65205B5D203020736574646173682065786368206870742073756220657863682076707420616464204D0A2020302076707432206E656720562068707432203020562030207670743220560A202068707432206E65672030205620636C6F7365706174682066696C6C7D206465660A2F5472695546207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20616464204D0A2020687074206E656720767074202D312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E65672076707420312E3632206D756C205620636C6F7365706174682066696C6C7D206465660A2F54726944207B7374726F6B65205B5D20302073657464617368203220636F70792076707420312E3132206D756C20737562204D0A2020687074206E65672076707420312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E656720767074202D312E3632206D756C205620636C6F736570617468207374726F6B650A2020506E747D206465660A2F5472694446207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20737562204D0A2020687074206E65672076707420312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E656720767074202D312E3632206D756C205620636C6F7365706174682066696C6C7D206465660A2F44696146207B7374726F6B65205B5D203020736574646173682076707420616464204D0A2020687074206E656720767074206E656720562068707420767074206E656720560A202068707420767074205620687074206E656720767074205620636C6F7365706174682066696C6C7D206465660A2F50656E74207B7374726F6B65205B5D20302073657464617368203220636F70792067736176650A20207472616E736C617465203020687074204D2034207B373220726F74617465203020687074204C7D207265706561740A2020636C6F736570617468207374726F6B652067726573746F726520506E747D206465660A2F50656E7446207B7374726F6B65205B5D203020736574646173682067736176650A20207472616E736C617465203020687074204D2034207B373220726F74617465203020687074204C7D207265706561740A2020636C6F7365706174682066696C6C2067726573746F72657D206465660A2F436972636C65207B7374726F6B65205B5D20302073657464617368203220636F70790A202068707420302033363020617263207374726F6B6520506E747D206465660A2F436972636C6546207B7374726F6B65205B5D2030207365746461736820687074203020333630206172632066696C6C7D206465660A2F4330207B424C205B5D20302073657464617368203220636F7079206D6F7665746F2076707420393020343530206172637D2062696E64206465660A2F4331207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420302039302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4332207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F707920767074203930203138302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4333207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F7079207670742030203138302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4334207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420313830203237302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4335207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F7079207670742030203930206172630A093220636F7079206D6F7665746F0A093220636F70792076707420313830203237302061726320636C6F7365706174682066696C6C0A09767074203020333630206172637D2062696E64206465660A2F4336207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F707920767074203930203237302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4337207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F7079207670742030203237302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4338207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420323730203336302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F4339207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420323730203435302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F433130207B424C205B5D20302073657464617368203220636F7079203220636F7079206D6F7665746F2076707420323730203336302061726320636C6F7365706174682066696C6C0A093220636F7079206D6F7665746F0A093220636F707920767074203930203138302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F433131207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F7079207670742030203138302061726320636C6F7365706174682066696C6C0A093220636F7079206D6F7665746F0A093220636F70792076707420323730203336302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F433132207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420313830203336302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F433133207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F70792076707420302039302061726320636C6F7365706174682066696C6C0A093220636F7079206D6F7665746F0A093220636F70792076707420313830203336302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F433134207B424C205B5D20302073657464617368203220636F7079206D6F7665746F0A093220636F707920767074203930203336302061726320636C6F7365706174682066696C6C0A09767074203020333630206172637D2062696E64206465660A2F433135207B424C205B5D20302073657464617368203220636F7079207670742030203336302061726320636C6F7365706174682066696C6C0A097670742030203336302061726320636C6F7365706174687D2062696E64206465660A2F526563207B6E6577706174682034203220726F6C6C206D6F7665746F203120696E646578203020726C696E65746F2030206578636820726C696E65746F0A096E6567203020726C696E65746F20636C6F7365706174687D2062696E64206465660A2F537175617265207B647570205265637D2062696E64206465660A2F42737175617265207B767074207375622065786368207670742073756220657863682076707432205371756172657D2062696E64206465660A2F5330207B424C205B5D20302073657464617368203220636F7079206D6F7665746F20302076707420726C696E65746F20424C20427371756172657D2062696E64206465660A2F5331207B424C205B5D20302073657464617368203220636F707920767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5332207B424C205B5D20302073657464617368203220636F707920657863682076707420737562206578636820767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5333207B424C205B5D20302073657464617368203220636F7079206578636820767074207375622065786368207670743220767074205265632066696C6C20427371756172657D2062696E64206465660A2F5334207B424C205B5D20302073657464617368203220636F7079206578636820767074207375622065786368207670742073756220767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5335207B424C205B5D20302073657464617368203220636F7079203220636F707920767074205371756172652066696C6C0A096578636820767074207375622065786368207670742073756220767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5336207B424C205B5D20302073657464617368203220636F70792065786368207670742073756220657863682076707420737562207670742076707432205265632066696C6C20427371756172657D2062696E64206465660A2F5337207B424C205B5D20302073657464617368203220636F70792065786368207670742073756220657863682076707420737562207670742076707432205265632066696C6C0A093220636F707920767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5338207B424C205B5D20302073657464617368203220636F7079207670742073756220767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F5339207B424C205B5D20302073657464617368203220636F70792076707420737562207670742076707432205265632066696C6C20427371756172657D2062696E64206465660A2F533130207B424C205B5D20302073657464617368203220636F7079207670742073756220767074205371756172652066696C6C203220636F707920657863682076707420737562206578636820767074205371756172652066696C6C0A09427371756172657D2062696E64206465660A2F533131207B424C205B5D20302073657464617368203220636F7079207670742073756220767074205371756172652066696C6C203220636F7079206578636820767074207375622065786368207670743220767074205265632066696C6C0A09427371756172657D2062696E64206465660A2F533132207B424C205B5D20302073657464617368203220636F70792065786368207670742073756220657863682076707420737562207670743220767074205265632066696C6C20427371756172657D2062696E64206465660A2F533133207B424C205B5D20302073657464617368203220636F70792065786368207670742073756220657863682076707420737562207670743220767074205265632066696C6C0A093220636F707920767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F533134207B424C205B5D20302073657464617368203220636F70792065786368207670742073756220657863682076707420737562207670743220767074205265632066696C6C0A093220636F707920657863682076707420737562206578636820767074205371756172652066696C6C20427371756172657D2062696E64206465660A2F533135207B424C205B5D20302073657464617368203220636F707920427371756172652066696C6C20427371756172657D2062696E64206465660A2F4430207B6773617665207472616E736C61746520343520726F7461746520302030205330207374726F6B652067726573746F72657D2062696E64206465660A2F4431207B6773617665207472616E736C61746520343520726F7461746520302030205331207374726F6B652067726573746F72657D2062696E64206465660A2F4432207B6773617665207472616E736C61746520343520726F7461746520302030205332207374726F6B652067726573746F72657D2062696E64206465660A2F4433207B6773617665207472616E736C61746520343520726F7461746520302030205333207374726F6B652067726573746F72657D2062696E64206465660A2F4434207B6773617665207472616E736C61746520343520726F7461746520302030205334207374726F6B652067726573746F72657D2062696E64206465660A2F4435207B6773617665207472616E736C61746520343520726F7461746520302030205335207374726F6B652067726573746F72657D2062696E64206465660A2F4436207B6773617665207472616E736C61746520343520726F7461746520302030205336207374726F6B652067726573746F72657D2062696E64206465660A2F4437207B6773617665207472616E736C61746520343520726F7461746520302030205337207374726F6B652067726573746F72657D2062696E64206465660A2F4438207B6773617665207472616E736C61746520343520726F7461746520302030205338207374726F6B652067726573746F72657D2062696E64206465660A2F4439207B6773617665207472616E736C61746520343520726F7461746520302030205339207374726F6B652067726573746F72657D2062696E64206465660A2F443130207B6773617665207472616E736C61746520343520726F746174652030203020533130207374726F6B652067726573746F72657D2062696E64206465660A2F443131207B6773617665207472616E736C61746520343520726F746174652030203020533131207374726F6B652067726573746F72657D2062696E64206465660A2F443132207B6773617665207472616E736C61746520343520726F746174652030203020533132207374726F6B652067726573746F72657D2062696E64206465660A2F443133207B6773617665207472616E736C61746520343520726F746174652030203020533133207374726F6B652067726573746F72657D2062696E64206465660A2F443134207B6773617665207472616E736C61746520343520726F746174652030203020533134207374726F6B652067726573746F72657D2062696E64206465660A2F443135207B6773617665207472616E736C61746520343520726F746174652030203020533135207374726F6B652067726573746F72657D2062696E64206465660A2F44696145207B7374726F6B65205B5D203020736574646173682076707420616464204D0A2020687074206E656720767074206E656720562068707420767074206E656720560A202068707420767074205620687074206E656720767074205620636C6F736570617468207374726F6B657D206465660A2F426F7845207B7374726F6B65205B5D203020736574646173682065786368206870742073756220657863682076707420616464204D0A2020302076707432206E656720562068707432203020562030207670743220560A202068707432206E65672030205620636C6F736570617468207374726F6B657D206465660A2F5472695545207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20616464204D0A2020687074206E656720767074202D312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E65672076707420312E3632206D756C205620636C6F736570617468207374726F6B657D206465660A2F5472694445207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20737562204D0A2020687074206E65672076707420312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E656720767074202D312E3632206D756C205620636C6F736570617468207374726F6B657D206465660A2F50656E7445207B7374726F6B65205B5D203020736574646173682067736176650A20207472616E736C617465203020687074204D2034207B373220726F74617465203020687074204C7D207265706561740A2020636C6F736570617468207374726F6B652067726573746F72657D206465660A2F4369726345207B7374726F6B65205B5D20302073657464617368200A202068707420302033363020617263207374726F6B657D206465660A2F4F7061717565207B677361766520636C6F736570617468203120736574677261792066696C6C2067726573746F72652030207365746772617920636C6F7365706174687D206465660A2F44696157207B7374726F6B65205B5D203020736574646173682076707420616464204D0A2020687074206E656720767074206E656720562068707420767074206E656720560A202068707420767074205620687074206E6567207670742056204F7061717565207374726F6B657D206465660A2F426F7857207B7374726F6B65205B5D203020736574646173682065786368206870742073756220657863682076707420616464204D0A2020302076707432206E656720562068707432203020562030207670743220560A202068707432206E656720302056204F7061717565207374726F6B657D206465660A2F5472695557207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20616464204D0A2020687074206E656720767074202D312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E65672076707420312E3632206D756C2056204F7061717565207374726F6B657D206465660A2F5472694457207B7374726F6B65205B5D203020736574646173682076707420312E3132206D756C20737562204D0A2020687074206E65672076707420312E3632206D756C20560A20206870742032206D756C203020560A2020687074206E656720767074202D312E3632206D756C2056204F7061717565207374726F6B657D206465660A2F50656E7457207B7374726F6B65205B5D203020736574646173682067736176650A20207472616E736C617465203020687074204D2034207B373220726F74617465203020687074204C7D207265706561740A20204F7061717565207374726F6B652067726573746F72657D206465660A2F4369726357207B7374726F6B65205B5D20302073657464617368200A202068707420302033363020617263204F7061717565207374726F6B657D206465660A2F426F7846696C6C207B677361766520526563203120736574677261792066696C6C2067726573746F72657D206465660A2F44656E73697479207B0A20202F46696C6C64656E2065786368206465660A202063757272656E74726762636F6C6F720A20202F436F6C42206578636820646566202F436F6C47206578636820646566202F436F6C522065786368206465660A20202F436F6C5220436F6C522046696C6C64656E206D756C2046696C6C64656E20737562203120616464206465660A20202F436F6C4720436F6C472046696C6C64656E206D756C2046696C6C64656E20737562203120616464206465660A20202F436F6C4220436F6C422046696C6C64656E206D756C2046696C6C64656E20737562203120616464206465660A2020436F6C5220436F6C4720436F6C4220736574726762636F6C6F727D206465660A2F426F78436F6C46696C6C207B67736176652052656320506F6C7946696C6C7D206465660A2F506F6C7946696C6C207B67736176652044656E736974792066696C6C2067726573746F72652067726573746F72657D206465660A2F68207B726C696E65746F20726C696E65746F20726C696E65746F20677361766520636C6F7365706174682066696C6C2067726573746F72657D2062696E64206465660A250A2520506F7374536372697074204C6576656C2031205061747465726E2046696C6C20726F7574696E6520666F722072656374616E676C65730A252055736167653A207820792077206820732061205858205061747465726E46696C6C0A2509782C79203D206C6F776572206C65667420636F726E6572206F6620626F7820746F2062652066696C6C65640A2509772C68203D20776964746820616E6420686569676874206F6620626F780A2509202061203D20616E676C6520696E2064656772656573206265747765656E206C696E657320616E6420782D617869730A2509205858203D20302F3120666F72206E6F2F7965732063726F73732D68617463680A250A2F5061747465726E46696C6C207B6773617665202F504661205B2039203220726F6C6C205D206465660A20205046612030206765742050466120322067657420322064697620616464205046612031206765742050466120332067657420322064697620616464207472616E736C6174650A2020504661203220676574202D322064697620504661203320676574202D32206469762050466120322067657420504661203320676574205265630A20205472616E73706172656E745061747465726E73207B7D207B6773617665203120736574677261792066696C6C2067726573746F72657D206966656C73650A2020636C69700A202063757272656E746C696E65776964746820302E35206D756C207365746C696E6577696474680A20202F5046732050466120322067657420647570206D756C2050466120332067657420647570206D756C206164642073717274206465660A2020302030204D2050466120352067657420726F7461746520504673202D322064697620647570207472616E736C6174650A202030203120504673205046612034206765742064697620312061646420666C6F6F72206376690A097B504661203420676574206D756C2030204D20302050467320567D20666F720A20203020504661203620676574206E65207B0A0930203120504673205046612034206765742064697620312061646420666C6F6F72206376690A097B504661203420676574206D756C20302032203120726F6C6C204D20504673203020567D20666F720A207D2069660A20207374726F6B652067726573746F72657D206465660A250A2F6C616E67756167656C6576656C2077686572650A207B706F70206C616E67756167656C6576656C7D207B317D206966656C73650A6475702032206C740A097B2F496E746572707265744C6576656C312074727565206465660A09202F496E746572707265744C6576656C332066616C7365206465667D0A097B2F496E746572707265744C6576656C31204C6576656C31206465660A0920322067740A09202020207B2F496E746572707265744C6576656C33204C6576656C33206465667D0A09202020207B2F496E746572707265744C6576656C332066616C7365206465667D0A09206966656C7365207D0A206966656C73650A250A2520506F7374536372697074206C6576656C2032207061747465726E2066696C6C20646566696E6974696F6E730A250A2F4C6576656C325061747465726E46696C6C207B0A2F54696C65387838207B2F5061696E74547970652032202F5061747465726E547970652031202F54696C696E67547970652031202F42426F78205B302030203820385D202F58537465702038202F595374657020387D0A0962696E64206465660A2F4B656570436F6C6F72207B63757272656E74726762636F6C6F72205B2F5061747465726E202F4465766963655247425D20736574636F6C6F7273706163657D2062696E64206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F7020302030204D20382038204C20302038204D20382030204C207374726F6B657D200A3E3E206D6174726978206D616B657061747465726E0A2F506174312065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F7020302030204D20382038204C20302038204D20382030204C207374726F6B650A09302034204D20342038204C20382034204C20342030204C20302034204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174322065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F7020302030204D20302038204C0A09382038204C20382030204C20302030204C2066696C6C7D0A3E3E206D6174726978206D616B657061747465726E0A2F506174332065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F70202D342038204D2038202D34204C0A0930203132204D2031322030204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174342065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F70202D342030204D2038203132204C0A0930202D34204D2031322038204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174352065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F70202D322038204D2034202D34204C0A0930203132204D2038202D34204C2034203132204D2031302030204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174362065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F70202D322030204D2034203132204C0A0930202D34204D2038203132204C2034202D34204D2031302038204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174372065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F702038202D32204D202D342034204C0A0931322030204D202D342038204C2031322034204D2030203130204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174382065786368206465660A3C3C2054696C653878380A202F5061696E7450726F63207B302E35207365746C696E65776964746820706F702030202D32204D2031322034204C0A092D342030204D2031322038204C202D342034204D2038203130204C207374726F6B657D0A3E3E206D6174726978206D616B657061747465726E0A2F506174392065786368206465660A2F5061747465726E31207B5061747465726E42676E64204B656570436F6C6F722050617431207365747061747465726E7D2062696E64206465660A2F5061747465726E32207B5061747465726E42676E64204B656570436F6C6F722050617432207365747061747465726E7D2062696E64206465660A2F5061747465726E33207B5061747465726E42676E64204B656570436F6C6F722050617433207365747061747465726E7D2062696E64206465660A2F5061747465726E34207B5061747465726E42676E64204B656570436F6C6F72204C616E647363617065207B506174357D207B506174347D206966656C7365207365747061747465726E7D2062696E64206465660A2F5061747465726E35207B5061747465726E42676E64204B656570436F6C6F72204C616E647363617065207B506174347D207B506174357D206966656C7365207365747061747465726E7D2062696E64206465660A2F5061747465726E36207B5061747465726E42676E64204B656570436F6C6F72204C616E647363617065207B506174397D207B506174367D206966656C7365207365747061747465726E7D2062696E64206465660A2F5061747465726E37207B5061747465726E42676E64204B656570436F6C6F72204C616E647363617065207B506174387D207B506174377D206966656C7365207365747061747465726E7D2062696E64206465660A7D206465660A250A250A25456E64206F6620506F7374536372697074204C6576656C203220636F64650A250A2F5061747465726E42676E64207B0A20205472616E73706172656E745061747465726E73207B7D207B6773617665203120736574677261792066696C6C2067726573746F72657D206966656C73650A7D206465660A250A25205375627374697475746520666F72204C6576656C2032207061747465726E2066696C6C20636F64657320776974680A2520677261797363616C65206966204C6576656C203220737570706F7274206973206E6F742073656C65637465642E0A250A2F4C6576656C315061747465726E46696C6C207B0A2F5061747465726E31207B302E3235302044656E736974797D2062696E64206465660A2F5061747465726E32207B302E3530302044656E736974797D2062696E64206465660A2F5061747465726E33207B302E3735302044656E736974797D2062696E64206465660A2F5061747465726E34207B302E3132352044656E736974797D2062696E64206465660A2F5061747465726E35207B302E3337352044656E736974797D2062696E64206465660A2F5061747465726E36207B302E3632352044656E736974797D2062696E64206465660A2F5061747465726E37207B302E3837352044656E736974797D2062696E64206465660A7D206465660A250A25204E6F77207465737420666F7220737570706F7274206F66204C6576656C203220636F64650A250A4C6576656C31207B4C6576656C315061747465726E46696C6C7D207B4C6576656C325061747465726E46696C6C7D206966656C73650A250A2F53796D626F6C2D4F626C69717565202F53796D626F6C2066696E64666F6E74205B312030202E3136372031203020305D206D616B65666F6E740A647570206C656E677468206469637420626567696E207B3120696E646578202F464944206571207B706F7020706F707D207B6465667D206966656C73657D20666F72616C6C0A63757272656E746469637420656E6420646566696E65666F6E7420706F700A250A2F4D4673686F77207B0A2020207B2064757020352067657420332067650A20202020207B2035206765742033206571207B67736176657D207B67726573746F72657D206966656C7365207D0A20202020207B647570206475702030206765742066696E64666F6E742065786368203120676574207363616C65666F6E7420736574666F6E740A20202020205B2063757272656E74706F696E74205D206578636820647570203220676574203020657863682052206475702035206765742032206E65207B6475702064757020360A20202020206765742065786368203420676574207B7465787473686F777D207B737472696E67776964746820706F70203020527D206966656C7365207D69662064757020352067657420302065710A20202020207B647570203320676574207B3220676574206E656720302065786368205220706F707D207B706F7020616C6F616420706F70204D7D206966656C73657D207B64757020350A20202020206765742031206571207B647570203220676574206578636820647570203320676574206578636820362067657420737472696E67776964746820706F70202D32206469760A2020202020647570203020527D207B64757020362067657420737472696E67776964746820706F70202D3220646976203020522036206765740A20202020207465787473686F77203220696E646578207B616C6F616420706F70204D206E65672033202D3120726F6C6C206E6567205220706F7020706F707D207B706F7020706F7020706F700A2020202020706F7020616C6F616420706F70204D7D206966656C7365207D6966656C7365207D6966656C7365207D0A20202020206966656C7365207D0A202020666F72616C6C7D206465660A2F47737769647468207B6475702074797065202F737472696E6774797065206571207B737472696E6777696474687D207B706F7020286E2920737472696E6777696474687D206966656C73657D206465660A2F4D467769647468207B302065786368207B206475702035206765742033206765207B2035206765742033206571207B2030207D207B20706F70207D206966656C7365207D0A207B6475702033206765747B647570206475702030206765742066696E64666F6E742065786368203120676574207363616C65666F6E7420736574666F6E740A20202020203620676574204773776964746820706F70206164647D207B706F707D206966656C73657D206966656C73657D20666F72616C6C7D206465660A2F4D4C73686F77207B2063757272656E74706F696E74207374726F6B65204D0A202030206578636820520A2020426C61636B74657874207B677361766520302073657467726179204D4673686F772067726573746F72657D207B4D4673686F777D206966656C7365207D2062696E64206465660A2F4D5273686F77207B2063757272656E74706F696E74207374726F6B65204D0A20206578636820647570204D467769647468206E65672033202D3120726F6C6C20520A2020426C61636B74657874207B677361766520302073657467726179204D4673686F772067726573746F72657D207B4D4673686F777D206966656C7365207D2062696E64206465660A2F4D4373686F77207B2063757272656E74706F696E74207374726F6B65204D0A20206578636820647570204D467769647468202D32206469762033202D3120726F6C6C20520A2020426C61636B74657874207B677361766520302073657467726179204D4673686F772067726573746F72657D207B4D4673686F777D206966656C7365207D2062696E64206465660A2F585973617665202020207B205B2820292031203220747275652066616C736520332028295D207D2062696E64206465660A2F5859726573746F7265207B205B2820292031203220747275652066616C736520342028295D207D2062696E64206465660A4C6576656C312053757070726573735044464D61726B206F72200A7B7D207B0A2F53446963742031302064696374206465660A73797374656D64696374202F7064666D61726B206B6E6F776E206E6F74207B0A20207573657264696374202F7064666D61726B2073797374656D64696374202F636C656172746F6D61726B20676574207075740A7D2069660A534469637420626567696E205B0A20202F5469746C65202874656D702E657073290A20202F5375626A6563742028676E75706C6F7420706C6F74290A20202F43726561746F722028676E75706C6F7420352E302070617463686C6576656C2033290A20202F417574686F7220286D617274696E6F290A2520202F50726F64756365722028676E75706C6F74290A2520202F4B6579776F7264732028290A20202F4372656174696F6E4461746520284D6F6E204E6F762032312031323A33343A33322032303136290A20202F444F43494E464F207064666D61726B0A656E640A7D206966656C73650A250A2520537570706F727420666F7220626F7865642074657874202D20457468616E2041204D657272697474204D617920323030350A250A2F496E697454657874426F78207B207573657264696374202F544279322033202D3120726F6C6C20707574207573657264696374202F544278322033202D3120726F6C6C207075740A20202020202020202020207573657264696374202F544279312033202D3120726F6C6C20707574207573657264696374202F544278312033202D3120726F6C6C207075740A092020202F426F78696E67207472756520646566207D206465660A2F457874656E6454657874426F78207B20426F78696E670A202020207B206773617665206475702066616C7365206368617270617468207061746862626F780A2020202020206475702054427932206774207B7573657264696374202F544279322033202D3120726F6C6C207075747D207B706F707D206966656C73650A2020202020206475702054427832206774207B7573657264696374202F544278322033202D3120726F6C6C207075747D207B706F707D206966656C73650A2020202020206475702054427931206C74207B7573657264696374202F544279312033202D3120726F6C6C207075747D207B706F707D206966656C73650A2020202020206475702054427831206C74207B7573657264696374202F544278312033202D3120726F6C6C207075747D207B706F707D206966656C73650A20202020202067726573746F7265207D206966207D206465660A2F506F7054657874426F78207B206E6577706174682054427831205442786D617267696E207375622054427931205442796D617267696E20737562204D0A20202020202020202020202020202054427831205442786D617267696E207375622054427932205442796D617267696E20616464204C0A092020202020202054427832205442786D617267696E206164642054427932205442796D617267696E20616464204C0A092020202020202054427832205442786D617267696E206164642054427931205442796D617267696E20737562204C20636C6F736570617468207D206465660A2F4472617754657874426F78207B20506F7054657874426F78207374726F6B65202F426F78696E672066616C7365206465667D206465660A2F46696C6C54657874426F78207B20677361766520506F7054657874426F7820312031203120736574726762636F6C6F722066696C6C2067726573746F7265202F426F78696E672066616C7365206465667D206465660A3020302030203020496E697454657874426F780A2F5442786D617267696E203230206465660A2F5442796D617267696E203230206465660A2F426F78696E672066616C7365206465660A2F7465787473686F77207B20457874656E6454657874426F78204773686F77207D206465660A250A2520726564756E64616E7420646566696E6974696F6E7320666F7220636F6D7061746962696C69747920776974682070726F6C6F6775652E7073206F6C646572207468616E20352E302E320A2F4C5442207B424C205B5D204C436220444C7D206465660A2F4C5462207B504C205B5D204C436220444C7D206465660A656E640A2525456E6450726F6C6F670A2525506167653A203120310A676E756469637420626567696E0A67736176650A646F636C69700A3530203530207472616E736C6174650A302E30353020302E303530207363616C650A3020736574677261790A6E6577706174680A2848656C766574696361292066696E64666F6E7420313430207363616C65666F6E7420736574666F6E740A4261636B67726F756E64436F6C6F722030206C742033203120726F6C6C2030206C7420657863682030206C74206F72206F72206E6F74207B4261636B67726F756E64436F6C6F72204320312E3030302030203020373230302E303020353034302E303020426F78436F6C46696C6C7D2069660A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A36383620343438204D0A3633203020560A36313938203020520A2D3633203020560A7374726F6B650A36303220343438204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020282030295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3638362031333333204D0A3633203020560A36313938203020520A2D3633203020560A7374726F6B650A3630322031333333204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820302E32295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3638362032323137204D0A3633203020560A36313938203020520A2D3633203020560A7374726F6B650A3630322032323137204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820302E34295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3638362033313032204D0A3633203020560A36313938203020520A2D3633203020560A7374726F6B650A3630322033313032204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820302E36295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3638362033393836204D0A3633203020560A36313938203020520A2D3633203020560A7374726F6B650A3630322033393836204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820302E38295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3638362034383731204D0A3633203020560A36313938203020520A2D3633203020560A7374726F6B650A3630322034383731204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020282031295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A36383620343438204D0A3020363320560A30203433363020520A30202D363320560A7374726F6B650A36383620333038204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020282030295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3137333020343438204D0A3020363320560A30203433363020520A30202D363320560A7374726F6B650A3137333020333038204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820302E35295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3237373320343438204D0A3020363320560A30203433363020520A30202D363320560A7374726F6B650A3237373320333038204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020282031295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3338313720343438204D0A3020363320560A30203433363020520A30202D363320560A7374726F6B650A3338313720333038204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820312E35295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3438363020343438204D0A3020363320560A30203433363020520A30202D363320560A7374726F6B650A3438363020333038204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020282032295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3539303420343438204D0A3020363320560A30203433363020520A30202D363320560A7374726F6B650A3539303420333038204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202820322E35295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A3639343720343438204D0A3020363320560A30203433363020520A30202D363320560A7374726F6B650A3639343720333038204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020282033295D0A5D202D34362E37204D4373686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A312E30303020554C0A4C54420A4C436220736574726762636F6C6F720A3638362034383731204E0A36383620343438204C0A36323631203020560A30203434323320560A2D36323631203020560A5A207374726F6B650A312E3030302055500A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A4C436220736574726762636F6C6F720A3131322032363539204D0A63757272656E74706F696E74206773617665207472616E736C617465202D32373020726F7461746520302030206D6F7665746F0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020286669746E657373295D0A5D202D34362E37204D4373686F770A67726573746F72650A4C54620A4C436220736574726762636F6C6F720A33383136203938204D0A5B205B2848656C76657469636129203134302E3020302E30207472756520747275652030202853666F727A6F20636F6D707574617A696F6E616C65295D0A5D202D34362E37204D4373686F770A4C54620A2520426567696E20706C6F742023310A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A4C436220736574726762636F6C6F720A363239362034373338204D0A5B205B2848656C76657469636129203134302E3020302E302074727565207472756520302028313020702E20353020692E295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A363338302034373338204D0A333939203020560A3638362034383731204D0A3633202D31333220560A3633202D31323820560A3634202D31323420560A3633202D31323120560A3633202D31313720560A3633202D31313320560A3634202D31313020560A3633202D31303720560A3633202D31303420560A3633202D31303020560A3634202D393820560A3633202D393420560A3633202D393220560A3633202D383920560A3634202D383720560A3633202D383320560A3633202D383220560A3633202D373920560A3634202D373620560A3633202D373420560A3633202D373220560A3633202D373020560A3634202D363820560A3633202D363620560A3633202D363320560A3633202D363220560A3634202D363020560A3633202D353920560A3633202D353620560A3633202D353520560A3634202D353320560A3633202D353220560A3633202D353020560A3633202D343820560A3633202D343820560A3634202D343520560A3633202D343520560A3633202D343320560A3633202D343120560A3634202D343120560A3633202D333920560A3633202D333820560A3633202D333720560A3634202D333620560A3633202D333520560A3633202D333420560A3633202D333220560A3634202D333220560A3633202D333120560A3633202D333020560A3633202D323920560A3634202D323820560A3633202D323720560A3633202D323720560A3633202D323620560A3634202D323520560A3633202D323420560A3633202D323320560A3633202D323320560A3634202D323220560A3633202D323120560A3633202D323120560A3633202D323020560A3634202D323020560A3633202D313920560A3633202D313820560A3633202D313820560A3633202D313820560A3634202D313620560A3633202D313720560A3633202D313620560A3633202D313520560A3634202D313520560A3633202D313420560A3633202D313420560A3633202D313420560A3634202D313320560A3633202D313320560A3633202D313220560A3633202D313220560A3634202D313220560A3633202D313120560A3633202D313120560A3633202D313120560A3634202D313020560A3633202D313020560A3633202D313020560A3633202D313020560A3634202D3920560A3633202D3920560A3633202D3820560A3633202D3920560A3634202D3820560A3633202D3820560A3633202D3720560A3633202D3820560A3634202D3720560A3633202D3720560A3633202D3720560A2520456E6420706C6F742023310A2520426567696E20706C6F742023320A7374726F6B650A4C54620A4C54310A4C436220736574726762636F6C6F720A4C436220736574726762636F6C6F720A363239362034353938204D0A5B205B2848656C76657469636129203134302E3020302E3020747275652074727565203020283120702E2035303020692E295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C54310A4C436220736574726762636F6C6F720A363338302034353938204D0A333939203020560A3638362034383731204D0A3633202D31313920560A3633202D31313620560A3634202D31313220560A3633202D31313020560A3633202D31303720560A3633202D31303420560A3634202D31303120560A3633202D393820560A3633202D393620560A3633202D393320560A3634202D393020560A3633202D383920560A3633202D383520560A3633202D383420560A3634202D383120560A3633202D373920560A3633202D373720560A3633202D373520560A3634202D373320560A3633202D373120560A3633202D363820560A3633202D363820560A3634202D363520560A3633202D363320560A3633202D363220560A3633202D363020560A3634202D353920560A3633202D353720560A3633202D353520560A3633202D353420560A3634202D353320560A3633202D353120560A3633202D353020560A3633202D343820560A3633202D343720560A3634202D343620560A3633202D343520560A3633202D343320560A3633202D343220560A3634202D343120560A3633202D343020560A3633202D333920560A3633202D333820560A3634202D333720560A3633202D333620560A3633202D333520560A3633202D333320560A3634202D333420560A3633202D333220560A3633202D333120560A3633202D333020560A3634202D333020560A3633202D323920560A3633202D323820560A3633202D323720560A3634202D323720560A3633202D323520560A3633202D323620560A3633202D323420560A3634202D323420560A3633202D323320560A3633202D323320560A3633202D323220560A3634202D323120560A3633202D323120560A3633202D323020560A3633202D323020560A3633202D313920560A3634202D313820560A3633202D313820560A3633202D313820560A3633202D313720560A3634202D313720560A3633202D313620560A3633202D313620560A3633202D313520560A3634202D313520560A3633202D313520560A3633202D313420560A3633202D313420560A3634202D313320560A3633202D313320560A3633202D313320560A3633202D313320560A3634202D313220560A3633202D313120560A3633202D313220560A3633202D313120560A3634202D313120560A3633202D313020560A3633202D313020560A3633202D313020560A3634202D313020560A3633202D3920560A3633202D3920560A3633202D3920560A3634202D3920560A3633202D3920560A3633202D3820560A2520456E6420706C6F742023320A2520426567696E20706C6F742023330A7374726F6B650A4C54620A4C54320A4C436220736574726762636F6C6F720A4C436220736574726762636F6C6F720A363239362034343538204D0A5B205B2848656C76657469636129203134302E3020302E302074727565207472756520302028353020702E20313020692E295D0A5D202D34362E37204D5273686F770A312E30303020554C0A4C54620A4C54320A4C436220736574726762636F6C6F720A363338302034343538204D0A333939203020560A3638362034383731204D0A3633202D31303620560A3633202D31303320560A3634202D31303120560A3633202D393920560A3633202D393620560A3633202D393420560A3634202D393120560A3633202D393020560A3633202D383720560A3633202D383520560A3634202D383320560A3633202D383120560A3633202D383020560A3633202D373720560A3634202D373520560A3633202D373420560A3633202D373220560A3633202D373020560A3634202D363920560A3633202D363620560A3633202D363620560A3633202D363320560A3634202D363220560A3633202D363120560A3633202D353920560A3633202D353820560A3634202D353620560A3633202D353620560A3633202D353320560A3633202D353320560A3634202D353120560A3633202D353020560A3633202D343920560A3633202D343720560A3633202D343720560A3634202D343520560A3633202D343420560A3633202D343320560A3633202D343320560A3634202D343120560A3633202D343020560A3633202D333920560A3633202D333820560A3634202D333820560A3633202D333620560A3633202D333620560A3633202D333520560A3634202D333320560A3633202D333420560A3633202D333220560A3633202D333120560A3634202D333120560A3633202D333020560A3633202D333020560A3633202D323820560A3634202D323820560A3633202D323720560A3633202D323720560A3633202D323620560A3634202D323520560A3633202D323520560A3633202D323420560A3633202D323420560A3634202D323320560A3633202D323220560A3633202D323220560A3633202D323120560A3633202D323120560A3634202D323120560A3633202D323020560A3633202D313920560A3633202D313920560A3634202D313820560A3633202D313820560A3633202D313820560A3633202D313720560A3634202D313720560A3633202D313620560A3633202D313620560A3633202D313620560A3634202D313520560A3633202D313520560A3633202D313520560A3633202D313420560A3634202D313420560A3633202D313320560A3633202D313320560A3633202D313320560A3634202D313320560A3633202D313220560A3633202D313220560A3633202D313220560A3634202D313120560A3633202D313120560A3633202D313120560A3633202D313020560A3634202D313120560A3633202D313020560A3633202D313020560A2520456E6420706C6F742023330A7374726F6B650A322E30303020554C0A4C54620A4C436220736574726762636F6C6F720A312E30303020554C0A4C54420A4C436220736574726762636F6C6F720A3638362034383731204E0A36383620343438204C0A36323631203020560A30203434323320560A2D36323631203020560A5A207374726F6B650A312E3030302055500A312E30303020554C0A4C54620A4C436220736574726762636F6C6F720A7374726F6B650A67726573746F72650A656E640A73686F77706167650A2525547261696C65720A2525446F63756D656E74466F6E74733A2048656C7665746963610A>|ps>||||>>>
+
+  In questo caso la configurazione 50 popolazioni per 10 individui ottine
+  fitness migliori con meno sforzo delle altre.
+
+  <subsubsection|Popolazioni cellulari>
+
+  Questo e' un secondo modo di creare popolazioni strutturate.
+
+  L'idea e' di mettere ciascun individuo su un griglia ou un grappolo
+
+  <with|gr-mode|<tuple|edit|text-at>|gr-frame|<tuple|scale|1cm|<tuple|0.5gw|0.5gh>>|gr-geometry|<tuple|geometry|1par|0.6par>|gr-color|dark
+  cyan|gr-dash-style|10|gr-line-width|2ln|<graphics||<carc|<point|-5.2233552923298|2.97862941874584>|<point|-3.52663281184296|3.06872269695724>|<point|-3.52663281184296|2.66331192833706>>|<carc|<point|-5.23830883866958|0.35074693229665>|<point|-3.54158635818274|0.44084021050805>|<point|-3.54158635818274|0.03542944188787>>|<carc|<point|-5.20728893414706|-2.28578079176221>|<point|-3.51056645366022|-2.19568751355081>|<point|-3.51056645366022|-2.60109828217099>>|<carc|<point|-2.07016046431022|2.91856836040479>|<point|-0.37343798382338|3.00866163861619>|<point|-0.37343798382338|2.60325086999601>>|<carc|<point|-2.05517239908995|0.24586348939011>|<point|-0.35844991860311|0.33595676760151>|<point|-0.35844991860311|-0.06945400101867>>|<carc|<point|-1.87496267796282|-2.38179744988758>|<point|-0.17824019747598|-2.29170417167618>|<point|-0.17824019747598|-2.69711494029636>>|<carc|<point|1.07079487655299|2.90262239450357>|<point|2.76751735703983|2.99271567271497>|<point|2.76751735703983|2.58730490409479>>|<carc|<point|0.88615735063037|0.20745451465105>|<point|2.58287983111721|0.29754779286245>|<point|2.58287983111721|-0.10786297575773>>|<carc|<point|1.10074077862264|-2.33551142382691>|<point|2.79746325910948|-2.24541814561551>|<point|2.79746325910948|-2.65082891423569>>|<line|<point|-3.52256|0.331737>|<point|-2.03345969123028|0.3555440217567>>|<line|<point|-1.10059|-0.725293>|<point|-1.10511182893453|-1.63468640078452>>|<line|<point|-0.33513|0.170256>|<point|0.88615735063037|0.20745451465105>>|<line|<point|1.83625|-0.764202>|<point|1.86839868131763|-1.58862481542125>>|<line|<point|-0.17824|-2.2917>|<point|1.10074077862264|-2.33551142382691>>|<line|<point|-3.48851|-2.45793>|<point|-1.87496267796282|-2.38179744988758>>|<line|<point|-4.46134|-0.622278>|<point|-4.30427463178824|-1.53553116795721>>|<line|<point|-4.32526|1.1004>|<point|-4.38629890636975|2.00213931300699>>|<line|<point|-3.50323|2.83113>|<point|-2.07016046431022|2.91856836040479>>|<line|<point|-1.34604|1.95209>|<point|-1.27571836756395|0.993890893447978>>|<line|<point|-0.349354|2.79896>|<point|1.07079487655299|2.90262239450357>>|<line|<point|1.82649|1.93184>|<point|1.82748293450356|0.954793798663808>>|<with|color|dark
+  cyan|dash-style|10|line-width|2ln|<cline|<point|-2.54959|3.83>|<point|-0.125992194734753|3.83000396877894>|<point|0.255010583410504|1.25823521629845>|<point|3.54645125016537|1.20531816377828>|<point|3.43003373462098|-1.12303214710941>|<point|0.0539257838338405|-1.14419896811748>|<point|0.255010583410504|-3.80063500463024>|<point|-2.43317568461437|-3.62071702606165>|<point|-2.53900978965472|-1.0912819155973>|<point|-6.11620254001852|-1.36645058870221>|<point|-6.2008698240508|1.13123429025003>|<point|-2.61309366318296|1.71332186797195>>>|<with|color|dark
+  cyan|dash-style|10|line-width|2ln|<line|<point|-1.62884|0.0305596>|<point|-0.708079772456674|0.326895091943379>>>|<with|color|dark
+  cyan|dash-style|10|line-width|2ln|<line|<point|-1.42775|0.612647>|<point|-0.993831856065617|-0.0541076862018786>>>|<with|color|dark
+  cyan|<text-at|Selezione per torneo|<point|2.73153|1.52282>>>|<with|color|dark
+  cyan|<text-at||<point|-1.44892|4.43326>>>>>
+
+  In questo caso abbiamo 9 individui su una griglia
+
+  <\itemize>
+    <item>La <underline|selezione> si fara' per torneo: Ogni individuo entra
+    in competizione con i suoi vicini e rimipazzera il vicino\ 
+
+    <item>Il <underline|crossover> si fara' scegliendo a caso uno dei suoi
+    vicini con cui scambiera' una parte del suo codice genetico
+
+    <item>La <underline|mutazione> si fara' come sempre.
+  </itemize>
+
+  Con queste regole possiamo fare una aggiornamenteo sincrono di ogni
+  individuo.\ 
+
+  Il vantaggio di questo modello e' di mantenere una diversita' per un
+  maggiore tempo, cosa che favorisce la esplorazione.
+
+  E' possibile studiare il <with|font-shape|italic|takeover time>. per una
+  configurazione ad anello <math|\<tau\>=O<around*|(|n|)>> dove <math|n> e'
+  il numero di individui, mentre per un caso a griglia 2D (come in esempio)
+  <math|\<tau\>=O<around*|(|<sqrt|n>|)>>.
+
+  \;
+
+  <section|Programmazione Genetica (GP)>
+
+  <subsection|Introduzione>
+
+  E' un dominio sviluppato negli anni 90, in particolare da
+  <with|font-shape|italic|Kozu>. L'idea e' quella di utilizzare l'evoluzione
+  darwiniana a dei <underline|programmi informatici>.
+
+  Invece di avere dei vettori numerici come negli <with|font-series|bold|AG>
+  si utilizzeranno delle popolazioni di codice che potra duqnque mutare,
+  incrociare e essere selezionato.
+
+  Questi programmi dovranno produrre un output ragionabile a partire di un
+  input dato. Possiamo vedere dunqui la <with|font-series|bold|GP> come un
+  problema di apprendimento, o come un problema di minimizzazione tra
+  l'output desiderato e quello ottenuto (l'errore).
+
+  Spesso ci si dona un insieme di coppie \<less\>input, output\<gtr\> che
+  costituiscono <underline|l'insieme dell'apprendimento>, anche chiamato
+  <underline|test-set>.
+
+  Altre volte possiamo mettere il programma in condizioni reali e valutare le
+  performance: ex. programma di pilotaggio automatico testato con un
+  simulatore di volo.
+
+  <with|color|black|Si spera che il programma che emergera' da questa
+  procedura di evoluzione sara' capace di generalizzare.> (ovvero reagira' in
+  modo corretto con nuovi dati, non presenti nel
+  <with|font-shape|italic|test-set>)
+
+  Se il <with|font-shape|italic|test-set> non e' corretamente scelto (per
+  esempio e' troppo specifico) il risultato non sara' corretto.
 </body>
 
 <initial|<\collection>
@@ -934,8 +2030,31 @@
     <associate|auto-19|<tuple|3.4|13>>
     <associate|auto-2|<tuple|1.1|1>>
     <associate|auto-20|<tuple|3.4.1|13>>
+    <associate|auto-21|<tuple|3.5|?>>
+    <associate|auto-22|<tuple|4|?>>
+    <associate|auto-23|<tuple|4.1|?>>
+    <associate|auto-24|<tuple|4.2|?>>
+    <associate|auto-25|<tuple|4.3|?>>
+    <associate|auto-26|<tuple|4.3.1|?>>
+    <associate|auto-27|<tuple|4.3.2|?>>
+    <associate|auto-28|<tuple|4.3.3|?>>
+    <associate|auto-29|<tuple|4.3.4|?>>
     <associate|auto-3|<tuple|1.2|3>>
+    <associate|auto-30|<tuple|4.4|?>>
+    <associate|auto-31|<tuple|4.4.1|?>>
+    <associate|auto-32|<tuple|4.5|?>>
+    <associate|auto-33|<tuple|4.6|?>>
+    <associate|auto-34|<tuple|4.7|?>>
+    <associate|auto-35|<tuple|4.8|?>>
+    <associate|auto-36|<tuple|4.9|?>>
+    <associate|auto-37|<tuple|4.9.1|?>>
+    <associate|auto-38|<tuple|1|?>>
+    <associate|auto-39|<tuple|2|?>>
     <associate|auto-4|<tuple|1.3|4>>
+    <associate|auto-40|<tuple|1|?>>
+    <associate|auto-41|<tuple|4.9.2|?>>
+    <associate|auto-42|<tuple|5|?>>
+    <associate|auto-43|<tuple|5.1|?>>
     <associate|auto-5|<tuple|2|6>>
     <associate|auto-6|<tuple|2.1|6>>
     <associate|auto-7|<tuple|2.1.1|6>>
@@ -946,8 +2065,16 @@
 
 <\auxiliary>
   <\collection>
+    <\associate|figure>
+      <tuple|normal||<pageref|auto-38>>
+
+      <tuple|normal||<pageref|auto-39>>
+    </associate>
+    <\associate|table>
+      <tuple|normal||<pageref|auto-40>>
+    </associate>
     <\associate|toc>
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Simulated
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Simulate
       Annealing> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-1><vspace|0.5fn>
 
@@ -968,7 +2095,7 @@
       <no-break><pageref|auto-5><vspace|0.5fn>
 
       <with|par-left|<quote|1tab>|2.1<space|2spc>La pista dei ferormoni: una
-      ottimizazione naturale <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      ottimizzazione naturale <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-6>>
 
       <with|par-left|<quote|2tab>|2.1.1<space|2spc>Esperienza di Goss (1989)
@@ -985,7 +2112,7 @@
       <no-break><pageref|auto-9>>
 
       <with|par-left|<quote|1tab>|2.2<space|2spc>Algoritmo informatico di
-      ottimazione <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      ottimizzazione <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-10>>
 
       <with|par-left|<quote|2tab>|2.2.1<space|2spc>Algoritmo
@@ -1029,6 +2156,86 @@
       <with|par-left|<quote|2tab>|3.4.1<space|2spc>Algoritmo
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-20>>
+
+      <with|par-left|<quote|1tab>|3.5<space|2spc>Pseudo Code
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-21>>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|4<space|2spc>Algoritimi
+      evolutivi> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-22><vspace|0.5fn>
+
+      <with|par-left|<quote|1tab>|4.1<space|2spc>Introduzione
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-23>>
+
+      <with|par-left|<quote|1tab>|4.2<space|2spc>Algoritmi genetici
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-24>>
+
+      <with|par-left|<quote|1tab>|4.3<space|2spc>Pseudo codice
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-25>>
+
+      <with|par-left|<quote|2tab>|4.3.1<space|2spc>Selezione
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-26>>
+
+      <with|par-left|<quote|2tab>|4.3.2<space|2spc>Crossover
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-27>>
+
+      <with|par-left|<quote|2tab>|4.3.3<space|2spc>Mutazione
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-28>>
+
+      <with|par-left|<quote|2tab>|4.3.4<space|2spc>Diversificazione VS
+      Intensificazione <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-29>>
+
+      <with|par-left|<quote|1tab>|4.4<space|2spc>Esempio
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-30>>
+
+      <with|par-left|<quote|2tab>|4.4.1<space|2spc>Esempio piu' realistico
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-31>>
+
+      <with|par-left|<quote|1tab>|4.5<space|2spc>Ottimizzazione di funzioni
+      continue <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-32>>
+
+      <with|par-left|<quote|1tab>|4.6<space|2spc>Altri metodi di selezione
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-33>>
+
+      <with|par-left|<quote|1tab>|4.7<space|2spc>Altre operazioni di
+      crossover e mutazione <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-34>>
+
+      <with|par-left|<quote|1tab>|4.8<space|2spc>I teoremi degli schemi
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-35>>
+
+      <with|par-left|<quote|1tab>|4.9<space|2spc>Popolazioni strutturate
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-36>>
+
+      <with|par-left|<quote|2tab>|4.9.1<space|2spc>Le multi-popolazioni
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-37>>
+
+      <with|par-left|<quote|2tab>|4.9.2<space|2spc>Popolazioni cellulari
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-41>>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|5<space|2spc>Programmazione
+      Genetica (GP)> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-42><vspace|0.5fn>
+
+      <with|par-left|<quote|1tab>|5.1<space|2spc>Introduzione
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-43>>
     </associate>
   </collection>
 </auxiliary>

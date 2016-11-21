@@ -1,0 +1,27 @@
+clear all;
+pkg load image;
+[data, ~,~,~] = traintestMNIST([2], 500);
+[n, D] = size(data);
+
+#X = mat2cell(data, ones(1, n), D);
+avg_x = mean(data);
+[pc,ev,~] = pca(data);
+errs = zeros(D, 1);
+disp('redy to go');
+for m=1:5:D
+   PCM = pc(1:1:m,:);
+   imgs = cell(n,1);
+   for i=1:1:n
+      img = data(i,:);
+      imgs(i) = {rm(img, avg_x, PCM)};  
+   endfor
+   mat_img = cell2mat(imgs);
+   x=1/n*1/D*sum(sum(power(data-mat_img,2)));
+   
+   errs(m) =x;
+endfor
+errs = errs(1:5:D);
+mm = [1:5:D];
+disp('done');
+figure();
+plot(mm,errs);

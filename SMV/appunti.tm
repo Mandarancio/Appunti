@@ -23,12 +23,69 @@
     \;
   </itemize-dot>
 
+  <section|Computation Tree Logic (CTL)>
+
+  <subsection|Introduzione>
+
+  Quali sono le logiche temporali esistenti
+
+  <\itemize>
+    <item>Linear-time logic (LTL):
+
+    Descrive una sequenza lineare di esecuizone
+
+    <item>Computation Tree Logic (CTL)
+
+    La sequenza e' descritta in un albero di esecuzione (+ realistico)
+  </itemize>
+
+  Per un grafo si crea il suo albero di esecuzione (ovvero tutte le possibili
+  tappe della esecuzione)
+
   \;
+
+  Questo vuole dire:
+
+  <\math>
+    \<tau\>= <around*|\<langle\>|S,\<rightarrow\>,s<rsup|0>|\<rangle\>>\<rightarrow\>
+    <around*|\<langle\>|U,\<rightarrow\><rprime|'>,u<rsup|0>|\<rangle\>>
+  </math>
+
+  Ovvero una sorta di copia del grafo dove pero' ogni nodo ha un solo
+  predocessore.
+
+  <\underline>
+    Sintassi:
+  </underline>
+
+  <with|font-series|bold|AP>: atomi proposition
+
+  <\itemize>
+    <item><math|a\<in\>AP \<rightarrow\> a <text|is a CTL formula>>
+
+    <item><math|\<phi\><rsub|1>,\<phi\><rsub|2>> are CTL formulas then :
+
+    <\equation*>
+      \<neg\>\<phi\><rsub|1><space|1em>\<phi\><rsub|1>\<wedge\>\<phi\><rsub|2><space|1em>EX\<phi\><rsub|1><space|1em>EG\<phi\><rsub|1><space|1em>\<phi\><rsub|1>EU\<phi\><rsub|2>
+    </equation*>
+
+    \;
+  </itemize>
+
+  <underline|Struttura Kripke>
+
+  E' un sistema di transizione (una sorta di automata con infinite
+  transizioni)
+
+  NuSMV tool per calcolare\ 
 </body>
 
 <\references>
   <\collection>
-    <associate|auto-1|<tuple|1|?|../../../.TeXmacs/texts/scratch/no_name_4.tm>>
+    <associate|auto-1|<tuple|1|?>>
+    <associate|auto-2|<tuple|2|?>>
+    <associate|auto-3|<tuple|2.1|?>>
+    <associate|auto-4|<tuple|1|?>>
   </collection>
 </references>
 
